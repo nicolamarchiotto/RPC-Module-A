@@ -1,0 +1,3 @@
+[submodule "ForecastNucleoFramework-test"]
+	path = ForecastNucleoFramework-test
+	url = https://gitlab.com/altairLab/elasticteam/ForecastNucleoFramework-test
