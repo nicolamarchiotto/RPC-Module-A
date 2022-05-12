@@ -7,6 +7,3 @@
 [submodule "forecastnucleoframework"]
 	path = forecastnucleoframework
 	url = https://gitlab.com/altairLab/elasticteam/forecastnucleoframework
-[submodule "forecastnucleoframework-test"]
-	path = forecastnucleoframework-test
-	url = https://gitlab.com/altairLab/elasticteam/forecastnucleoframework-test
