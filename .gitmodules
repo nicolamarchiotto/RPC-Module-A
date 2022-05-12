@@ -4,3 +4,6 @@
 [submodule "RPC-MbedNucleoAssignments"]
 	path = RPC-MbedNucleoAssignments
 	url = https://github.com/nicolamarchiotto/RPC-MbedNucleoAssignments
+[submodule "forecastnucleoframework"]
+	path = forecastnucleoframework
+	url = https://gitlab.com/altairLab/elasticteam/forecastnucleoframework
