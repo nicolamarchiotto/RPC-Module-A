@@ -1,6 +1,0 @@
-[submodule "ForecastNucleoFramework-test"]
-	path = ForecastNucleoFramework-test
-	url = https://gitlab.com/altairLab/elasticteam/ForecastNucleoFramework-test
-[submodule "forecastnucleoframework"]
-	path = forecastnucleoframework
-	url = https://gitlab.com/altairLab/elasticteam/forecastnucleoframework
