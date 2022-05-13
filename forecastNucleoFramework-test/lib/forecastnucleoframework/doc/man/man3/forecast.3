@@ -1,0 +1,117 @@
+.TH "forecast" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBcom\fP"
+.br
+.ti -1c
+.RI " \fBenvEncoder\fP"
+.br
+.ti -1c
+.RI " \fBmotorEncoder\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBApp\fP"
+.br
+.ti -1c
+.RI "class \fBController\fP"
+.br
+.ti -1c
+.RI "class \fBForcePID\fP"
+.br
+.RI "\fBForcePID\fP control class\&. "
+.ti -1c
+.RI "class \fBHardware\fP"
+.br
+.ti -1c
+.RI "class \fBImpedanceControl\fP"
+.br
+.RI "Impedance Control class\&. "
+.ti -1c
+.RI "class \fBIntegralSlidingModeForceControl\fP"
+.br
+.ti -1c
+.RI "class \fBMegaPD\fP"
+.br
+.RI "\fBMegaPD\fP control class\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBLoggerCallback\fP = std::function< std::vector< float >(const \fBHardware\fP *, const \fBController\fP *, const \fBController\fP *)>"
+.br
+.ti -1c
+.RI "using \fBRefGen\fP = std::function< utility::ddvar(const \fBHardware\fP *)>"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBStatus\fP : uint8_t { \fBStatus::NO_ERROR\fP = 0, \fBStatus::TICKER_INIT_ERR\fP, \fBStatus::MOTOR_ENCODER_INIT_ERR\fP, \fBStatus::ENV_ENCODER_INIT_ERR\fP, \fBStatus::CONTROL_MOTOR_INIT_ERR\fP, \fBStatus::ENV_MOTOR_INIT_ERR\fP, \fBStatus::TORQUE_SENSOR_INIT_ERR\fP, \fBStatus::FREQ_NOT_KEPT\fP, \fBStatus::COMMUNICATION_ERROR\fP }"
+.br
+.RI "Contains all the possible errors returned by the methods of this library\&. "
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBforecast::LoggerCallback\fP = typedef std::function< std::vector<float>(const \fBHardware\fP*, const \fBController\fP*, const \fBController\fP*)>"
+
+.PP
+Definition at line 15 of file App\&.hpp\&.
+.SS "using \fBforecast::RefGen\fP = typedef std::function<utility::ddvar(const \fBHardware\fP*)>"
+
+.PP
+Definition at line 16 of file App\&.hpp\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBforecast::Status\fP : uint8_t\fC [strong]\fP"
+
+.PP
+Contains all the possible errors returned by the methods of this library\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINO_ERROR \fP\fP
+.TP
+\fB\fITICKER_INIT_ERR \fP\fP
+Identify a wrong timer initialization\&. 
+.TP
+\fB\fIMOTOR_ENCODER_INIT_ERR \fP\fP
+Identify a wrong motor encoder initialization\&. 
+.TP
+\fB\fIENV_ENCODER_INIT_ERR \fP\fP
+Identify a wrong environment encoder initialization 
+.TP
+\fB\fICONTROL_MOTOR_INIT_ERR \fP\fP
+Identify a wrong control motor initialization\&. 
+.TP
+\fB\fIENV_MOTOR_INIT_ERR \fP\fP
+Identify a wrong environment motor initialization 
+.TP
+\fB\fITORQUE_SENSOR_INIT_ERR \fP\fP
+Identify a wrong torque sensor initialization\&. 
+.TP
+\fB\fIFREQ_NOT_KEPT \fP\fP
+Identify that the loop frequency isn't kept\&. 
+.TP
+\fB\fICOMMUNICATION_ERROR \fP\fP
+Identify that a communication error is occurred 
+.PP
+Definition at line 12 of file Status\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

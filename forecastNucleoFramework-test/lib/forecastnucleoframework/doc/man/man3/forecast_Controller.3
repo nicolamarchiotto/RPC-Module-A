@@ -1,0 +1,161 @@
+.TH "forecast::Controller" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast::Controller
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Controller\&.hpp>\fP
+.PP
+Inherited by \fBforecast::ForcePID\fP, \fBforecast::ImpedanceControl\fP, \fBforecast::IntegralSlidingModeForceControl\fP, and \fBforecast::MegaPD\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBController\fP (size_t \fBnumberOfParams\fP=0)"
+.br
+.RI "\fBController\fP constructor\&. "
+.ti -1c
+.RI "virtual \fB~Controller\fP ()=default"
+.br
+.RI "Default virtual destructor\&. "
+.ti -1c
+.RI "virtual bool \fBinit\fP (const std::vector< float > &params)=0"
+.br
+.RI "\fBController\fP initialization\&. The implementation should take care of setting to true the value of the initialized field of the controller\&. "
+.ti -1c
+.RI "virtual std::vector< std::string > \fBgetParamNames\fP () const"
+.br
+.RI "Get the names of the parameter in order\&. If not implemented it will return a vector of strings: 'param_1', \&.\&.\&., 'param_N'\&. "
+.ti -1c
+.RI "virtual size_t \fBgetNumberOfParams\fP () const"
+.br
+.RI "Get the number of parameters required for the initialization\&. "
+.ti -1c
+.RI "virtual bool \fBisInitialized\fP () const"
+.br
+.RI "return if the controller is been initialized "
+.ti -1c
+.RI "virtual utility::ddvar \fBprocess\fP (const \fBHardware\fP *hw, utility::ddvar ref)=0"
+.br
+.RI "Implementation of the control law\&. The method produces an output given a reference (input)\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const size_t \fBnumberOfParams\fP"
+.br
+.ti -1c
+.RI "bool \fBinitialized\fP = false"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file Controller\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Controller::Controller (size_t numberOfParams = \fC0\fP)"
+
+.PP
+\fBController\fP constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINumber\fP of parameters required for the initialization 
+.RE
+.PP
+
+.PP
+Definition at line 5 of file Controller\&.cpp\&.
+.SS "virtual forecast::Controller::~Controller ()\fC [virtual]\fP, \fC [default]\fP"
+
+.PP
+Default virtual destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "size_t Controller::getNumberOfParams () const\fC [virtual]\fP"
+
+.PP
+Get the number of parameters required for the initialization\&. 
+.PP
+\fBReturns\fP
+.RS 4
+size_t 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file Controller\&.cpp\&.
+.SS "std::vector< std::string > Controller::getParamNames () const\fC [virtual]\fP"
+
+.PP
+Get the names of the parameter in order\&. If not implemented it will return a vector of strings: 'param_1', \&.\&.\&., 'param_N'\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::vector<std::string> 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBforecast::ForcePID\fP, \fBforecast::MegaPD\fP, \fBforecast::ImpedanceControl\fP, and \fBforecast::IntegralSlidingModeForceControl\fP\&.
+.PP
+Definition at line 9 of file Controller\&.cpp\&.
+.SS "virtual bool forecast::Controller::init (const std::vector< float > & params)\fC [pure virtual]\fP"
+
+.PP
+\fBController\fP initialization\&. The implementation should take care of setting to true the value of the initialized field of the controller\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIA\fP vector containing the float params\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBforecast::ForcePID\fP, \fBforecast::MegaPD\fP, \fBforecast::ImpedanceControl\fP, and \fBforecast::IntegralSlidingModeForceControl\fP\&.
+.SS "bool Controller::isInitialized () const\fC [virtual]\fP"
+
+.PP
+return if the controller is been initialized 
+.PP
+\fBReturns\fP
+.RS 4
+true 
+.PP
+false 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file Controller\&.cpp\&.
+.SS "virtual utility::ddvar forecast::Controller::process (const \fBHardware\fP * hw, utility::ddvar ref)\fC [pure virtual]\fP"
+
+.PP
+Implementation of the control law\&. The method produces an output given a reference (input)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIControl\fP reference 
+.RE
+.PP
+
+.PP
+Implemented in \fBforecast::ForcePID\fP, \fBforecast::MegaPD\fP, \fBforecast::ImpedanceControl\fP, and \fBforecast::IntegralSlidingModeForceControl\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool forecast::Controller::initialized = false\fC [protected]\fP"
+
+.PP
+Definition at line 66 of file Controller\&.hpp\&.
+.SS "const size_t forecast::Controller::numberOfParams\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file Controller\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

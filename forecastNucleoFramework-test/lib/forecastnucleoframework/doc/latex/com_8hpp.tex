@@ -1,0 +1,49 @@
+\hypertarget{com_8hpp}{}\doxysection{include/forecast/com.hpp File Reference}
+\label{com_8hpp}\index{include/forecast/com.hpp@{include/forecast/com.hpp}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceforecast}{forecast}}
+\item 
+ \mbox{\hyperlink{namespaceforecast_1_1com}{forecast\+::com}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceforecast_1_1com_a2721f8b8092ce0d10fc7da9207d136d4}{forecast\+::com\+::\+Type}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceforecast_1_1com_a2721f8b8092ce0d10fc7da9207d136d4a632ac26031c098805b57ab5e9a1ee295}{forecast\+::com\+::\+L\+OG}} = 0, 
+\mbox{\hyperlink{namespaceforecast_1_1com_a2721f8b8092ce0d10fc7da9207d136d4a239997cd279c6b50d5cfb933e74ef815}{forecast\+::com\+::\+E\+R\+R\+OR}} = 1, 
+\mbox{\hyperlink{namespaceforecast_1_1com_a2721f8b8092ce0d10fc7da9207d136d4ac8e850a215a8e22ae195f4c2f3d39b93}{forecast\+::com\+::\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+S\+YN}} = 4, 
+\mbox{\hyperlink{namespaceforecast_1_1com_a2721f8b8092ce0d10fc7da9207d136d4a3718e8a799e789e18c87c748d917af96}{forecast\+::com\+::\+H\+A\+N\+D\+S\+H\+A\+K\+E\+\_\+\+A\+CK}}, 
+\newline
+\mbox{\hyperlink{namespaceforecast_1_1com_a2721f8b8092ce0d10fc7da9207d136d4a52a4e7c9027511285b6e3c529fb8d14f}{forecast\+::com\+::\+D\+A\+T\+A\+\_\+\+R\+EQ}}, 
+\mbox{\hyperlink{namespaceforecast_1_1com_a2721f8b8092ce0d10fc7da9207d136d4a9742590500e7f120d0f36382086862a4}{forecast\+::com\+::\+D\+A\+TA}}, 
+\mbox{\hyperlink{namespaceforecast_1_1com_a2721f8b8092ce0d10fc7da9207d136d4a4821094758c6245ddeae4437b2ee5247}{forecast\+::com\+::\+M\+SG}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceforecast_1_1com_aa14b54c867d6cddaad4f1e5eb73d4a2a}{forecast\+::com\+::err}} \{ \mbox{\hyperlink{namespaceforecast_1_1com_aa14b54c867d6cddaad4f1e5eb73d4a2aa051140c4da0c4b371dbc8158b3546ce0}{forecast\+::com\+::\+U\+N\+E\+S\+C\+A\+P\+E\+D\+\_\+\+C\+H\+AR}} = -\/1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespaceforecast_1_1com_a1b78cf482abb012315c6ff3614b86ee6}{forecast\+::com\+::escape}} (const void $\ast$src, void $\ast$dst, uint32\+\_\+t src\+Sz, uint32\+\_\+t max\+Sz=0)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespaceforecast_1_1com_a51189e24434286a715a1f96e1a54c3db}{forecast\+::com\+::unescape}} (const void $\ast$src, void $\ast$dst, uint32\+\_\+t src\+Sz, uint32\+\_\+t max\+Sz=0)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespaceforecast_1_1com_a60f51b6cc1b58a443db6513fdb32b9c1}{forecast\+::com\+::checksum}} (const uint8\+\_\+t $\ast$src, uint32\+\_\+t sz)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespaceforecast_1_1com_a928411e72e47192c5ec32ec300004fd3}{forecast\+::com\+::build\+Pkg}} (com\+::\+Type t, const void $\ast$payload, void $\ast$dst, uint32\+\_\+t payload\+Sz, uint32\+\_\+t max\+Sz=0)
+\item 
+bool \mbox{\hyperlink{namespaceforecast_1_1com_afcfb7f7cc44bf219640f77b0ab13dc0c}{forecast\+::com\+::check\+Etx}} (const uint8\+\_\+t $\ast$pkg, uint32\+\_\+t size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{namespaceforecast_1_1com_ac6b13ae898e34446cc89e394ec36a507}{forecast\+::com\+::stx}} = 0x02
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{namespaceforecast_1_1com_a3eceac346ab5d8a7ec2dbda6ca273b50}{forecast\+::com\+::etx}} = 0x03
+\item 
+constexpr uint8\+\_\+t \mbox{\hyperlink{namespaceforecast_1_1com_a70e49421a741e989ae81279437293aa6}{forecast\+::com\+::esc}} = 0x1b
+\end{DoxyCompactItemize}

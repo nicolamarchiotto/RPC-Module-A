@@ -1,0 +1,187 @@
+.TH "forecast::ForcePID" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast::ForcePID \- \fBForcePID\fP control class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ForcePID\&.hpp>\fP
+.PP
+Inherits \fBforecast::Controller\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBForcePID\fP ()"
+.br
+.RI "PID Force control constructor\&. "
+.ti -1c
+.RI "\fBForcePID\fP (float \fBkp\fP, float \fBki\fP, float \fBkd\fP)"
+.br
+.RI "Construct a new Force P I D object\&. This constructor initialize, the controller\&. "
+.ti -1c
+.RI "virtual bool \fBinit\fP (const std::vector< float > &params) override"
+.br
+.RI "PID control initialization\&. "
+.ti -1c
+.RI "virtual std::vector< std::string > \fBgetParamNames\fP () const override"
+.br
+.RI "Get Return the names of the parameters\&. "
+.ti -1c
+.RI "virtual utility::ddvar \fBprocess\fP (const \fBHardware\fP *hw, utility::ddvar ref) override"
+.br
+.RI "Implementation of the control law\&. The method produces an output given a reference (input)\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBkp\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBki\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBkd\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBerrPast\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBerr\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBderr\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBierr\fP = 0\&.0"
+.br
+.ti -1c
+.RI "utility::ddvar \fBout\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBForcePID\fP control class\&. 
+.PP
+Definition at line 12 of file ForcePID\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ForcePID::ForcePID ()"
+
+.PP
+PID Force control constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpointer\fP to the HW interface 
+.RE
+.PP
+
+.PP
+Definition at line 5 of file ForcePID\&.cpp\&.
+.SS "ForcePID::ForcePID (float kp, float ki, float kd)"
+
+.PP
+Construct a new Force P I D object\&. This constructor initialize, the controller\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkp\fP 
+.br
+\fIki\fP 
+.br
+\fIkd\fP 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file ForcePID\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > ForcePID::getParamNames () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get Return the names of the parameters\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::vector<std::string> 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBforecast::Controller\fP\&.
+.PP
+Definition at line 45 of file ForcePID\&.cpp\&.
+.SS "bool ForcePID::init (const std::vector< float > & params)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+PID control initialization\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP vector containing the constants P, I, D with the order respect 
+.RE
+.PP
+
+.PP
+Implements \fBforecast::Controller\fP\&.
+.PP
+Definition at line 22 of file ForcePID\&.cpp\&.
+.SS "utility::ddvar ForcePID::process (const \fBHardware\fP * hw, utility::ddvar ref)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implementation of the control law\&. The method produces an output given a reference (input)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIControl\fP reference 
+.RE
+.PP
+
+.PP
+Implements \fBforecast::Controller\fP\&.
+.PP
+Definition at line 33 of file ForcePID\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float forecast::ForcePID::derr = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 57 of file ForcePID\&.hpp\&.
+.SS "float forecast::ForcePID::err = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file ForcePID\&.hpp\&.
+.SS "float forecast::ForcePID::errPast = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 54 of file ForcePID\&.hpp\&.
+.SS "float forecast::ForcePID::ierr = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 58 of file ForcePID\&.hpp\&.
+.SS "float forecast::ForcePID::kd = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file ForcePID\&.hpp\&.
+.SS "float forecast::ForcePID::ki = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 51 of file ForcePID\&.hpp\&.
+.SS "float forecast::ForcePID::kp = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file ForcePID\&.hpp\&.
+.SS "utility::ddvar forecast::ForcePID::out\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file ForcePID\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

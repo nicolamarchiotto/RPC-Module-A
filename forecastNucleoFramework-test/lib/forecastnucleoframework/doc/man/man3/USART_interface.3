@@ -1,0 +1,304 @@
+.TH "USART_interface" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USART_interface
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <USART_interface\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUSART_interface\fP (PinName _pin_tx, PinName _pin_rx, \fBWord_length\fP _length, \fBMode\fP _mode, uint32_t _baudrate, \fBParity_bits\fP _parity, \fBStop_bits\fP _stopbit, \fBDMA_conf\fP _dma_conf, \fBRX_conf\fP _overrun, uint16_t _size_tx, uint16_t _size_rx)"
+.br
+.ti -1c
+.RI "\fBUSART_interface\fP (PinName _pin_tx, PinName _pin_rx, \fBWord_length\fP _length, \fBMode\fP _mode, uint32_t _baudrate, \fBParity_bits\fP _parity, \fBStop_bits\fP _stopbit, \fBDMA_conf\fP _dma_conf, uint16_t _size_tx, uint16_t _size_rx)"
+.br
+.ti -1c
+.RI "\fBUSART_interface\fP (PinName _pin_tx, PinName _pin_rx, uint32_t _baudrate, \fBDMA_conf\fP _dma_conf, uint16_t _size_tx, uint16_t _size_rx)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBinit\fP (PinName _pin_tx, PinName _pin_rx, \fBWord_length\fP _length, \fBMode\fP _mode, uint32_t _baudrate, \fBParity_bits\fP _parity, \fBStop_bits\fP _stopbit, \fBDMA_conf\fP _dma_conf, \fBRX_conf\fP _overrun, uint16_t _size_tx, uint16_t _size_rx)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBenable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBunable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBreceive_enable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBreceive_unable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBtransmit_enable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBtransmit_unable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBis_enable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBis_receive_enable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBis_transmit_enable\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBis_data_available\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBis_data_buffer\fP (uint16_t *_length)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBread_data\fP (uint8_t *_data)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBwrite_data\fP (uint8_t _data, bool _wait)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBsend\fP (bool wait=true)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBsend\fP (uint16_t size, bool wait=true)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBget_tx_buffer\fP (uint8_t *_data)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBput_rx_buffer\fP (uint8_t _data)"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBstart_dma_transmit\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBis_tx_dma_free\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBflush_rx_buffer\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBflush_tx_buffer\fP ()"
+.br
+.ti -1c
+.RI "bool \fBis_tx_buffer_empty\fP ()"
+.br
+.ti -1c
+.RI "uint8_t * \fBget_rx_buffer_pointer\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBget_rx_buffer_dma_position\fP ()"
+.br
+.ti -1c
+.RI "uint8_t * \fBget_tx_buffer_pointer\fP (bool wait=false)"
+.br
+.ti -1c
+.RI "uint32_t \fBget_tx_buffer_dma_position\fP ()"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBprintf\fP (const char *format,\&.\&.\&.) MBED_PRINTF_METHOD(1"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBUSART_status\fP \fBprintf\fP (bool wait, const char *format,\&.\&.\&.) MBED_PRINTF_METHOD(2"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP \fBbprintf\fP (const char *format,\&.\&.\&.) MBED_PRINTF_METHOD(1"
+.br
+.ti -1c
+.RI "\fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP \fBbprintf\fP (bool wait, const char *format,\&.\&.\&.) MBED_PRINTF_METHOD(2"
+.br
+.ti -1c
+.RI "template<typename T > \fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP \fBput_tx_buffer\fP (T _data)"
+.br
+.ti -1c
+.RI "template<typename T > \fBUSART_status\fP \fBput_tx_buffer\fP (uint16_t len, T *_data)"
+.br
+.ti -1c
+.RI "template<typename T > \fBUSART_status\fP \fBget_rx_buffer\fP (T *_data)"
+.br
+.ti -1c
+.RI "template<typename T > \fBUSART_status\fP \fBget_rx_buffer\fP (uint16_t *len, T *_data)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUSART_status\fP \fB_status\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 157 of file USART_interface\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "USART_interface::USART_interface (PinName _pin_tx, PinName _pin_rx, \fBWord_length\fP _length, \fBMode\fP _mode, uint32_t _baudrate, \fBParity_bits\fP _parity, \fBStop_bits\fP _stopbit, \fBDMA_conf\fP _dma_conf, \fBRX_conf\fP _overrun, uint16_t _size_tx, uint16_t _size_rx)"
+
+.PP
+Definition at line 3 of file USART_interface\&.cpp\&.
+.SS "USART_interface::USART_interface (PinName _pin_tx, PinName _pin_rx, \fBWord_length\fP _length, \fBMode\fP _mode, uint32_t _baudrate, \fBParity_bits\fP _parity, \fBStop_bits\fP _stopbit, \fBDMA_conf\fP _dma_conf, uint16_t _size_tx, uint16_t _size_rx)"
+
+.PP
+Definition at line 7 of file USART_interface\&.cpp\&.
+.SS "USART_interface::USART_interface (PinName _pin_tx, PinName _pin_rx, uint32_t _baudrate, \fBDMA_conf\fP _dma_conf, uint16_t _size_tx, uint16_t _size_rx)"
+
+.PP
+Definition at line 11 of file USART_interface\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUSART_status\fP USART_interface::bprintf (bool wait, const char * format,  \&.\&.\&.)"
+
+.PP
+Definition at line 1457 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::bprintf (const char * format,  \&.\&.\&.)"
+
+.PP
+Definition at line 1429 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::enable ()"
+
+.PP
+Definition at line 602 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::flush_rx_buffer ()"
+
+.PP
+Definition at line 1265 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::flush_tx_buffer ()"
+
+.PP
+Definition at line 1320 of file USART_interface\&.cpp\&.
+.SS "template<typename T > \fBUSART_status\fP USART_interface::get_rx_buffer (T * _data)\fC [inline]\fP"
+
+.PP
+Definition at line 256 of file USART_interface\&.hpp\&.
+.SS "template<typename T > \fBUSART_status\fP USART_interface::get_rx_buffer (uint16_t * len, T * _data)\fC [inline]\fP"
+
+.PP
+Definition at line 259 of file USART_interface\&.hpp\&.
+.SS "uint32_t USART_interface::get_rx_buffer_dma_position ()"
+
+.PP
+Definition at line 1350 of file USART_interface\&.cpp\&.
+.SS "uint8_t * USART_interface::get_rx_buffer_pointer ()"
+
+.PP
+Definition at line 1346 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::get_tx_buffer (uint8_t * _data)"
+
+.PP
+Definition at line 1039 of file USART_interface\&.cpp\&.
+.SS "uint32_t USART_interface::get_tx_buffer_dma_position ()"
+
+.PP
+Definition at line 1368 of file USART_interface\&.cpp\&.
+.SS "uint8_t * USART_interface::get_tx_buffer_pointer (bool wait = \fCfalse\fP)"
+
+.PP
+Definition at line 1359 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::init (PinName _pin_tx, PinName _pin_rx, \fBWord_length\fP _length, \fBMode\fP _mode, uint32_t _baudrate, \fBParity_bits\fP _parity, \fBStop_bits\fP _stopbit, \fBDMA_conf\fP _dma_conf, \fBRX_conf\fP _overrun, uint16_t _size_tx, uint16_t _size_rx)"
+
+.PP
+Definition at line 20 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::is_data_available ()"
+
+.PP
+Definition at line 762 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::is_data_buffer (uint16_t * _length)"
+
+.PP
+Definition at line 808 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::is_enable ()"
+
+.PP
+Definition at line 726 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::is_receive_enable ()"
+
+.PP
+Definition at line 738 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::is_transmit_enable ()"
+
+.PP
+Definition at line 750 of file USART_interface\&.cpp\&.
+.SS "bool USART_interface::is_tx_buffer_empty ()"
+
+.PP
+Definition at line 1341 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::is_tx_dma_free ()"
+
+.PP
+Definition at line 1248 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::printf (bool wait, const char * format,  \&.\&.\&.)"
+
+.PP
+Definition at line 1403 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::printf (const char * format,  \&.\&.\&.)"
+
+.PP
+Definition at line 1377 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::put_rx_buffer (uint8_t _data)"
+
+.PP
+Definition at line 1069 of file USART_interface\&.cpp\&.
+.SS "template<typename T > \fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP \fBUSART_status\fP USART_interface::put_tx_buffer (T _data)\fC [inline]\fP"
+
+.PP
+Definition at line 240 of file USART_interface\&.hpp\&.
+.SS "template<typename T > \fBUSART_status\fP USART_interface::put_tx_buffer (uint16_t len, T * _data)\fC [inline]\fP"
+
+.PP
+Definition at line 243 of file USART_interface\&.hpp\&.
+.SS "\fBUSART_status\fP USART_interface::read_data (uint8_t * _data)"
+
+.PP
+Definition at line 844 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::receive_enable ()"
+
+.PP
+Definition at line 641 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::receive_unable ()"
+
+.PP
+Definition at line 664 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::send (bool wait = \fCtrue\fP)"
+
+.PP
+Definition at line 906 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::send (uint16_t size, bool wait = \fCtrue\fP)"
+
+.PP
+Definition at line 969 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::start_dma_transmit ()"
+
+.PP
+Definition at line 1163 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::transmit_enable ()"
+
+.PP
+Definition at line 685 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::transmit_unable ()"
+
+.PP
+Definition at line 704 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::unable ()"
+
+.PP
+Definition at line 621 of file USART_interface\&.cpp\&.
+.SS "\fBUSART_status\fP USART_interface::write_data (uint8_t _data, bool _wait)"
+
+.PP
+Definition at line 872 of file USART_interface\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUSART_status\fP USART_interface::_status"
+
+.PP
+Definition at line 201 of file USART_interface\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

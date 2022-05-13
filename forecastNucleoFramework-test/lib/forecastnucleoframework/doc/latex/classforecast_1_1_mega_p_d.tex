@@ -1,0 +1,231 @@
+\hypertarget{classforecast_1_1_mega_p_d}{}\doxysection{forecast\+::Mega\+PD Class Reference}
+\label{classforecast_1_1_mega_p_d}\index{forecast::MegaPD@{forecast::MegaPD}}
+
+
+\mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} control class.  
+
+
+
+
+{\ttfamily \#include $<$Mega\+P\+D.\+hpp$>$}
+
+Inheritance diagram for forecast\+::Mega\+PD\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classforecast_1_1_mega_p_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforecast_1_1_mega_p_d_aaec56b55f2014f5c254520149a6f8919}{Mega\+PD}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} control constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classforecast_1_1_mega_p_d_aa51bd001ead3aff0434f721bea5a7550}{Mega\+PD}} (float \mbox{\hyperlink{classforecast_1_1_mega_p_d_ae3cfd0dc195aff9097d3d0b8f97ab25c}{kp}}, float \mbox{\hyperlink{classforecast_1_1_mega_p_d_a899da796392cb0221a7979ffbe8d86c6}{kd}}, float \mbox{\hyperlink{classforecast_1_1_mega_p_d_a8aa120584ff4f13fcb65276368a543f3}{ff}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} object. This constructor initialize, the controller. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classforecast_1_1_mega_p_d_af816f7a15600a12166497ac2d59ee253}{init}} (const std\+::vector$<$ float $>$ \&params) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} control initialization. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classforecast_1_1_mega_p_d_aeeb240c917b9b059a167ea3c63cbafc6}{get\+Param\+Names}} () const override
+\begin{DoxyCompactList}\small\item\em Get Return the names of the parameters. \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_mega_p_d_acb6b3a470fdc4745ad8860d9d9d3284a}{process}} (const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$hw, utility\+::ddvar ref) override
+\begin{DoxyCompactList}\small\item\em Implementation of the control law. The method produces an output given a reference (input). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_mega_p_d_ae3cfd0dc195aff9097d3d0b8f97ab25c}{kp}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_mega_p_d_a899da796392cb0221a7979ffbe8d86c6}{kd}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_mega_p_d_a8aa120584ff4f13fcb65276368a543f3}{ff}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_mega_p_d_ae04c66bbde9f0d8c3f783cc3a5d9bfb0}{err}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_mega_p_d_a25c31c35df441540d78ee81b3d915914}{derr}} = 0.\+0
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_mega_p_d_af72a8444e7e47d03f7e166092a846a88}{out}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} control class. 
+
+Definition at line 10 of file Mega\+P\+D.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_aaec56b55f2014f5c254520149a6f8919}\label{classforecast_1_1_mega_p_d_aaec56b55f2014f5c254520149a6f8919}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!MegaPD@{MegaPD}}
+\index{MegaPD@{MegaPD}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{MegaPD()}{MegaPD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mega\+P\+D\+::\+Mega\+PD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} control constructor. 
+
+
+
+Definition at line 6 of file Mega\+P\+D.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_aa51bd001ead3aff0434f721bea5a7550}\label{classforecast_1_1_mega_p_d_aa51bd001ead3aff0434f721bea5a7550}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!MegaPD@{MegaPD}}
+\index{MegaPD@{MegaPD}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{MegaPD()}{MegaPD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mega\+P\+D\+::\+Mega\+PD (\begin{DoxyParamCaption}\item[{float}]{kp,  }\item[{float}]{kd,  }\item[{float}]{ff }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} object. This constructor initialize, the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & \\
+\hline
+{\em kd} & \\
+\hline
+{\em ff} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file Mega\+P\+D.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_aeeb240c917b9b059a167ea3c63cbafc6}\label{classforecast_1_1_mega_p_d_aeeb240c917b9b059a167ea3c63cbafc6}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!getParamNames@{getParamNames}}
+\index{getParamNames@{getParamNames}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{getParamNames()}{getParamNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Mega\+P\+D\+::get\+Param\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get Return the names of the parameters. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classforecast_1_1_controller_aa9a391066225d7300a0ad338e324914a}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 46 of file Mega\+P\+D.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_af816f7a15600a12166497ac2d59ee253}\label{classforecast_1_1_mega_p_d_af816f7a15600a12166497ac2d59ee253}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!init@{init}}
+\index{init@{init}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool Mega\+P\+D\+::init (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} control initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & vector containing the constants kpd, kd, ff in the respected order \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classforecast_1_1_controller_a445798926a36181bd9bc1825ad705b2e}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 23 of file Mega\+P\+D.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_acb6b3a470fdc4745ad8860d9d9d3284a}\label{classforecast_1_1_mega_p_d_acb6b3a470fdc4745ad8860d9d9d3284a}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!process@{process}}
+\index{process@{process}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily utility\+::ddvar Mega\+P\+D\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$}]{hw,  }\item[{utility\+::ddvar}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of the control law. The method produces an output given a reference (input). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Control} & reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classforecast_1_1_controller_ae85c4138f1299cc068d471f65c57b9b0}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 34 of file Mega\+P\+D.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_a25c31c35df441540d78ee81b3d915914}\label{classforecast_1_1_mega_p_d_a25c31c35df441540d78ee81b3d915914}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!derr@{derr}}
+\index{derr@{derr}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{derr}{derr}}
+{\footnotesize\ttfamily float forecast\+::\+Mega\+P\+D\+::derr = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file Mega\+P\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_ae04c66bbde9f0d8c3f783cc3a5d9bfb0}\label{classforecast_1_1_mega_p_d_ae04c66bbde9f0d8c3f783cc3a5d9bfb0}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!err@{err}}
+\index{err@{err}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily float forecast\+::\+Mega\+P\+D\+::err = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file Mega\+P\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_a8aa120584ff4f13fcb65276368a543f3}\label{classforecast_1_1_mega_p_d_a8aa120584ff4f13fcb65276368a543f3}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!ff@{ff}}
+\index{ff@{ff}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{ff}{ff}}
+{\footnotesize\ttfamily float forecast\+::\+Mega\+P\+D\+::ff = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file Mega\+P\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_a899da796392cb0221a7979ffbe8d86c6}\label{classforecast_1_1_mega_p_d_a899da796392cb0221a7979ffbe8d86c6}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!kd@{kd}}
+\index{kd@{kd}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{kd}{kd}}
+{\footnotesize\ttfamily float forecast\+::\+Mega\+P\+D\+::kd = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file Mega\+P\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_ae3cfd0dc195aff9097d3d0b8f97ab25c}\label{classforecast_1_1_mega_p_d_ae3cfd0dc195aff9097d3d0b8f97ab25c}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!kp@{kp}}
+\index{kp@{kp}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{kp}{kp}}
+{\footnotesize\ttfamily float forecast\+::\+Mega\+P\+D\+::kp = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file Mega\+P\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_mega_p_d_af72a8444e7e47d03f7e166092a846a88}\label{classforecast_1_1_mega_p_d_af72a8444e7e47d03f7e166092a846a88}} 
+\index{forecast::MegaPD@{forecast::MegaPD}!out@{out}}
+\index{out@{out}!forecast::MegaPD@{forecast::MegaPD}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Mega\+P\+D\+::out\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 51 of file Mega\+P\+D.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/forecast/controllers/\mbox{\hyperlink{_mega_p_d_8hpp}{Mega\+P\+D.\+hpp}}\item 
+src/controllers/\mbox{\hyperlink{_mega_p_d_8cpp}{Mega\+P\+D.\+cpp}}\end{DoxyCompactItemize}

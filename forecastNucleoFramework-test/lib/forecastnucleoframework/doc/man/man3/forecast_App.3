@@ -1,0 +1,216 @@
+.TH "forecast::App" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast::App
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <App\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBApp\fP (unsigned int txBuffSz=256, unsigned int rxBuffSz=256, unsigned int baudrate=921600)"
+.br
+.ti -1c
+.RI "void \fBsetEnviorment\fP (std::unique_ptr< \fBController\fP > env)"
+.br
+.ti -1c
+.RI "void \fBsetMotor\fP (std::unique_ptr< \fBController\fP > motor)"
+.br
+.ti -1c
+.RI "void \fBsetEnviorment\fP (\fBController\fP *env)"
+.br
+.ti -1c
+.RI "void \fBsetMotor\fP (\fBController\fP *motor)"
+.br
+.ti -1c
+.RI "void \fBsetLogger\fP (\fBLoggerCallback\fP logger)"
+.br
+.ti -1c
+.RI "void \fBsetEnvRefGen\fP (\fBRefGen\fP gen)"
+.br
+.ti -1c
+.RI "void \fBsetMotorRefGen\fP (\fBRefGen\fP gen)"
+.br
+.ti -1c
+.RI "bool \fBisOk\fP ()"
+.br
+.RI "Checks if the \fBApp\fP is ready to run\&. "
+.ti -1c
+.RI "bool \fBexecControlLoop\fP (ulong freq=1000)"
+.br
+.RI "Execs the function execControl at the control frequency\&. "
+.ti -1c
+.RI "bool \fBexecControl\fP ()"
+.br
+.RI "Execs one cicle of the control loop\&. "
+.ti -1c
+.RI "void \fBlogInfo\fP ()"
+.br
+.RI "It logs the values returned by the logger callback function\&. "
+.ti -1c
+.RI "void \fBlogError\fP (const std::string &msg)"
+.br
+.RI "It logs an error through the serial\&. "
+.ti -1c
+.RI "bool \fBrequireMotorParams\fP ()"
+.br
+.RI "Requires the parameters for the motor controller from the pc interface\&. "
+.ti -1c
+.RI "bool \fBrequireEnvironmentParams\fP ()"
+.br
+.RI "Requires the parameters for the enviorment controller from the pc interface\&. "
+.ti -1c
+.RI "float \fBrequireFloatValue\fP (const std::string &valueName='')"
+.br
+.RI "Requires a simple float value for the user, if a name is passed this will be showed to the user\&. "
+.ti -1c
+.RI "void \fBsendMessage\fP (const std::string &msg)"
+.br
+.RI "Send a message to the pc\&. "
+.ti -1c
+.RI "bool \fBwaitConnection\fP ()"
+.br
+.RI "This method will wait for a message from the pc to be sure that the connection is established\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file App\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "App::App (unsigned int txBuffSz = \fC256\fP, unsigned int rxBuffSz = \fC256\fP, unsigned int baudrate = \fC921600\fP)"
+
+.PP
+Definition at line 78 of file App\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool App::execControl ()"
+
+.PP
+Execs one cicle of the control loop\&. This method should be called at a specified frequency to garantee to have a good control\&. 
+.PP
+Definition at line 138 of file App\&.cpp\&.
+.SS "bool App::execControlLoop (ulong freq = \fC1000\fP)"
+
+.PP
+Execs the function execControl at the control frequency\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfreq\fP The frequency of the loop in Hz\&. Default to 1 KHz 
+.RE
+.PP
+
+.PP
+Definition at line 171 of file App\&.cpp\&.
+.SS "bool App::isOk ()"
+
+.PP
+Checks if the \fBApp\fP is ready to run\&. 
+.PP
+\fBReturns\fP
+.RS 4
+true if the object is ready to exec the control 
+.PP
+false if the object is not ready to exec the control loop 
+.RE
+.PP
+
+.PP
+Definition at line 132 of file App\&.cpp\&.
+.SS "void App::logError (const std::string & msg)"
+
+.PP
+It logs an error through the serial\&. 
+.PP
+Definition at line 210 of file App\&.cpp\&.
+.SS "void App::logInfo ()"
+
+.PP
+It logs the values returned by the logger callback function\&. 
+.PP
+Definition at line 204 of file App\&.cpp\&.
+.SS "bool App::requireEnvironmentParams ()"
+
+.PP
+Requires the parameters for the enviorment controller from the pc interface\&. 
+.PP
+Definition at line 282 of file App\&.cpp\&.
+.SS "float App::requireFloatValue (const std::string & valueName = \fC''\fP)"
+
+.PP
+Requires a simple float value for the user, if a name is passed this will be showed to the user\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvalueName\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+float 
+.RE
+.PP
+
+.PP
+Definition at line 218 of file App\&.cpp\&.
+.SS "bool App::requireMotorParams ()"
+
+.PP
+Requires the parameters for the motor controller from the pc interface\&. 
+.PP
+Definition at line 277 of file App\&.cpp\&.
+.SS "void App::sendMessage (const std::string & msg)"
+
+.PP
+Send a message to the pc\&. It is a time expensive function to not use for logging functionalities\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImsg\fP Message to send\&. 
+.RE
+.PP
+
+.PP
+Definition at line 241 of file App\&.cpp\&.
+.SS "void App::setEnviorment (\fBController\fP * env)"
+
+.PP
+Definition at line 263 of file App\&.cpp\&.
+.SS "void App::setEnviorment (std::unique_ptr< \fBController\fP > env)"
+
+.PP
+Definition at line 251 of file App\&.cpp\&.
+.SS "void App::setEnvRefGen (\fBRefGen\fP gen)"
+
+.PP
+Definition at line 269 of file App\&.cpp\&.
+.SS "void App::setLogger (\fBLoggerCallback\fP logger)"
+
+.PP
+Definition at line 214 of file App\&.cpp\&.
+.SS "void App::setMotor (\fBController\fP * motor)"
+
+.PP
+Definition at line 257 of file App\&.cpp\&.
+.SS "void App::setMotor (std::unique_ptr< \fBController\fP > motor)"
+
+.PP
+Definition at line 245 of file App\&.cpp\&.
+.SS "void App::setMotorRefGen (\fBRefGen\fP gen)"
+
+.PP
+Definition at line 273 of file App\&.cpp\&.
+.SS "bool App::waitConnection ()"
+
+.PP
+This method will wait for a message from the pc to be sure that the connection is established\&. 
+.PP
+Definition at line 381 of file App\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

@@ -1,0 +1,244 @@
+[33mcommit 26058330e29bb09985c03112204361934b28f527[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Matteo Meneghetti <matteo@meneghetti.dev>
+Date:   Thu Jul 9 14:54:54 2020 +0200
+
+    [FIX] Fixed controllers includes and freq check
+
+[33mcommit 12e5f4ebb8ad540ab35ac94c857337b5cccb3fab[m
+Merge: f024450 ba95f16
+Author: Eldison Dimo <eldisondimo@MacBook-Air-di-Eldison.local>
+Date:   Wed Jun 24 11:14:47 2020 +0200
+
+    kkk
+
+[33mcommit ba95f16557a7c3ddb9acfd60a11630ec44c89029[m
+Author: Eldison Dimo <eldisondimo@MacBook-Air-di-Eldison.local>
+Date:   Wed Jun 24 10:54:09 2020 +0200
+
+    [EDIT] error fixed
+
+[33mcommit f024450163b68c66e60d46225640c10098812eb1[m
+Author: Eldison Dimo <eldisondimo@MacBook-Air-di-Eldison.local>
+Date:   Mon Jun 15 11:36:03 2020 +0200
+
+    [EDIT] impedance control class fixed
+
+[33mcommit 80aeadad8cd958bf58f38bc95a0ace31e1a9d15e[m
+Author: Eldison Dimo <eldisondimo@MacBook-Air-di-Eldison.local>
+Date:   Mon Jun 15 11:33:23 2020 +0200
+
+    [EDIT] Impedance control class fixed
+
+[33mcommit 1ea917a1c96699f923cb92004aa6026bd9403793[m
+Merge: bb44a5f 76fbeec
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Jun 3 20:27:22 2020 +0200
+
+    Merge branch 'master' of gitlab.com:altairLab/elasticteam/ForecastNucleoFramework
+
+[33mcommit bb44a5f69619afbfb5da2bbda58da428d8eacdac[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Jun 3 20:27:06 2020 +0200
+
+    [doc] added doc
+
+[33mcommit 76fbeecb73580853877435b2feeef4c6cba97636[m
+Author: rafael.ferro1 <rafael.ferro@gmail.com>
+Date:   Tue May 19 16:11:56 2020 -0300
+
+    [UPDATE] USART interface with interrupt
+
+[33mcommit 9c7d36decfff53d061272588bad13873371eb97d[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Fri May 8 10:34:32 2020 +0200
+
+    [DOC][ADD]
+    added documentation.
+    added feature to interrupt the control loop.
+    Communication with dma in both directions.
+
+[33mcommit c9a4d2dd59ff0f777a04f8262cf7dc7d457cdcf3[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Sun Apr 26 12:30:32 2020 +0200
+
+    [FIX] Change from pc.read to pc.get_rx_buff
+    functions in read options.
+    Added flush of buffers before connection.
+
+[33mcommit a4e6fa3871b1a49214e1c4dda28f00ab1194806e[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Sun Apr 26 12:14:16 2020 +0200
+
+    [REFACTOR] Changed name of waitForHandshake to waitConnection
+
+[33mcommit 3b7038a8320c324ef80af71f305642a64f18e732[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Fri Apr 10 17:14:41 2020 +0200
+
+    [BUGFIX] piccolo bugfix
+
+[33mcommit af6fe6e72a3a6494b044434ccd715e126cb772a1[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Tue Mar 24 16:16:34 2020 +0100
+
+    [REFACTOR]
+
+[33mcommit 3403d0a41d32003b21cb2fe0d999710cccb5c0e8[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Mon Mar 23 15:35:59 2020 +0100
+
+    [add] gitignore for avoiding push the configs
+
+[33mcommit efdc8861844b8b7944da88e8e390140da759bfe5[m
+Author: rafael.ferro1 <rafael.ferro@gmail.com>
+Date:   Sun Mar 22 11:49:43 2020 +0100
+
+    Add velocity by interperiod method
+
+[33mcommit b5d48e4ec674058cd55ed67cb0c7e1360ffb49b5[m
+Author: Matteo Meneghetti <matteo@meneghetti.dev>
+Date:   Tue Mar 17 12:26:45 2020 +0100
+
+    [FIX] Fixed -Wreorder warning
+
+[33mcommit deedd7e44782ceb8d05751f51f4def07da45d10b[m
+Author: rafael.ferro1 <rafael.ferro@gmail.com>
+Date:   Mon Mar 16 18:19:08 2020 +0100
+
+    Set initial motor torque to zero
+
+[33mcommit 1ba6c133030a43d33b461436af0f535509905039[m
+Author: rafael.ferro1 <rafael.ferro@gmail.com>
+Date:   Mon Mar 16 17:23:00 2020 +0100
+
+    Fix USART_interface library
+
+[33mcommit 80beaa6b5a20d34fcf7a5f5d082823cf2c67a532[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Mon Mar 16 09:08:07 2020 +0100
+
+    [Refactor] deleted debug line
+
+[33mcommit 79df3c419570b65398a1f80b171d46feb9bf1939[m
+Merge: 626f1a7 143b668
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Mar 11 17:57:17 2020 +0100
+
+    Merge branch 'master' of gitlab.com:altairLab/elasticteam/ForecastNucleoFramework
+
+[33mcommit 626f1a7c7891a0016bb85ed7989678ccb3b7636e[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Mar 11 17:57:08 2020 +0100
+
+    [add] handshake
+
+[33mcommit 143b668ff0e5b552caa65f38aea33d9b0617977a[m
+Author: Matteo Meneghetti <matteo@meneghetti.dev>
+Date:   Tue Mar 3 16:54:31 2020 +0100
+
+    [NEW] Implemented the remaining controllers (still to test) and removed control-lib import
+
+[33mcommit 49496878ecc30aa76ba02cfdb618d889a18d431d[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Tue Feb 25 17:54:36 2020 +0100
+
+    [EDB] End of day backup
+
+[33mcommit 9316997a643e612bd697ae0e43170f62880b1853[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Feb 19 17:40:52 2020 +0100
+
+    [ADD] Controller class and ForcePID controller
+
+[33mcommit e55de56d789ad0e45de16d161c23e088b1ffb38d[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Tue Feb 18 17:33:40 2020 +0100
+
+    [ADD] hw timer ticker control inside the App.
+    [IN PROGRESS] removing the dependency from the control library
+
+[33mcommit fa5b902fa17724839ffbcd4300830ea357514a4a[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Tue Feb 11 11:02:02 2020 +0100
+
+    [ADD] communication with the pc.
+    Add debug communication.
+
+[33mcommit d4ff7367045598c66347edee6a5ede1564a5a29f[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Mon Feb 3 17:23:30 2020 +0100
+
+    [ADD] Implementation of requireFloatValue
+
+[33mcommit aa9deb7864dc754e20cbff172233cb53ef7cbc4f[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Tue Jan 28 16:37:03 2020 +0100
+
+    "fix"
+
+[33mcommit a26623dc6f1a819825213a406093cefe5605f95f[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Tue Jan 28 16:35:59 2020 +0100
+
+    communication working
+
+[33mcommit 89d616ede1a058892b134e2b7286d4b447dd4da0[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Mon Jan 20 17:21:35 2020 +0100
+
+    [BUGFIX] bugfix on escape and unescape
+
+[33mcommit 122c10749f1180e1af6647da16613558ff41cc4f[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Mon Jan 20 15:08:08 2020 +0100
+
+    [REMOVE] Removed wrong directory tree
+
+[33mcommit 2923bbd59fe5df726333f0f5c5cc9b2b7f6c2fed[m
+Merge: af119f1 4a1c4ba
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Jan 8 16:23:20 2020 +0100
+
+    Merge branch 'making_order'
+
+[33mcommit 4a1c4ba19d4cf7b936894d17e46ef3a6b1d29852[m[33m ([m[1;31morigin/making_order[m[33m)[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Jan 8 16:22:42 2020 +0100
+
+    Reordered as library
+
+[33mcommit 09046288df601eb1184ab3272d5a10a8ad070fd6[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Mon Dec 23 17:31:18 2019 +0100
+
+    [backup]
+
+[33mcommit b3226d63a9b615c7847e214f8c0bd8972f93a656[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Fri Dec 20 13:57:09 2019 +0100
+
+    [ADDED] Option script finished.
+
+[33mcommit 4a090bae99650878d92442b86e6196dd6d0a9bf8[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Dec 18 17:53:59 2019 +0100
+
+    [backup]
+
+[33mcommit 22cf94fc26d2c90cb42add2568732d3984855fe8[m
+Author: Noè Murr <nosba95@yahoo.com>
+Date:   Wed Dec 18 17:53:47 2019 +0100
+
+    [backup]
+
+[33mcommit 871c880f9b91efbc38d2269e935d1022217e570c[m
+Author: Enrico Sartori <enrico.sartori@univr.it>
+Date:   Wed Dec 4 15:28:16 2019 +0100
+
+    First commit
+
+[33mcommit af119f1065d35f75f31315d38dbcd295a593f457[m
+Author: eldisondimo <eldison.dimo@hotmail.com>
+Date:   Wed Dec 4 14:14:31 2019 +0000
+
+    Initial commit

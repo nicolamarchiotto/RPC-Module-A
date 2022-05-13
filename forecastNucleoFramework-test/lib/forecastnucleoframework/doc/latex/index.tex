@@ -1,0 +1,12 @@
+Welcome to the documentation for the Forecast Nucleo Framework. This framework aims to create a simple and fast way to implement benchmarking applications on \href{https://os.mbed.com/platforms/ST-Nucleo-F446RE/}{\texttt{ stm32\+Nucleo F446fe}} shields. It is built uppon the framwork \href{https://os.mbed.com/}{\texttt{ mbed}}.
+
+The framework provide a simple way to run a controller algorithm on a specific hardware. To help the user to create is own test the Framework provide also a \mbox{\hyperlink{classforecast_1_1_app_a87fd26ed219244a074e6956773443994}{App\+::exec\+Control\+Loop}} function that aims to run the control loop maintaining a specific frequency.
+
+The loop is composed by the following point\+:
+\begin{DoxyItemize}
+\item {\ttfamily Update the readings from the hw sensors}
+\item {\ttfamily Generate the reference for the control algoritm}
+\item {\ttfamily Exec the control algoritm}
+\item {\ttfamily Update the torque of the motor with the one provided by the algorithm}
+\item {\ttfamily Log the desired values to the pc to allow the user to benchmark the algorithm} 
+\end{DoxyItemize}

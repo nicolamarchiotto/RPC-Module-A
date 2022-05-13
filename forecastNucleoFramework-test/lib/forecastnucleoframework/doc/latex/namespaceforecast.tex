@@ -1,0 +1,130 @@
+\hypertarget{namespaceforecast}{}\doxysection{forecast Namespace Reference}
+\label{namespaceforecast}\index{forecast@{forecast}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceforecast_1_1com}{com}}
+\item 
+ \mbox{\hyperlink{namespaceforecast_1_1env_encoder}{env\+Encoder}}
+\item 
+ \mbox{\hyperlink{namespaceforecast_1_1motor_encoder}{motor\+Encoder}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classforecast_1_1_app}{App}}
+\item 
+class \mbox{\hyperlink{classforecast_1_1_controller}{Controller}}
+\item 
+class \mbox{\hyperlink{classforecast_1_1_force_p_i_d}{Force\+P\+ID}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classforecast_1_1_force_p_i_d}{Force\+P\+ID}} control class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}}
+\item 
+class \mbox{\hyperlink{classforecast_1_1_impedance_control}{Impedance\+Control}}
+\begin{DoxyCompactList}\small\item\em Impedance Control class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control}{Integral\+Sliding\+Mode\+Force\+Control}}
+\item 
+class \mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classforecast_1_1_mega_p_d}{Mega\+PD}} control class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceforecast_a913edfce21618ec988e2b08f150a2196}{Logger\+Callback}} = std\+::function$<$ std\+::vector$<$ float $>$(const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$, const \mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $\ast$, const \mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $\ast$)$>$
+\item 
+using \mbox{\hyperlink{namespaceforecast_a18be792b8c3455be5acfda6fa7cde7e1}{Ref\+Gen}} = std\+::function$<$ utility\+::ddvar(const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8}{Status}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8ad306b6fdee05fe87455110ddf6501e6c}{Status\+::\+N\+O\+\_\+\+E\+R\+R\+OR}} = 0, 
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a5e442142d3265b916b6eb957cce6da39}{Status\+::\+T\+I\+C\+K\+E\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR}}, 
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a4a7230aeb23feb68de7b1061ff855dcf}{Status\+::\+M\+O\+T\+O\+R\+\_\+\+E\+N\+C\+O\+D\+E\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR}}, 
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a43425c0b0b923a8cc06ca22daafb62ea}{Status\+::\+E\+N\+V\+\_\+\+E\+N\+C\+O\+D\+E\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR}}, 
+\newline
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a30effe422088514764703777b80063cd}{Status\+::\+C\+O\+N\+T\+R\+O\+L\+\_\+\+M\+O\+T\+O\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR}}, 
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8ae50dc606ce88c514a6fc22eadc3d2f4d}{Status\+::\+E\+N\+V\+\_\+\+M\+O\+T\+O\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR}}, 
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a1b0a311da5601e09e1db2261e372de7c}{Status\+::\+T\+O\+R\+Q\+U\+E\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR}}, 
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8aac78fcae30e13f160113598d05640989}{Status\+::\+F\+R\+E\+Q\+\_\+\+N\+O\+T\+\_\+\+K\+E\+PT}}, 
+\newline
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8aca3a06257167acb5cd86e22cb0289115}{Status\+::\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Contains all the possible errors returned by the methods of this library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceforecast_a913edfce21618ec988e2b08f150a2196}\label{namespaceforecast_a913edfce21618ec988e2b08f150a2196}} 
+\index{forecast@{forecast}!LoggerCallback@{LoggerCallback}}
+\index{LoggerCallback@{LoggerCallback}!forecast@{forecast}}
+\doxysubsubsection{\texorpdfstring{LoggerCallback}{LoggerCallback}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceforecast_a913edfce21618ec988e2b08f150a2196}{forecast\+::\+Logger\+Callback}} = typedef std\+::function$<$ std\+::vector$<$float$>$(const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}}$\ast$, const \mbox{\hyperlink{classforecast_1_1_controller}{Controller}}$\ast$, const \mbox{\hyperlink{classforecast_1_1_controller}{Controller}}$\ast$)$>$}
+
+
+
+Definition at line 15 of file App.\+hpp.
+
+\mbox{\Hypertarget{namespaceforecast_a18be792b8c3455be5acfda6fa7cde7e1}\label{namespaceforecast_a18be792b8c3455be5acfda6fa7cde7e1}} 
+\index{forecast@{forecast}!RefGen@{RefGen}}
+\index{RefGen@{RefGen}!forecast@{forecast}}
+\doxysubsubsection{\texorpdfstring{RefGen}{RefGen}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceforecast_a18be792b8c3455be5acfda6fa7cde7e1}{forecast\+::\+Ref\+Gen}} = typedef std\+::function$<$utility\+::ddvar(const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}}$\ast$)$>$}
+
+
+
+Definition at line 16 of file App.\+hpp.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8}} 
+\index{forecast@{forecast}!Status@{Status}}
+\index{Status@{Status}!forecast@{forecast}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8}{forecast\+::\+Status}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Contains all the possible errors returned by the methods of this library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_ERROR@{NO\_ERROR}!forecast@{forecast}}\index{forecast@{forecast}!NO\_ERROR@{NO\_ERROR}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8ad306b6fdee05fe87455110ddf6501e6c}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8ad306b6fdee05fe87455110ddf6501e6c}} 
+N\+O\+\_\+\+E\+R\+R\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TICKER\_INIT\_ERR@{TICKER\_INIT\_ERR}!forecast@{forecast}}\index{forecast@{forecast}!TICKER\_INIT\_ERR@{TICKER\_INIT\_ERR}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a5e442142d3265b916b6eb957cce6da39}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a5e442142d3265b916b6eb957cce6da39}} 
+T\+I\+C\+K\+E\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR&Identify a wrong timer initialization. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOTOR\_ENCODER\_INIT\_ERR@{MOTOR\_ENCODER\_INIT\_ERR}!forecast@{forecast}}\index{forecast@{forecast}!MOTOR\_ENCODER\_INIT\_ERR@{MOTOR\_ENCODER\_INIT\_ERR}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a4a7230aeb23feb68de7b1061ff855dcf}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a4a7230aeb23feb68de7b1061ff855dcf}} 
+M\+O\+T\+O\+R\+\_\+\+E\+N\+C\+O\+D\+E\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR&Identify a wrong motor encoder initialization. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENV\_ENCODER\_INIT\_ERR@{ENV\_ENCODER\_INIT\_ERR}!forecast@{forecast}}\index{forecast@{forecast}!ENV\_ENCODER\_INIT\_ERR@{ENV\_ENCODER\_INIT\_ERR}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a43425c0b0b923a8cc06ca22daafb62ea}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a43425c0b0b923a8cc06ca22daafb62ea}} 
+E\+N\+V\+\_\+\+E\+N\+C\+O\+D\+E\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR&Identify a wrong environment encoder initialization \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROL\_MOTOR\_INIT\_ERR@{CONTROL\_MOTOR\_INIT\_ERR}!forecast@{forecast}}\index{forecast@{forecast}!CONTROL\_MOTOR\_INIT\_ERR@{CONTROL\_MOTOR\_INIT\_ERR}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a30effe422088514764703777b80063cd}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a30effe422088514764703777b80063cd}} 
+C\+O\+N\+T\+R\+O\+L\+\_\+\+M\+O\+T\+O\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR&Identify a wrong control motor initialization. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENV\_MOTOR\_INIT\_ERR@{ENV\_MOTOR\_INIT\_ERR}!forecast@{forecast}}\index{forecast@{forecast}!ENV\_MOTOR\_INIT\_ERR@{ENV\_MOTOR\_INIT\_ERR}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8ae50dc606ce88c514a6fc22eadc3d2f4d}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8ae50dc606ce88c514a6fc22eadc3d2f4d}} 
+E\+N\+V\+\_\+\+M\+O\+T\+O\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR&Identify a wrong environment motor initialization \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TORQUE\_SENSOR\_INIT\_ERR@{TORQUE\_SENSOR\_INIT\_ERR}!forecast@{forecast}}\index{forecast@{forecast}!TORQUE\_SENSOR\_INIT\_ERR@{TORQUE\_SENSOR\_INIT\_ERR}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a1b0a311da5601e09e1db2261e372de7c}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8a1b0a311da5601e09e1db2261e372de7c}} 
+T\+O\+R\+Q\+U\+E\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+I\+T\+\_\+\+E\+RR&Identify a wrong torque sensor initialization. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREQ\_NOT\_KEPT@{FREQ\_NOT\_KEPT}!forecast@{forecast}}\index{forecast@{forecast}!FREQ\_NOT\_KEPT@{FREQ\_NOT\_KEPT}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8aac78fcae30e13f160113598d05640989}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8aac78fcae30e13f160113598d05640989}} 
+F\+R\+E\+Q\+\_\+\+N\+O\+T\+\_\+\+K\+E\+PT&Identify that the loop frequency isn\textquotesingle{}t kept. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMMUNICATION\_ERROR@{COMMUNICATION\_ERROR}!forecast@{forecast}}\index{forecast@{forecast}!COMMUNICATION\_ERROR@{COMMUNICATION\_ERROR}}}\mbox{\Hypertarget{namespaceforecast_a487b08052e0d9fbed8405865f52afba8aca3a06257167acb5cd86e22cb0289115}\label{namespaceforecast_a487b08052e0d9fbed8405865f52afba8aca3a06257167acb5cd86e22cb0289115}} 
+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR&Identify that a communication error is occurred \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 12 of file Status.\+hpp.
+

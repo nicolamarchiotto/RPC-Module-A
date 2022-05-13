@@ -1,0 +1,396 @@
+\hypertarget{classforecast_1_1_integral_sliding_mode_force_control}{}\doxysection{forecast\+::Integral\+Sliding\+Mode\+Force\+Control Class Reference}
+\label{classforecast_1_1_integral_sliding_mode_force_control}\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+
+
+{\ttfamily \#include $<$Integral\+Sliding\+Mode.\+hpp$>$}
+
+Inheritance diagram for forecast\+::Integral\+Sliding\+Mode\+Force\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classforecast_1_1_integral_sliding_mode_force_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a3a32f61c56ed3f34903b9d4477926d46}{Integral\+Sliding\+Mode\+Force\+Control}} ()
+\begin{DoxyCompactList}\small\item\em Integral Sliding Mode control constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a4e479ebe86a2b1203d0b83a1441dd2c1}{Integral\+Sliding\+Mode\+Force\+Control}} (float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_aa86206a315ed2b50b5eb35cc4bbeb3aa}{lambda1}}, float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a0c03ce74f4979de535cf6c70550507e6}{lambda2}}, float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_aa32e283e736272f478c5ca91f8808ff7}{Jm}}, float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a47e5368ea1e8314191121240eb3c9964}{Ks}})
+\begin{DoxyCompactList}\small\item\em Construct a new Integral Sliding Mode object. This constructor initialize, the controller. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a4ca8da6777b01abdc555116e5f9523f9}{init}} (const std\+::vector$<$ float $>$ \&params) override
+\begin{DoxyCompactList}\small\item\em Integral Sliding Mode control initialization. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a5ec6ad9d32c84522e9ad806a03dba072}{get\+Param\+Names}} () const override
+\begin{DoxyCompactList}\small\item\em Get Return the names of the parameters. \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a730192cb6fde689d94b2b6939b5bc84d}{process}} (const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$hw, utility\+::ddvar ref) override
+\begin{DoxyCompactList}\small\item\em Implementation of the control law. The method produces an output given a reference (input). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a92f91709a2eea3f96bcb8e469b3d2b85}{set\+\_\+ddtheta}} (float ddtheta)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_aa86206a315ed2b50b5eb35cc4bbeb3aa}{lambda1}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a0c03ce74f4979de535cf6c70550507e6}{lambda2}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a47e5368ea1e8314191121240eb3c9964}{Ks}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_aa32e283e736272f478c5ca91f8808ff7}{Jm}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_ab510f35afb91e3b3cffecc33883da01d}{A}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a203cc91dafb098938e4eb76e398b15f4}{kp}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a86bf2d3b45db1ac5aaeb6d9f1bf2ca1e}{kd}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a235c6580711ad56574a9a31b9076bebb}{s}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a4b8797ae04a46da1715408cdd27e481b}{ni}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a1fe4491b34ad859fe99431ff58d6debc}{phi}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a02b20cce125d2f814ec93288e1eb897c}{ka}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a45f846afbec6d00762443cc7f72ce395}{err}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a7e4fd808923702120711a932667424ad}{ierr}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a12581d6f34a786d04adc998b15f09c17}{derr}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a87d5ae66a5253b98b48ae637291f11db}{dderr}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_ac70a3e0a3557c8bad526bbc45e6c4fa3}{err\+\_\+prev}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_ad26d2a5c89695b205a3cb128c9916243}{ddtheta\+\_\+e}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_ae01b8b4b53c1a4ce4b80f3185e3988f5}{us}}
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a999d49d4f5f62f0d7973f8f956e10065}{out}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 7 of file Integral\+Sliding\+Mode.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a3a32f61c56ed3f34903b9d4477926d46}\label{classforecast_1_1_integral_sliding_mode_force_control_a3a32f61c56ed3f34903b9d4477926d46}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!IntegralSlidingModeForceControl@{IntegralSlidingModeForceControl}}
+\index{IntegralSlidingModeForceControl@{IntegralSlidingModeForceControl}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{IntegralSlidingModeForceControl()}{IntegralSlidingModeForceControl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Integral\+Sliding\+Mode\+Force\+Control\+::\+Integral\+Sliding\+Mode\+Force\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Integral Sliding Mode control constructor. 
+
+
+
+Definition at line 7 of file Integral\+Sliding\+Mode.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a4e479ebe86a2b1203d0b83a1441dd2c1}\label{classforecast_1_1_integral_sliding_mode_force_control_a4e479ebe86a2b1203d0b83a1441dd2c1}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!IntegralSlidingModeForceControl@{IntegralSlidingModeForceControl}}
+\index{IntegralSlidingModeForceControl@{IntegralSlidingModeForceControl}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{IntegralSlidingModeForceControl()}{IntegralSlidingModeForceControl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Integral\+Sliding\+Mode\+Force\+Control\+::\+Integral\+Sliding\+Mode\+Force\+Control (\begin{DoxyParamCaption}\item[{float}]{lambda1,  }\item[{float}]{lambda2,  }\item[{float}]{Jm,  }\item[{float}]{Ks }\end{DoxyParamCaption})}
+
+
+
+Construct a new Integral Sliding Mode object. This constructor initialize, the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lambda1} & \\
+\hline
+{\em lambda2} & \\
+\hline
+{\em Jm} & \\
+\hline
+{\em Ks} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file Integral\+Sliding\+Mode.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a5ec6ad9d32c84522e9ad806a03dba072}\label{classforecast_1_1_integral_sliding_mode_force_control_a5ec6ad9d32c84522e9ad806a03dba072}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!getParamNames@{getParamNames}}
+\index{getParamNames@{getParamNames}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{getParamNames()}{getParamNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Integral\+Sliding\+Mode\+Force\+Control\+::get\+Param\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get Return the names of the parameters. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classforecast_1_1_controller_aa9a391066225d7300a0ad338e324914a}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 75 of file Integral\+Sliding\+Mode.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a4ca8da6777b01abdc555116e5f9523f9}\label{classforecast_1_1_integral_sliding_mode_force_control_a4ca8da6777b01abdc555116e5f9523f9}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!init@{init}}
+\index{init@{init}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool Integral\+Sliding\+Mode\+Force\+Control\+::init (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Integral Sliding Mode control initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & vector containing the constants lambda1, lambda2, Jm, Ks in the respected order \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classforecast_1_1_controller_a445798926a36181bd9bc1825ad705b2e}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 30 of file Integral\+Sliding\+Mode.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a730192cb6fde689d94b2b6939b5bc84d}\label{classforecast_1_1_integral_sliding_mode_force_control_a730192cb6fde689d94b2b6939b5bc84d}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!process@{process}}
+\index{process@{process}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily utility\+::ddvar Integral\+Sliding\+Mode\+Force\+Control\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$}]{hw,  }\item[{utility\+::ddvar}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of the control law. The method produces an output given a reference (input). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Control} & reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classforecast_1_1_controller_ae85c4138f1299cc068d471f65c57b9b0}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 46 of file Integral\+Sliding\+Mode.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a92f91709a2eea3f96bcb8e469b3d2b85}\label{classforecast_1_1_integral_sliding_mode_force_control_a92f91709a2eea3f96bcb8e469b3d2b85}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!set\_ddtheta@{set\_ddtheta}}
+\index{set\_ddtheta@{set\_ddtheta}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{set\_ddtheta()}{set\_ddtheta()}}
+{\footnotesize\ttfamily void Integral\+Sliding\+Mode\+Force\+Control\+::set\+\_\+ddtheta (\begin{DoxyParamCaption}\item[{float}]{ddtheta }\end{DoxyParamCaption})}
+
+
+
+Definition at line 71 of file Integral\+Sliding\+Mode.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_ab510f35afb91e3b3cffecc33883da01d}\label{classforecast_1_1_integral_sliding_mode_force_control_ab510f35afb91e3b3cffecc33883da01d}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!A@{A}}
+\index{A@{A}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::A\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a87d5ae66a5253b98b48ae637291f11db}\label{classforecast_1_1_integral_sliding_mode_force_control_a87d5ae66a5253b98b48ae637291f11db}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!dderr@{dderr}}
+\index{dderr@{dderr}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{dderr}{dderr}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::dderr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_ad26d2a5c89695b205a3cb128c9916243}\label{classforecast_1_1_integral_sliding_mode_force_control_ad26d2a5c89695b205a3cb128c9916243}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!ddtheta\_e@{ddtheta\_e}}
+\index{ddtheta\_e@{ddtheta\_e}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{ddtheta\_e}{ddtheta\_e}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::ddtheta\+\_\+e\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 51 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a12581d6f34a786d04adc998b15f09c17}\label{classforecast_1_1_integral_sliding_mode_force_control_a12581d6f34a786d04adc998b15f09c17}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!derr@{derr}}
+\index{derr@{derr}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{derr}{derr}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::derr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a45f846afbec6d00762443cc7f72ce395}\label{classforecast_1_1_integral_sliding_mode_force_control_a45f846afbec6d00762443cc7f72ce395}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!err@{err}}
+\index{err@{err}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::err\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_ac70a3e0a3557c8bad526bbc45e6c4fa3}\label{classforecast_1_1_integral_sliding_mode_force_control_ac70a3e0a3557c8bad526bbc45e6c4fa3}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!err\_prev@{err\_prev}}
+\index{err\_prev@{err\_prev}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{err\_prev}{err\_prev}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::err\+\_\+prev\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a7e4fd808923702120711a932667424ad}\label{classforecast_1_1_integral_sliding_mode_force_control_a7e4fd808923702120711a932667424ad}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!ierr@{ierr}}
+\index{ierr@{ierr}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{ierr}{ierr}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::ierr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_aa32e283e736272f478c5ca91f8808ff7}\label{classforecast_1_1_integral_sliding_mode_force_control_aa32e283e736272f478c5ca91f8808ff7}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!Jm@{Jm}}
+\index{Jm@{Jm}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{Jm}{Jm}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::\+Jm\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a02b20cce125d2f814ec93288e1eb897c}\label{classforecast_1_1_integral_sliding_mode_force_control_a02b20cce125d2f814ec93288e1eb897c}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!ka@{ka}}
+\index{ka@{ka}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{ka}{ka}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::ka\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a86bf2d3b45db1ac5aaeb6d9f1bf2ca1e}\label{classforecast_1_1_integral_sliding_mode_force_control_a86bf2d3b45db1ac5aaeb6d9f1bf2ca1e}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!kd@{kd}}
+\index{kd@{kd}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{kd}{kd}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::kd\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a203cc91dafb098938e4eb76e398b15f4}\label{classforecast_1_1_integral_sliding_mode_force_control_a203cc91dafb098938e4eb76e398b15f4}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!kp@{kp}}
+\index{kp@{kp}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{kp}{kp}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::kp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a47e5368ea1e8314191121240eb3c9964}\label{classforecast_1_1_integral_sliding_mode_force_control_a47e5368ea1e8314191121240eb3c9964}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!Ks@{Ks}}
+\index{Ks@{Ks}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{Ks}{Ks}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::\+Ks\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_aa86206a315ed2b50b5eb35cc4bbeb3aa}\label{classforecast_1_1_integral_sliding_mode_force_control_aa86206a315ed2b50b5eb35cc4bbeb3aa}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!lambda1@{lambda1}}
+\index{lambda1@{lambda1}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{lambda1}{lambda1}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::lambda1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a0c03ce74f4979de535cf6c70550507e6}\label{classforecast_1_1_integral_sliding_mode_force_control_a0c03ce74f4979de535cf6c70550507e6}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!lambda2@{lambda2}}
+\index{lambda2@{lambda2}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{lambda2}{lambda2}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::lambda2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a4b8797ae04a46da1715408cdd27e481b}\label{classforecast_1_1_integral_sliding_mode_force_control_a4b8797ae04a46da1715408cdd27e481b}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!ni@{ni}}
+\index{ni@{ni}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{ni}{ni}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::ni\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a999d49d4f5f62f0d7973f8f956e10065}\label{classforecast_1_1_integral_sliding_mode_force_control_a999d49d4f5f62f0d7973f8f956e10065}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!out@{out}}
+\index{out@{out}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::out\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 53 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a1fe4491b34ad859fe99431ff58d6debc}\label{classforecast_1_1_integral_sliding_mode_force_control_a1fe4491b34ad859fe99431ff58d6debc}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!phi@{phi}}
+\index{phi@{phi}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{phi}{phi}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::phi\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 49 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_a235c6580711ad56574a9a31b9076bebb}\label{classforecast_1_1_integral_sliding_mode_force_control_a235c6580711ad56574a9a31b9076bebb}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!s@{s}}
+\index{s@{s}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::s\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file Integral\+Sliding\+Mode.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_integral_sliding_mode_force_control_ae01b8b4b53c1a4ce4b80f3185e3988f5}\label{classforecast_1_1_integral_sliding_mode_force_control_ae01b8b4b53c1a4ce4b80f3185e3988f5}} 
+\index{forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}!us@{us}}
+\index{us@{us}!forecast::IntegralSlidingModeForceControl@{forecast::IntegralSlidingModeForceControl}}
+\doxysubsubsection{\texorpdfstring{us}{us}}
+{\footnotesize\ttfamily float forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control\+::us\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file Integral\+Sliding\+Mode.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/forecast/controllers/\mbox{\hyperlink{_integral_sliding_mode_8hpp}{Integral\+Sliding\+Mode.\+hpp}}\item 
+src/controllers/\mbox{\hyperlink{_integral_sliding_mode_8cpp}{Integral\+Sliding\+Mode.\+cpp}}\end{DoxyCompactItemize}

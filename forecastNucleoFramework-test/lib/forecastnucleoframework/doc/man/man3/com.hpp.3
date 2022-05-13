@@ -1,0 +1,66 @@
+.TH "include/forecast/com.hpp" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/forecast/com.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdint\&.h>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBforecast\fP"
+.br
+.ti -1c
+.RI " \fBforecast::com\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBforecast::com::Type\fP : uint8_t { \fBforecast::com::LOG\fP = 0, \fBforecast::com::ERROR\fP = 1, \fBforecast::com::HANDSHAKE_SYN\fP = 4, \fBforecast::com::HANDSHAKE_ACK\fP, \fBforecast::com::DATA_REQ\fP, \fBforecast::com::DATA\fP, \fBforecast::com::MSG\fP }"
+.br
+.ti -1c
+.RI "enum \fBforecast::com::err\fP { \fBforecast::com::UNESCAPED_CHAR\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBforecast::com::escape\fP (const void *src, void *dst, uint32_t srcSz, uint32_t maxSz=0)"
+.br
+.ti -1c
+.RI "uint32_t \fBforecast::com::unescape\fP (const void *src, void *dst, uint32_t srcSz, uint32_t maxSz=0)"
+.br
+.ti -1c
+.RI "uint8_t \fBforecast::com::checksum\fP (const uint8_t *src, uint32_t sz)"
+.br
+.ti -1c
+.RI "uint32_t \fBforecast::com::buildPkg\fP (com::Type t, const void *payload, void *dst, uint32_t payloadSz, uint32_t maxSz=0)"
+.br
+.ti -1c
+.RI "bool \fBforecast::com::checkEtx\fP (const uint8_t *pkg, uint32_t size)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr uint8_t \fBforecast::com::stx\fP = 0x02"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBforecast::com::etx\fP = 0x03"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBforecast::com::esc\fP = 0x1b"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

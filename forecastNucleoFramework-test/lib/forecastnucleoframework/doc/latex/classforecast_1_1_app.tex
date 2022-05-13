@@ -1,0 +1,309 @@
+\hypertarget{classforecast_1_1_app}{}\doxysection{forecast\+::App Class Reference}
+\label{classforecast_1_1_app}\index{forecast::App@{forecast::App}}
+
+
+{\ttfamily \#include $<$App.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforecast_1_1_app_ac13623a2aa9dd5dbe2980682c1298fd4}{App}} (unsigned int tx\+Buff\+Sz=256, unsigned int rx\+Buff\+Sz=256, unsigned int baudrate=921600)
+\item 
+void \mbox{\hyperlink{classforecast_1_1_app_a5358a39ae140ef95ca3ef5a69b7c0974}{set\+Enviorment}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $>$ env)
+\item 
+void \mbox{\hyperlink{classforecast_1_1_app_a1ed2afa4dba0d4ca2b29586022c3f526}{set\+Motor}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $>$ motor)
+\item 
+void \mbox{\hyperlink{classforecast_1_1_app_ac3010ac95d2fe194153457f1cfe9fad1}{set\+Enviorment}} (\mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $\ast$env)
+\item 
+void \mbox{\hyperlink{classforecast_1_1_app_ad652bf3ff2e55de919593e7159cd2402}{set\+Motor}} (\mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $\ast$motor)
+\item 
+void \mbox{\hyperlink{classforecast_1_1_app_ada1e78dfe2a27431b9fc95f43044fc57}{set\+Logger}} (\mbox{\hyperlink{namespaceforecast_a913edfce21618ec988e2b08f150a2196}{Logger\+Callback}} logger)
+\item 
+void \mbox{\hyperlink{classforecast_1_1_app_a164f3307f25c9cc8b2f89fbc47503d14}{set\+Env\+Ref\+Gen}} (\mbox{\hyperlink{namespaceforecast_a18be792b8c3455be5acfda6fa7cde7e1}{Ref\+Gen}} gen)
+\item 
+void \mbox{\hyperlink{classforecast_1_1_app_a506eb639f7ee536a0d86b359a7feb179}{set\+Motor\+Ref\+Gen}} (\mbox{\hyperlink{namespaceforecast_a18be792b8c3455be5acfda6fa7cde7e1}{Ref\+Gen}} gen)
+\item 
+bool \mbox{\hyperlink{classforecast_1_1_app_af4174433950c7c31e0b84b7727ac3d66}{is\+Ok}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the \mbox{\hyperlink{classforecast_1_1_app}{App}} is ready to run. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classforecast_1_1_app_a87fd26ed219244a074e6956773443994}{exec\+Control\+Loop}} (ulong freq=1000)
+\begin{DoxyCompactList}\small\item\em Execs the function exec\+Control at the control frequency. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classforecast_1_1_app_a9a767ae1d1d1a812b4cebcb8bafb0cb6}{exec\+Control}} ()
+\begin{DoxyCompactList}\small\item\em Execs one cicle of the control loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classforecast_1_1_app_a99b59da739eaf2a28cd1c57750051845}{log\+Info}} ()
+\begin{DoxyCompactList}\small\item\em It logs the values returned by the logger callback function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classforecast_1_1_app_ab28a212bdb44aaf2041f7c63b79afdce}{log\+Error}} (const std\+::string \&msg)
+\begin{DoxyCompactList}\small\item\em It logs an error through the serial. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classforecast_1_1_app_a246437c670e54be402b74bbcc78d0a14}{require\+Motor\+Params}} ()
+\begin{DoxyCompactList}\small\item\em Requires the parameters for the motor controller from the pc interface. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classforecast_1_1_app_ab62a251f171890524f442341065f9891}{require\+Environment\+Params}} ()
+\begin{DoxyCompactList}\small\item\em Requires the parameters for the enviorment controller from the pc interface. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classforecast_1_1_app_aae1891b590ad084e58b795bf82c3e6e7}{require\+Float\+Value}} (const std\+::string \&value\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Requires a simple float value for the user, if a name is passed this will be showed to the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classforecast_1_1_app_a5adc02c2125c91f496bca899c37abea0}{send\+Message}} (const std\+::string \&msg)
+\begin{DoxyCompactList}\small\item\em Send a message to the pc. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classforecast_1_1_app_a1d0cd668c348f8fd6e338825faab7ac1}{wait\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em This method will wait for a message from the pc to be sure that the connection is established. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 18 of file App.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classforecast_1_1_app_ac13623a2aa9dd5dbe2980682c1298fd4}\label{classforecast_1_1_app_ac13623a2aa9dd5dbe2980682c1298fd4}} 
+\index{forecast::App@{forecast::App}!App@{App}}
+\index{App@{App}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{App()}{App()}}
+{\footnotesize\ttfamily App\+::\+App (\begin{DoxyParamCaption}\item[{unsigned int}]{tx\+Buff\+Sz = {\ttfamily 256},  }\item[{unsigned int}]{rx\+Buff\+Sz = {\ttfamily 256},  }\item[{unsigned int}]{baudrate = {\ttfamily 921600} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file App.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classforecast_1_1_app_a9a767ae1d1d1a812b4cebcb8bafb0cb6}\label{classforecast_1_1_app_a9a767ae1d1d1a812b4cebcb8bafb0cb6}} 
+\index{forecast::App@{forecast::App}!execControl@{execControl}}
+\index{execControl@{execControl}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{execControl()}{execControl()}}
+{\footnotesize\ttfamily bool App\+::exec\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Execs one cicle of the control loop. 
+
+This method should be called at a specified frequency to garantee to have a good control. 
+
+Definition at line 138 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a87fd26ed219244a074e6956773443994}\label{classforecast_1_1_app_a87fd26ed219244a074e6956773443994}} 
+\index{forecast::App@{forecast::App}!execControlLoop@{execControlLoop}}
+\index{execControlLoop@{execControlLoop}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{execControlLoop()}{execControlLoop()}}
+{\footnotesize\ttfamily bool App\+::exec\+Control\+Loop (\begin{DoxyParamCaption}\item[{ulong}]{freq = {\ttfamily 1000} }\end{DoxyParamCaption})}
+
+
+
+Execs the function exec\+Control at the control frequency. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em freq} & The frequency of the loop in Hz. Default to 1 K\+Hz \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 171 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_af4174433950c7c31e0b84b7727ac3d66}\label{classforecast_1_1_app_af4174433950c7c31e0b84b7727ac3d66}} 
+\index{forecast::App@{forecast::App}!isOk@{isOk}}
+\index{isOk@{isOk}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{isOk()}{isOk()}}
+{\footnotesize\ttfamily bool App\+::is\+Ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the \mbox{\hyperlink{classforecast_1_1_app}{App}} is ready to run. 
+
+\begin{DoxyReturn}{Returns}
+true if the object is ready to exec the control 
+
+false if the object is not ready to exec the control loop 
+\end{DoxyReturn}
+
+
+Definition at line 132 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_ab28a212bdb44aaf2041f7c63b79afdce}\label{classforecast_1_1_app_ab28a212bdb44aaf2041f7c63b79afdce}} 
+\index{forecast::App@{forecast::App}!logError@{logError}}
+\index{logError@{logError}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{logError()}{logError()}}
+{\footnotesize\ttfamily void App\+::log\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+It logs an error through the serial. 
+
+
+
+Definition at line 210 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a99b59da739eaf2a28cd1c57750051845}\label{classforecast_1_1_app_a99b59da739eaf2a28cd1c57750051845}} 
+\index{forecast::App@{forecast::App}!logInfo@{logInfo}}
+\index{logInfo@{logInfo}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{logInfo()}{logInfo()}}
+{\footnotesize\ttfamily void App\+::log\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+It logs the values returned by the logger callback function. 
+
+
+
+Definition at line 204 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_ab62a251f171890524f442341065f9891}\label{classforecast_1_1_app_ab62a251f171890524f442341065f9891}} 
+\index{forecast::App@{forecast::App}!requireEnvironmentParams@{requireEnvironmentParams}}
+\index{requireEnvironmentParams@{requireEnvironmentParams}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{requireEnvironmentParams()}{requireEnvironmentParams()}}
+{\footnotesize\ttfamily bool App\+::require\+Environment\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Requires the parameters for the enviorment controller from the pc interface. 
+
+
+
+Definition at line 282 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_aae1891b590ad084e58b795bf82c3e6e7}\label{classforecast_1_1_app_aae1891b590ad084e58b795bf82c3e6e7}} 
+\index{forecast::App@{forecast::App}!requireFloatValue@{requireFloatValue}}
+\index{requireFloatValue@{requireFloatValue}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{requireFloatValue()}{requireFloatValue()}}
+{\footnotesize\ttfamily float App\+::require\+Float\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value\+Name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Requires a simple float value for the user, if a name is passed this will be showed to the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+Definition at line 218 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a246437c670e54be402b74bbcc78d0a14}\label{classforecast_1_1_app_a246437c670e54be402b74bbcc78d0a14}} 
+\index{forecast::App@{forecast::App}!requireMotorParams@{requireMotorParams}}
+\index{requireMotorParams@{requireMotorParams}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{requireMotorParams()}{requireMotorParams()}}
+{\footnotesize\ttfamily bool App\+::require\+Motor\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Requires the parameters for the motor controller from the pc interface. 
+
+
+
+Definition at line 277 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a5adc02c2125c91f496bca899c37abea0}\label{classforecast_1_1_app_a5adc02c2125c91f496bca899c37abea0}} 
+\index{forecast::App@{forecast::App}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily void App\+::send\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Send a message to the pc. 
+
+It is a time expensive function to not use for logging functionalities.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Message to send. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 241 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_ac3010ac95d2fe194153457f1cfe9fad1}\label{classforecast_1_1_app_ac3010ac95d2fe194153457f1cfe9fad1}} 
+\index{forecast::App@{forecast::App}!setEnviorment@{setEnviorment}}
+\index{setEnviorment@{setEnviorment}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{setEnviorment()}{setEnviorment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void App\+::set\+Enviorment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $\ast$}]{env }\end{DoxyParamCaption})}
+
+
+
+Definition at line 263 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a5358a39ae140ef95ca3ef5a69b7c0974}\label{classforecast_1_1_app_a5358a39ae140ef95ca3ef5a69b7c0974}} 
+\index{forecast::App@{forecast::App}!setEnviorment@{setEnviorment}}
+\index{setEnviorment@{setEnviorment}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{setEnviorment()}{setEnviorment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void App\+::set\+Enviorment (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $>$}]{env }\end{DoxyParamCaption})}
+
+
+
+Definition at line 251 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a164f3307f25c9cc8b2f89fbc47503d14}\label{classforecast_1_1_app_a164f3307f25c9cc8b2f89fbc47503d14}} 
+\index{forecast::App@{forecast::App}!setEnvRefGen@{setEnvRefGen}}
+\index{setEnvRefGen@{setEnvRefGen}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{setEnvRefGen()}{setEnvRefGen()}}
+{\footnotesize\ttfamily void App\+::set\+Env\+Ref\+Gen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceforecast_a18be792b8c3455be5acfda6fa7cde7e1}{Ref\+Gen}}}]{gen }\end{DoxyParamCaption})}
+
+
+
+Definition at line 269 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_ada1e78dfe2a27431b9fc95f43044fc57}\label{classforecast_1_1_app_ada1e78dfe2a27431b9fc95f43044fc57}} 
+\index{forecast::App@{forecast::App}!setLogger@{setLogger}}
+\index{setLogger@{setLogger}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{setLogger()}{setLogger()}}
+{\footnotesize\ttfamily void App\+::set\+Logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceforecast_a913edfce21618ec988e2b08f150a2196}{Logger\+Callback}}}]{logger }\end{DoxyParamCaption})}
+
+
+
+Definition at line 214 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_ad652bf3ff2e55de919593e7159cd2402}\label{classforecast_1_1_app_ad652bf3ff2e55de919593e7159cd2402}} 
+\index{forecast::App@{forecast::App}!setMotor@{setMotor}}
+\index{setMotor@{setMotor}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{setMotor()}{setMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void App\+::set\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $\ast$}]{motor }\end{DoxyParamCaption})}
+
+
+
+Definition at line 257 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a1ed2afa4dba0d4ca2b29586022c3f526}\label{classforecast_1_1_app_a1ed2afa4dba0d4ca2b29586022c3f526}} 
+\index{forecast::App@{forecast::App}!setMotor@{setMotor}}
+\index{setMotor@{setMotor}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{setMotor()}{setMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void App\+::set\+Motor (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classforecast_1_1_controller}{Controller}} $>$}]{motor }\end{DoxyParamCaption})}
+
+
+
+Definition at line 245 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a506eb639f7ee536a0d86b359a7feb179}\label{classforecast_1_1_app_a506eb639f7ee536a0d86b359a7feb179}} 
+\index{forecast::App@{forecast::App}!setMotorRefGen@{setMotorRefGen}}
+\index{setMotorRefGen@{setMotorRefGen}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{setMotorRefGen()}{setMotorRefGen()}}
+{\footnotesize\ttfamily void App\+::set\+Motor\+Ref\+Gen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceforecast_a18be792b8c3455be5acfda6fa7cde7e1}{Ref\+Gen}}}]{gen }\end{DoxyParamCaption})}
+
+
+
+Definition at line 273 of file App.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_app_a1d0cd668c348f8fd6e338825faab7ac1}\label{classforecast_1_1_app_a1d0cd668c348f8fd6e338825faab7ac1}} 
+\index{forecast::App@{forecast::App}!waitConnection@{waitConnection}}
+\index{waitConnection@{waitConnection}!forecast::App@{forecast::App}}
+\doxysubsubsection{\texorpdfstring{waitConnection()}{waitConnection()}}
+{\footnotesize\ttfamily bool App\+::wait\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method will wait for a message from the pc to be sure that the connection is established. 
+
+
+
+Definition at line 381 of file App.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/forecast/\mbox{\hyperlink{_app_8hpp}{App.\+hpp}}\item 
+src/\mbox{\hyperlink{_app_8cpp}{App.\+cpp}}\end{DoxyCompactItemize}

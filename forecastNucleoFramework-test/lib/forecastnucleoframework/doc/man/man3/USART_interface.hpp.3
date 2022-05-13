@@ -1,0 +1,221 @@
+.TH "include/USART/USART_interface.hpp" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/USART/USART_interface.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mbed\&.h'\fP
+.br
+\fC#include 'PeripheralPins\&.h'\fP
+.br
+\fC#include 'Clock\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBUSART_interface\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBHAL_DMA_MODULE_ENABLE\fP"
+.br
+.ti -1c
+.RI "#define \fBHAL_USART_MODULE_ENABLED\fP"
+.br
+.ti -1c
+.RI "#define \fBD_length\fP   C_8bits"
+.br
+.ti -1c
+.RI "#define \fBD_parity\fP   C_Parity_None"
+.br
+.ti -1c
+.RI "#define \fBD_stopbit\fP   C_1stop"
+.br
+.ti -1c
+.RI "#define \fBD_mode\fP   C_Use_RX_TX"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBWord_length\fP "
+.br
+.ti -1c
+.RI "enum \fBParity_bits\fP "
+.br
+.ti -1c
+.RI "enum \fBStop_bits\fP "
+.br
+.ti -1c
+.RI "enum \fBDMA_conf\fP "
+.br
+.ti -1c
+.RI "enum \fBMode\fP "
+.br
+.ti -1c
+.RI "enum \fBRX_conf\fP "
+.br
+.ti -1c
+.RI "enum \fBUSART_status\fP { \fBS_fail_baudrate_wrong\fP = -110, \fBS_fail_DMA_TX_unavailable\fP = -109, \fBS_fail_DMA_RX_unavailable\fP = -108, \fBS_fail_DMA_TX_buffer\fP = -107, \fBS_fail_DMA_RX_buffer\fP = -106, \fBS_fail_DMA_TX_unable\fP = -105, \fBS_fail_DMA_RX_unable\fP = -104, \fBS_fail_TX_RX_different\fP = -103, \fBS_fail_TX_unavailable\fP = -102, \fBS_fail_RX_unavailable\fP = -101, \fBS_fail_USART_unavailable\fP = -100, \fBS_using_rx_dma\fP = -16, \fBS_using_tx_dma\fP = -15, \fBS_dma_transmit_process\fP = -14, \fBS_tx_dma_unavailable\fP = -13, \fBS_rx_dma_unavailable\fP = -12, \fBS_rx_buffer_already_empty\fP = -11, \fBS_rx_buffer_already_full\fP = -10, \fBS_tx_buffer_already_empty\fP = -9, \fBS_tx_buffer_already_full\fP = -8, \fBS_rx_buffer_not_initialized\fP = -7, \fBS_tx_buffer_not_initialized\fP = -6, \fBS_transmit_busy\fP = -5, \fBS_unable\fP = -2, \fBS_not_initialized\fP = -1, \fBS_ok\fP = 0, \fBS_USART_enable\fP = 1, \fBS_USART_unable\fP = 2, \fBS_already_enable\fP = 3, \fBS_already_unable\fP = 4, \fBS_receive_enable\fP = 5, \fBS_receive_unable\fP = 6, \fBS_receive_already_enable\fP = 7, \fBS_receive_already_unable\fP = 8, \fBS_transmit_enable\fP = 9, \fBS_transmit_unable\fP = 10, \fBS_transmit_already_enable\fP = 11, \fBS_transmit_already_unable\fP = 12, \fBS_data_available\fP = 13, \fBS_data_unavailable\fP = 14, \fBS_tx_buffer_empty\fP = 15, \fBS_tx_buffer_full\fP = 16, \fBS_rx_buffer_empty\fP = 17, \fBS_rx_buffer_full\fP = 18, \fBS_tx_dma_free\fP = 19 }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define D_length   C_8bits"
+
+.PP
+Definition at line 102 of file USART_interface\&.hpp\&.
+.SS "#define D_mode   C_Use_RX_TX"
+
+.PP
+Definition at line 105 of file USART_interface\&.hpp\&.
+.SS "#define D_parity   C_Parity_None"
+
+.PP
+Definition at line 103 of file USART_interface\&.hpp\&.
+.SS "#define D_stopbit   C_1stop"
+
+.PP
+Definition at line 104 of file USART_interface\&.hpp\&.
+.SS "#define HAL_DMA_MODULE_ENABLE"
+
+.PP
+Definition at line 13 of file USART_interface\&.hpp\&.
+.SS "#define HAL_USART_MODULE_ENABLED"
+
+.PP
+Definition at line 17 of file USART_interface\&.hpp\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBDMA_conf\fP"
+
+.PP
+Definition at line 60 of file USART_interface\&.hpp\&.
+.SS "enum \fBMode\fP"
+
+.PP
+Definition at line 79 of file USART_interface\&.hpp\&.
+.SS "enum \fBParity_bits\fP"
+
+.PP
+Definition at line 32 of file USART_interface\&.hpp\&.
+.SS "enum \fBRX_conf\fP"
+
+.PP
+Definition at line 92 of file USART_interface\&.hpp\&.
+.SS "enum \fBStop_bits\fP"
+
+.PP
+Definition at line 45 of file USART_interface\&.hpp\&.
+.SS "enum \fBUSART_status\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIS_fail_baudrate_wrong \fP\fP
+.TP
+\fB\fIS_fail_DMA_TX_unavailable \fP\fP
+.TP
+\fB\fIS_fail_DMA_RX_unavailable \fP\fP
+.TP
+\fB\fIS_fail_DMA_TX_buffer \fP\fP
+.TP
+\fB\fIS_fail_DMA_RX_buffer \fP\fP
+.TP
+\fB\fIS_fail_DMA_TX_unable \fP\fP
+.TP
+\fB\fIS_fail_DMA_RX_unable \fP\fP
+.TP
+\fB\fIS_fail_TX_RX_different \fP\fP
+.TP
+\fB\fIS_fail_TX_unavailable \fP\fP
+.TP
+\fB\fIS_fail_RX_unavailable \fP\fP
+.TP
+\fB\fIS_fail_USART_unavailable \fP\fP
+.TP
+\fB\fIS_using_rx_dma \fP\fP
+.TP
+\fB\fIS_using_tx_dma \fP\fP
+.TP
+\fB\fIS_dma_transmit_process \fP\fP
+.TP
+\fB\fIS_tx_dma_unavailable \fP\fP
+.TP
+\fB\fIS_rx_dma_unavailable \fP\fP
+.TP
+\fB\fIS_rx_buffer_already_empty \fP\fP
+.TP
+\fB\fIS_rx_buffer_already_full \fP\fP
+.TP
+\fB\fIS_tx_buffer_already_empty \fP\fP
+.TP
+\fB\fIS_tx_buffer_already_full \fP\fP
+.TP
+\fB\fIS_rx_buffer_not_initialized \fP\fP
+.TP
+\fB\fIS_tx_buffer_not_initialized \fP\fP
+.TP
+\fB\fIS_transmit_busy \fP\fP
+.TP
+\fB\fIS_unable \fP\fP
+.TP
+\fB\fIS_not_initialized \fP\fP
+.TP
+\fB\fIS_ok \fP\fP
+.TP
+\fB\fIS_USART_enable \fP\fP
+.TP
+\fB\fIS_USART_unable \fP\fP
+.TP
+\fB\fIS_already_enable \fP\fP
+.TP
+\fB\fIS_already_unable \fP\fP
+.TP
+\fB\fIS_receive_enable \fP\fP
+.TP
+\fB\fIS_receive_unable \fP\fP
+.TP
+\fB\fIS_receive_already_enable \fP\fP
+.TP
+\fB\fIS_receive_already_unable \fP\fP
+.TP
+\fB\fIS_transmit_enable \fP\fP
+.TP
+\fB\fIS_transmit_unable \fP\fP
+.TP
+\fB\fIS_transmit_already_enable \fP\fP
+.TP
+\fB\fIS_transmit_already_unable \fP\fP
+.TP
+\fB\fIS_data_available \fP\fP
+.TP
+\fB\fIS_data_unavailable \fP\fP
+.TP
+\fB\fIS_tx_buffer_empty \fP\fP
+.TP
+\fB\fIS_tx_buffer_full \fP\fP
+.TP
+\fB\fIS_rx_buffer_empty \fP\fP
+.TP
+\fB\fIS_rx_buffer_full \fP\fP
+.TP
+\fB\fIS_tx_dma_free \fP\fP
+.PP
+Definition at line 107 of file USART_interface\&.hpp\&.
+.SS "enum \fBWord_length\fP"
+
+.PP
+Definition at line 20 of file USART_interface\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

@@ -1,0 +1,436 @@
+.TH "forecast::Hardware" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast::Hardware
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Hardware\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHardware\fP ()=default"
+.br
+.RI "\fBHardware\fP constructor\&. "
+.ti -1c
+.RI "\fBStatus\fP \fBinit\fP ()"
+.br
+.RI "Initialization of the \fBHardware\fP\&. "
+.ti -1c
+.RI "virtual float \fBgetT\fP () const"
+.br
+.RI "Return the hw time t of the last update\&. "
+.ti -1c
+.RI "virtual float \fBgetDT\fP () const"
+.br
+.RI "Return the hw dt used in the last update\&. "
+.ti -1c
+.RI "virtual utility::ddvar \fBgetTauM\fP () const"
+.br
+.RI "Return the torque applied by the motor (measured by the sensor torque) "
+.ti -1c
+.RI "virtual utility::ddvar \fBgetTauE\fP () const"
+.br
+.RI "Return the torque applied by the environment (current feedback) "
+.ti -1c
+.RI "virtual utility::ddvar \fBgetTauS\fP () const"
+.br
+.RI "Return the torque measured by the spring\&. "
+.ti -1c
+.RI "virtual utility::ddvar \fBgetThetaM\fP () const"
+.br
+.RI "Return the angle radius measured by the encoder of the motor\&. "
+.ti -1c
+.RI "virtual utility::ddvar \fBgetThetaE\fP () const"
+.br
+.RI "Return the angle radius measured by the encoder of the environment\&. "
+.ti -1c
+.RI "virtual utility::ddvar \fBgetOutput\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (float \fBdt\fP)"
+.br
+.RI "Update the \fBHardware\fP by reading the value from the physical hw\&. "
+.ti -1c
+.RI "void \fBenableControlMotor\fP ()"
+.br
+.ti -1c
+.RI "void \fBenableEnvMotor\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetControlTorque\fP (float torque)"
+.br
+.ti -1c
+.RI "void \fBsetEnvTorque\fP (float torque)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBmotorEncoderInit\fP ()"
+.br
+.ti -1c
+.RI "bool \fBenvEncoderInit\fP ()"
+.br
+.RI "< Initialize the motor encoder "
+.ti -1c
+.RI "bool \fBmotorControlInit\fP ()"
+.br
+.RI "< Initialize the environment encoder "
+.ti -1c
+.RI "bool \fBmotorEnvironmentInit\fP ()"
+.br
+.RI "Initialize the motor\&. "
+.ti -1c
+.RI "bool \fBtorqueSensorInit\fP ()"
+.br
+.RI "Initialize the motor torque sensor\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "DigitalEncoderAB * \fBencoder_motor\fP = nullptr"
+.br
+.RI "Motor encoder\&. "
+.ti -1c
+.RI "DigitalEncoderAB * \fBencoder_env\fP = nullptr"
+.br
+.RI "Environment encoder\&. "
+.ti -1c
+.RI "EsconMotor * \fBcontrol_motor\fP = nullptr"
+.br
+.RI "Motor used for the control\&. "
+.ti -1c
+.RI "EsconMotor * \fBenv_motor\fP = nullptr"
+.br
+.RI "Motor used for the env\&. simulation\&. "
+.ti -1c
+.RI "AnalogInput * \fBtorque_sensor\fP = nullptr"
+.br
+.RI "Motor torque sensor\&. "
+.ti -1c
+.RI "float \fBt\fP"
+.br
+.ti -1c
+.RI "float \fBdt\fP"
+.br
+.ti -1c
+.RI "float \fBtau_m_offset\fP"
+.br
+.ti -1c
+.RI "utility::ddvar \fBtau_m\fP"
+.br
+.RI "tau_motor "
+.ti -1c
+.RI "utility::ddvar \fBenvTorqueFeedback\fP"
+.br
+.RI "tau_environment "
+.ti -1c
+.RI "utility::ddvar \fBtau_s\fP"
+.br
+.RI "tau_spring (or elastic link) "
+.ti -1c
+.RI "utility::ddvar \fBtheta_m\fP"
+.br
+.RI "motor position "
+.ti -1c
+.RI "utility::ddvar \fBtheta_e\fP"
+.br
+.RI "environment position "
+.ti -1c
+.RI "utility::ddvar \fBprev_tau_m\fP"
+.br
+.ti -1c
+.RI "utility::ddvar \fBprev_envTorqueFeedback\fP"
+.br
+.ti -1c
+.RI "utility::ddvar \fBprev_tau_s\fP"
+.br
+.ti -1c
+.RI "utility::ddvar \fBprev_theta_m\fP"
+.br
+.ti -1c
+.RI "utility::ddvar \fBprev_theta_e\fP"
+.br
+.ti -1c
+.RI "utility::ddvar \fBoutput\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file Hardware\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "forecast::Hardware::Hardware ()\fC [default]\fP"
+
+.PP
+\fBHardware\fP constructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void forecast::Hardware::enableControlMotor ()\fC [inline]\fP"
+
+.PP
+Definition at line 95 of file Hardware\&.hpp\&.
+.SS "void forecast::Hardware::enableEnvMotor ()\fC [inline]\fP"
+
+.PP
+Definition at line 97 of file Hardware\&.hpp\&.
+.SS "bool forecast::Hardware::envEncoderInit ()\fC [protected]\fP"
+
+.PP
+< Initialize the motor encoder 
+.PP
+Definition at line 52 of file Hardware\&.cpp\&.
+.SS "virtual float forecast::Hardware::getDT () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Return the hw dt used in the last update\&. 
+.PP
+\fBReturns\fP
+.RS 4
+dt 
+.RE
+.PP
+
+.PP
+Definition at line 42 of file Hardware\&.hpp\&.
+.SS "virtual utility::ddvar forecast::Hardware::getOutput () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 81 of file Hardware\&.hpp\&.
+.SS "virtual float forecast::Hardware::getT () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Return the hw time t of the last update\&. 
+.PP
+\fBReturns\fP
+.RS 4
+t 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file Hardware\&.hpp\&.
+.SS "virtual utility::ddvar forecast::Hardware::getTauE () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Return the torque applied by the environment (current feedback) 
+.PP
+\fBReturns\fP
+.RS 4
+envTorqueFeedback 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file Hardware\&.hpp\&.
+.SS "virtual utility::ddvar forecast::Hardware::getTauM () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Return the torque applied by the motor (measured by the sensor torque) std::make_unique<control::Control>() 
+.PP
+\fBReturns\fP
+.RS 4
+motorTorqueFeedback 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file Hardware\&.hpp\&.
+.SS "virtual utility::ddvar forecast::Hardware::getTauS () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Return the torque measured by the spring\&. 
+.PP
+\fBReturns\fP
+.RS 4
+tau_s 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file Hardware\&.hpp\&.
+.SS "virtual utility::ddvar forecast::Hardware::getThetaE () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Return the angle radius measured by the encoder of the environment\&. 
+.PP
+\fBReturns\fP
+.RS 4
+theta_e 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file Hardware\&.hpp\&.
+.SS "virtual utility::ddvar forecast::Hardware::getThetaM () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Return the angle radius measured by the encoder of the motor\&. 
+.PP
+\fBReturns\fP
+.RS 4
+theta_m 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file Hardware\&.hpp\&.
+.SS "\fBforecast::Status\fP forecast::Hardware::init ()"
+
+.PP
+Initialization of the \fBHardware\fP\&. 
+.PP
+Definition at line 11 of file Hardware\&.cpp\&.
+.SS "bool forecast::Hardware::motorControlInit ()\fC [protected]\fP"
+
+.PP
+< Initialize the environment encoder Initialize the motor 
+.PP
+Definition at line 62 of file Hardware\&.cpp\&.
+.SS "bool forecast::Hardware::motorEncoderInit ()\fC [protected]\fP"
+
+.PP
+Definition at line 41 of file Hardware\&.cpp\&.
+.SS "bool forecast::Hardware::motorEnvironmentInit ()\fC [protected]\fP"
+
+.PP
+Initialize the motor\&. 
+.PP
+Definition at line 75 of file Hardware\&.cpp\&.
+.SS "void forecast::Hardware::setControlTorque (float torque)\fC [inline]\fP"
+
+.PP
+Definition at line 100 of file Hardware\&.hpp\&.
+.SS "void forecast::Hardware::setEnvTorque (float torque)\fC [inline]\fP"
+
+.PP
+Definition at line 104 of file Hardware\&.hpp\&.
+.SS "bool forecast::Hardware::torqueSensorInit ()\fC [protected]\fP"
+
+.PP
+Initialize the motor torque sensor\&. 
+.PP
+Definition at line 88 of file Hardware\&.cpp\&.
+.SS "void forecast::Hardware::update (float dt)"
+
+.PP
+Update the \fBHardware\fP by reading the value from the physical hw\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fITorque\fP that has to be given to the motor for actuating the control Torque that has to be given to the environment for the simulation
+.br
+\fIdt\fP is the delta time in seconds to use for the calculations for controls 
+.RE
+.PP
+
+.PP
+Definition at line 102 of file Hardware\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "EsconMotor* forecast::Hardware::control_motor = nullptr\fC [protected]\fP"
+
+.PP
+Motor used for the control\&. 
+.PP
+Definition at line 120 of file Hardware\&.hpp\&.
+.SS "float forecast::Hardware::dt\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file Hardware\&.hpp\&.
+.SS "DigitalEncoderAB* forecast::Hardware::encoder_env = nullptr\fC [protected]\fP"
+
+.PP
+Environment encoder\&. 
+.PP
+Definition at line 118 of file Hardware\&.hpp\&.
+.SS "DigitalEncoderAB* forecast::Hardware::encoder_motor = nullptr\fC [protected]\fP"
+
+.PP
+Motor encoder\&. 
+.PP
+Definition at line 117 of file Hardware\&.hpp\&.
+.SS "EsconMotor* forecast::Hardware::env_motor = nullptr\fC [protected]\fP"
+
+.PP
+Motor used for the env\&. simulation\&. 
+.PP
+Definition at line 121 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::envTorqueFeedback\fC [protected]\fP"
+
+.PP
+tau_environment 
+.PP
+Definition at line 130 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::output\fC [protected]\fP"
+
+.PP
+Definition at line 141 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::prev_envTorqueFeedback\fC [protected]\fP"
+
+.PP
+Definition at line 136 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::prev_tau_m\fC [protected]\fP"
+
+.PP
+Definition at line 135 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::prev_tau_s\fC [protected]\fP"
+
+.PP
+Definition at line 137 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::prev_theta_e\fC [protected]\fP"
+
+.PP
+Definition at line 139 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::prev_theta_m\fC [protected]\fP"
+
+.PP
+Definition at line 138 of file Hardware\&.hpp\&.
+.SS "float forecast::Hardware::t\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::tau_m\fC [protected]\fP"
+
+.PP
+tau_motor 
+.PP
+Definition at line 129 of file Hardware\&.hpp\&.
+.SS "float forecast::Hardware::tau_m_offset\fC [protected]\fP"
+
+.PP
+Definition at line 127 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::tau_s\fC [protected]\fP"
+
+.PP
+tau_spring (or elastic link) 
+.PP
+Definition at line 131 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::theta_e\fC [protected]\fP"
+
+.PP
+environment position 
+.PP
+Definition at line 133 of file Hardware\&.hpp\&.
+.SS "utility::ddvar forecast::Hardware::theta_m\fC [protected]\fP"
+
+.PP
+motor position 
+.PP
+Definition at line 132 of file Hardware\&.hpp\&.
+.SS "AnalogInput* forecast::Hardware::torque_sensor = nullptr\fC [protected]\fP"
+
+.PP
+Motor torque sensor\&. 
+.PP
+Definition at line 123 of file Hardware\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

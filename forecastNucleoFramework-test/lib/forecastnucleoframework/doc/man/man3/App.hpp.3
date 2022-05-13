@@ -1,0 +1,52 @@
+.TH "include/forecast/App.hpp" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/forecast/App.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <USART/USART_interface\&.hpp>\fP
+.br
+\fC#include 'Controller\&.hpp'\fP
+.br
+\fC#include 'Hardware\&.hpp'\fP
+.br
+\fC#include 'Status\&.hpp'\fP
+.br
+\fC#include 'com\&.hpp'\fP
+.br
+\fC#include <functional>\fP
+.br
+\fC#include <memory>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBforecast::App\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBforecast\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBforecast::LoggerCallback\fP = std::function< std::vector< float >(const Hardware *, const Controller *, const Controller *)>"
+.br
+.ti -1c
+.RI "using \fBforecast::RefGen\fP = std::function< utility::ddvar(const Hardware *)>"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

@@ -1,0 +1,171 @@
+.TH "forecast::ImpedanceControl" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast::ImpedanceControl \- Impedance Control class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ImpedanceControl\&.hpp>\fP
+.PP
+Inherits \fBforecast::Controller\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImpedanceControl\fP ()"
+.br
+.RI "Impedance control constructor\&. "
+.ti -1c
+.RI "\fBImpedanceControl\fP (float \fBkp\fP, float \fBk_des\fP)"
+.br
+.RI "Construct a new \fBImpedanceControl\fP object\&. This constructor initialize, the controller\&. "
+.ti -1c
+.RI "virtual bool \fBinit\fP (const std::vector< float > &params) override"
+.br
+.RI "Impedance control initialization\&. "
+.ti -1c
+.RI "virtual std::vector< std::string > \fBgetParamNames\fP () const override"
+.br
+.RI "Get Return the names of the parameters\&. "
+.ti -1c
+.RI "virtual utility::ddvar \fBprocess\fP (const \fBHardware\fP *hw, utility::ddvar ref) override"
+.br
+.RI "Implementation of the control law\&. The method produces an output given a reference (input)\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBkp\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBk_des\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBtheta\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBtheta_eq\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBerr\fP = 0\&.0"
+.br
+.ti -1c
+.RI "uint8_t \fBonce\fP = 1"
+.br
+.ti -1c
+.RI "utility::ddvar \fBout\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Impedance Control class\&. 
+.PP
+Definition at line 11 of file ImpedanceControl\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ImpedanceControl::ImpedanceControl ()"
+
+.PP
+Impedance control constructor\&. 
+.PP
+Definition at line 5 of file ImpedanceControl\&.cpp\&.
+.SS "ImpedanceControl::ImpedanceControl (float kp, float k_des)"
+
+.PP
+Construct a new \fBImpedanceControl\fP object\&. This constructor initialize, the controller\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkp\fP 
+.br
+\fIk_des\fP 
+.RE
+.PP
+
+.PP
+Definition at line 14 of file ImpedanceControl\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > ImpedanceControl::getParamNames () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get Return the names of the parameters\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::vector<std::string> 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBforecast::Controller\fP\&.
+.PP
+Definition at line 53 of file ImpedanceControl\&.cpp\&.
+.SS "bool ImpedanceControl::init (const std::vector< float > & params)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Impedance control initialization\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP vector containing the constants KP , K_DES in this order 
+.RE
+.PP
+
+.PP
+Implements \fBforecast::Controller\fP\&.
+.PP
+Definition at line 25 of file ImpedanceControl\&.cpp\&.
+.SS "utility::ddvar ImpedanceControl::process (const \fBHardware\fP * hw, utility::ddvar ref)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implementation of the control law\&. The method produces an output given a reference (input)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIControl\fP reference 
+.RE
+.PP
+
+.PP
+Implements \fBforecast::Controller\fP\&.
+.PP
+Definition at line 42 of file ImpedanceControl\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float forecast::ImpedanceControl::err = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file ImpedanceControl\&.hpp\&.
+.SS "float forecast::ImpedanceControl::k_des = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 45 of file ImpedanceControl\&.hpp\&.
+.SS "float forecast::ImpedanceControl::kp = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 44 of file ImpedanceControl\&.hpp\&.
+.SS "uint8_t forecast::ImpedanceControl::once = 1\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file ImpedanceControl\&.hpp\&.
+.SS "utility::ddvar forecast::ImpedanceControl::out\fC [protected]\fP"
+
+.PP
+Definition at line 54 of file ImpedanceControl\&.hpp\&.
+.SS "float forecast::ImpedanceControl::theta = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 47 of file ImpedanceControl\&.hpp\&.
+.SS "float forecast::ImpedanceControl::theta_eq = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 48 of file ImpedanceControl\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

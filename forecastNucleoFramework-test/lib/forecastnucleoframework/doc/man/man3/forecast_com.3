@@ -1,0 +1,121 @@
+.TH "forecast::com" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast::com
+.SH SYNOPSIS
+.br
+.PP
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP : uint8_t { \fBLOG\fP = 0, \fBERROR\fP = 1, \fBHANDSHAKE_SYN\fP = 4, \fBHANDSHAKE_ACK\fP, \fBDATA_REQ\fP, \fBDATA\fP, \fBMSG\fP }"
+.br
+.ti -1c
+.RI "enum \fBerr\fP { \fBUNESCAPED_CHAR\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBescape\fP (const void *src, void *dst, uint32_t srcSz, uint32_t maxSz=0)"
+.br
+.ti -1c
+.RI "uint32_t \fBunescape\fP (const void *src, void *dst, uint32_t srcSz, uint32_t maxSz=0)"
+.br
+.ti -1c
+.RI "uint8_t \fBchecksum\fP (const uint8_t *src, uint32_t sz)"
+.br
+.ti -1c
+.RI "uint32_t \fBbuildPkg\fP (\fBcom::Type\fP t, const void *payload, void *dst, uint32_t payloadSz, uint32_t maxSz=0)"
+.br
+.ti -1c
+.RI "bool \fBcheckEtx\fP (const uint8_t *pkg, uint32_t size)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr uint8_t \fBstx\fP = 0x02"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBetx\fP = 0x03"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBesc\fP = 0x1b"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBforecast::com::err\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNESCAPED_CHAR \fP\fP
+.PP
+Definition at line 23 of file com\&.hpp\&.
+.SS "enum \fBforecast::com::Type\fP : uint8_t"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILOG \fP\fP
+.TP
+\fB\fIERROR \fP\fP
+.TP
+\fB\fIHANDSHAKE_SYN \fP\fP
+.TP
+\fB\fIHANDSHAKE_ACK \fP\fP
+.TP
+\fB\fIDATA_REQ \fP\fP
+.TP
+\fB\fIDATA \fP\fP
+.TP
+\fB\fIMSG \fP\fP
+.PP
+Definition at line 13 of file com\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "uint32_t forecast::com::buildPkg (\fBcom::Type\fP t, const void * payload, void * dst, uint32_t payloadSz, uint32_t maxSz = \fC0\fP)"
+
+.PP
+Definition at line 56 of file com\&.cpp\&.
+.SS "bool forecast::com::checkEtx (const uint8_t * pkg, uint32_t size)"
+
+.PP
+Definition at line 76 of file com\&.cpp\&.
+.SS "uint8_t forecast::com::checksum (const uint8_t * src, uint32_t sz)"
+
+.PP
+Definition at line 47 of file com\&.cpp\&.
+.SS "uint32_t forecast::com::escape (const void * src, void * dst, uint32_t srcSz, uint32_t maxSz = \fC0\fP)"
+
+.PP
+Definition at line 7 of file com\&.cpp\&.
+.SS "uint32_t forecast::com::unescape (const void * src, void * dst, uint32_t srcSz, uint32_t maxSz = \fC0\fP)"
+
+.PP
+Definition at line 29 of file com\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "constexpr uint8_t forecast::com::esc = 0x1b\fC [constexpr]\fP"
+
+.PP
+Definition at line 11 of file com\&.hpp\&.
+.SS "constexpr uint8_t forecast::com::etx = 0x03\fC [constexpr]\fP"
+
+.PP
+Definition at line 10 of file com\&.hpp\&.
+.SS "constexpr uint8_t forecast::com::stx = 0x02\fC [constexpr]\fP"
+
+.PP
+Definition at line 9 of file com\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

@@ -1,0 +1,241 @@
+\hypertarget{classforecast_1_1_impedance_control}{}\doxysection{forecast\+::Impedance\+Control Class Reference}
+\label{classforecast_1_1_impedance_control}\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+
+
+Impedance Control class.  
+
+
+
+
+{\ttfamily \#include $<$Impedance\+Control.\+hpp$>$}
+
+Inheritance diagram for forecast\+::Impedance\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classforecast_1_1_impedance_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforecast_1_1_impedance_control_a78434a0d1f5f5cfad2e95877cb2dd6f9}{Impedance\+Control}} ()
+\begin{DoxyCompactList}\small\item\em Impedance control constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classforecast_1_1_impedance_control_a80aaff2d04287cbcedbf1ab3bd804088}{Impedance\+Control}} (float \mbox{\hyperlink{classforecast_1_1_impedance_control_a5ddeb1c3e928c5482497d3a7eac46edc}{kp}}, float \mbox{\hyperlink{classforecast_1_1_impedance_control_a2b71395822af282f3a51591cf5289135}{k\+\_\+des}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classforecast_1_1_impedance_control}{Impedance\+Control}} object. This constructor initialize, the controller. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classforecast_1_1_impedance_control_a8dee855308e71d984004fcaaa3b9e8a6}{init}} (const std\+::vector$<$ float $>$ \&params) override
+\begin{DoxyCompactList}\small\item\em Impedance control initialization. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classforecast_1_1_impedance_control_ab0144566d59e988ce0dbac49ae728e8e}{get\+Param\+Names}} () const override
+\begin{DoxyCompactList}\small\item\em Get Return the names of the parameters. \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_impedance_control_a0b49e63f8019e4ae35d0e7c4a40681e0}{process}} (const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$hw, utility\+::ddvar ref) override
+\begin{DoxyCompactList}\small\item\em Implementation of the control law. The method produces an output given a reference (input). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_impedance_control_a5ddeb1c3e928c5482497d3a7eac46edc}{kp}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_impedance_control_a2b71395822af282f3a51591cf5289135}{k\+\_\+des}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_impedance_control_a1d770f81158429875d8342d2fd45eb2a}{theta}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_impedance_control_a619341ccd6611452c36d8a58eb897c68}{theta\+\_\+eq}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_impedance_control_ab75c005db544e6a21c7f379fb8203996}{err}} = 0.\+0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classforecast_1_1_impedance_control_a14d17fd4609b33ae431935a66a9ce3bd}{once}} = 1
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_impedance_control_ac173efdf0b4d61372295530b5e95035c}{out}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Impedance Control class. 
+
+Definition at line 11 of file Impedance\+Control.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a78434a0d1f5f5cfad2e95877cb2dd6f9}\label{classforecast_1_1_impedance_control_a78434a0d1f5f5cfad2e95877cb2dd6f9}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!ImpedanceControl@{ImpedanceControl}}
+\index{ImpedanceControl@{ImpedanceControl}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{ImpedanceControl()}{ImpedanceControl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Impedance\+Control\+::\+Impedance\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Impedance control constructor. 
+
+
+
+Definition at line 5 of file Impedance\+Control.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a80aaff2d04287cbcedbf1ab3bd804088}\label{classforecast_1_1_impedance_control_a80aaff2d04287cbcedbf1ab3bd804088}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!ImpedanceControl@{ImpedanceControl}}
+\index{ImpedanceControl@{ImpedanceControl}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{ImpedanceControl()}{ImpedanceControl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Impedance\+Control\+::\+Impedance\+Control (\begin{DoxyParamCaption}\item[{float}]{kp,  }\item[{float}]{k\+\_\+des }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classforecast_1_1_impedance_control}{Impedance\+Control}} object. This constructor initialize, the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & \\
+\hline
+{\em k\+\_\+des} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Impedance\+Control.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_ab0144566d59e988ce0dbac49ae728e8e}\label{classforecast_1_1_impedance_control_ab0144566d59e988ce0dbac49ae728e8e}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!getParamNames@{getParamNames}}
+\index{getParamNames@{getParamNames}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{getParamNames()}{getParamNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Impedance\+Control\+::get\+Param\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get Return the names of the parameters. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classforecast_1_1_controller_aa9a391066225d7300a0ad338e324914a}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 53 of file Impedance\+Control.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a8dee855308e71d984004fcaaa3b9e8a6}\label{classforecast_1_1_impedance_control_a8dee855308e71d984004fcaaa3b9e8a6}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!init@{init}}
+\index{init@{init}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool Impedance\+Control\+::init (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Impedance control initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & vector containing the constants KP , K\+\_\+\+D\+ES in this order \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classforecast_1_1_controller_a445798926a36181bd9bc1825ad705b2e}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 25 of file Impedance\+Control.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a0b49e63f8019e4ae35d0e7c4a40681e0}\label{classforecast_1_1_impedance_control_a0b49e63f8019e4ae35d0e7c4a40681e0}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!process@{process}}
+\index{process@{process}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily utility\+::ddvar Impedance\+Control\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$}]{hw,  }\item[{utility\+::ddvar}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of the control law. The method produces an output given a reference (input). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Control} & reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classforecast_1_1_controller_ae85c4138f1299cc068d471f65c57b9b0}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 42 of file Impedance\+Control.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_ab75c005db544e6a21c7f379fb8203996}\label{classforecast_1_1_impedance_control_ab75c005db544e6a21c7f379fb8203996}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!err@{err}}
+\index{err@{err}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily float forecast\+::\+Impedance\+Control\+::err = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file Impedance\+Control.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a2b71395822af282f3a51591cf5289135}\label{classforecast_1_1_impedance_control_a2b71395822af282f3a51591cf5289135}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!k\_des@{k\_des}}
+\index{k\_des@{k\_des}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{k\_des}{k\_des}}
+{\footnotesize\ttfamily float forecast\+::\+Impedance\+Control\+::k\+\_\+des = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file Impedance\+Control.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a5ddeb1c3e928c5482497d3a7eac46edc}\label{classforecast_1_1_impedance_control_a5ddeb1c3e928c5482497d3a7eac46edc}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!kp@{kp}}
+\index{kp@{kp}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{kp}{kp}}
+{\footnotesize\ttfamily float forecast\+::\+Impedance\+Control\+::kp = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 44 of file Impedance\+Control.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a14d17fd4609b33ae431935a66a9ce3bd}\label{classforecast_1_1_impedance_control_a14d17fd4609b33ae431935a66a9ce3bd}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!once@{once}}
+\index{once@{once}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{once}{once}}
+{\footnotesize\ttfamily uint8\+\_\+t forecast\+::\+Impedance\+Control\+::once = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file Impedance\+Control.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_ac173efdf0b4d61372295530b5e95035c}\label{classforecast_1_1_impedance_control_ac173efdf0b4d61372295530b5e95035c}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!out@{out}}
+\index{out@{out}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Impedance\+Control\+::out\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 54 of file Impedance\+Control.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a1d770f81158429875d8342d2fd45eb2a}\label{classforecast_1_1_impedance_control_a1d770f81158429875d8342d2fd45eb2a}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!theta@{theta}}
+\index{theta@{theta}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{theta}{theta}}
+{\footnotesize\ttfamily float forecast\+::\+Impedance\+Control\+::theta = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file Impedance\+Control.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_impedance_control_a619341ccd6611452c36d8a58eb897c68}\label{classforecast_1_1_impedance_control_a619341ccd6611452c36d8a58eb897c68}} 
+\index{forecast::ImpedanceControl@{forecast::ImpedanceControl}!theta\_eq@{theta\_eq}}
+\index{theta\_eq@{theta\_eq}!forecast::ImpedanceControl@{forecast::ImpedanceControl}}
+\doxysubsubsection{\texorpdfstring{theta\_eq}{theta\_eq}}
+{\footnotesize\ttfamily float forecast\+::\+Impedance\+Control\+::theta\+\_\+eq = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file Impedance\+Control.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/forecast/controllers/\mbox{\hyperlink{_impedance_control_8hpp}{Impedance\+Control.\+hpp}}\item 
+src/controllers/\mbox{\hyperlink{_impedance_control_8cpp}{Impedance\+Control.\+cpp}}\end{DoxyCompactItemize}

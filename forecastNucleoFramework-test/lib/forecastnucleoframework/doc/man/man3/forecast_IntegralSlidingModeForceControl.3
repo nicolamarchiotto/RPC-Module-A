@@ -1,0 +1,263 @@
+.TH "forecast::IntegralSlidingModeForceControl" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast::IntegralSlidingModeForceControl
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IntegralSlidingMode\&.hpp>\fP
+.PP
+Inherits \fBforecast::Controller\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIntegralSlidingModeForceControl\fP ()"
+.br
+.RI "Integral Sliding Mode control constructor\&. "
+.ti -1c
+.RI "\fBIntegralSlidingModeForceControl\fP (float \fBlambda1\fP, float \fBlambda2\fP, float \fBJm\fP, float \fBKs\fP)"
+.br
+.RI "Construct a new Integral Sliding Mode object\&. This constructor initialize, the controller\&. "
+.ti -1c
+.RI "virtual bool \fBinit\fP (const std::vector< float > &params) override"
+.br
+.RI "Integral Sliding Mode control initialization\&. "
+.ti -1c
+.RI "virtual std::vector< std::string > \fBgetParamNames\fP () const override"
+.br
+.RI "Get Return the names of the parameters\&. "
+.ti -1c
+.RI "virtual utility::ddvar \fBprocess\fP (const \fBHardware\fP *hw, utility::ddvar ref) override"
+.br
+.RI "Implementation of the control law\&. The method produces an output given a reference (input)\&. "
+.ti -1c
+.RI "void \fBset_ddtheta\fP (float ddtheta)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBlambda1\fP"
+.br
+.ti -1c
+.RI "float \fBlambda2\fP"
+.br
+.ti -1c
+.RI "float \fBKs\fP"
+.br
+.ti -1c
+.RI "float \fBJm\fP"
+.br
+.ti -1c
+.RI "float \fBA\fP"
+.br
+.ti -1c
+.RI "float \fBkp\fP"
+.br
+.ti -1c
+.RI "float \fBkd\fP"
+.br
+.ti -1c
+.RI "float \fBs\fP"
+.br
+.ti -1c
+.RI "float \fBni\fP"
+.br
+.ti -1c
+.RI "float \fBphi\fP"
+.br
+.ti -1c
+.RI "float \fBka\fP"
+.br
+.ti -1c
+.RI "float \fBerr\fP"
+.br
+.ti -1c
+.RI "float \fBierr\fP"
+.br
+.ti -1c
+.RI "float \fBderr\fP"
+.br
+.ti -1c
+.RI "float \fBdderr\fP"
+.br
+.ti -1c
+.RI "float \fBerr_prev\fP"
+.br
+.ti -1c
+.RI "float \fBddtheta_e\fP"
+.br
+.ti -1c
+.RI "float \fBus\fP"
+.br
+.ti -1c
+.RI "utility::ddvar \fBout\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file IntegralSlidingMode\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IntegralSlidingModeForceControl::IntegralSlidingModeForceControl ()"
+
+.PP
+Integral Sliding Mode control constructor\&. 
+.PP
+Definition at line 7 of file IntegralSlidingMode\&.cpp\&.
+.SS "IntegralSlidingModeForceControl::IntegralSlidingModeForceControl (float lambda1, float lambda2, float Jm, float Ks)"
+
+.PP
+Construct a new Integral Sliding Mode object\&. This constructor initialize, the controller\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlambda1\fP 
+.br
+\fIlambda2\fP 
+.br
+\fIJm\fP 
+.br
+\fIKs\fP 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file IntegralSlidingMode\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > IntegralSlidingModeForceControl::getParamNames () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get Return the names of the parameters\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::vector<std::string> 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBforecast::Controller\fP\&.
+.PP
+Definition at line 75 of file IntegralSlidingMode\&.cpp\&.
+.SS "bool IntegralSlidingModeForceControl::init (const std::vector< float > & params)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Integral Sliding Mode control initialization\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP vector containing the constants lambda1, lambda2, Jm, Ks in the respected order 
+.RE
+.PP
+
+.PP
+Implements \fBforecast::Controller\fP\&.
+.PP
+Definition at line 30 of file IntegralSlidingMode\&.cpp\&.
+.SS "utility::ddvar IntegralSlidingModeForceControl::process (const \fBHardware\fP * hw, utility::ddvar ref)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implementation of the control law\&. The method produces an output given a reference (input)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIControl\fP reference 
+.RE
+.PP
+
+.PP
+Implements \fBforecast::Controller\fP\&.
+.PP
+Definition at line 46 of file IntegralSlidingMode\&.cpp\&.
+.SS "void IntegralSlidingModeForceControl::set_ddtheta (float ddtheta)"
+
+.PP
+Definition at line 71 of file IntegralSlidingMode\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float forecast::IntegralSlidingModeForceControl::A\fC [protected]\fP"
+
+.PP
+Definition at line 46 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::dderr\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::ddtheta_e\fC [protected]\fP"
+
+.PP
+Definition at line 51 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::derr\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::err\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::err_prev\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::ierr\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::Jm\fC [protected]\fP"
+
+.PP
+Definition at line 46 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::ka\fC [protected]\fP"
+
+.PP
+Definition at line 49 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::kd\fC [protected]\fP"
+
+.PP
+Definition at line 47 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::kp\fC [protected]\fP"
+
+.PP
+Definition at line 47 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::Ks\fC [protected]\fP"
+
+.PP
+Definition at line 46 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::lambda1\fC [protected]\fP"
+
+.PP
+Definition at line 45 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::lambda2\fC [protected]\fP"
+
+.PP
+Definition at line 45 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::ni\fC [protected]\fP"
+
+.PP
+Definition at line 49 of file IntegralSlidingMode\&.hpp\&.
+.SS "utility::ddvar forecast::IntegralSlidingModeForceControl::out\fC [protected]\fP"
+
+.PP
+Definition at line 53 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::phi\fC [protected]\fP"
+
+.PP
+Definition at line 49 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::s\fC [protected]\fP"
+
+.PP
+Definition at line 48 of file IntegralSlidingMode\&.hpp\&.
+.SS "float forecast::IntegralSlidingModeForceControl::us\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file IntegralSlidingMode\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

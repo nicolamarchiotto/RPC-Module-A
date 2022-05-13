@@ -1,0 +1,625 @@
+\hypertarget{classforecast_1_1_hardware}{}\doxysection{forecast\+::Hardware Class Reference}
+\label{classforecast_1_1_hardware}\index{forecast::Hardware@{forecast::Hardware}}
+
+
+{\ttfamily \#include $<$Hardware.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforecast_1_1_hardware_a9f8bc21d8c6bb2ce2018a8a3e60a0f57}{Hardware}} ()=default
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8}{Status}} \mbox{\hyperlink{classforecast_1_1_hardware_afca0f44f6dc290d340139a42c55c03c6}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initialization of the \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}}. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classforecast_1_1_hardware_ac6faa49bdbe017fb47d536b7a456cf6a}{getT}} () const
+\begin{DoxyCompactList}\small\item\em Return the hw time t of the last update. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classforecast_1_1_hardware_ade2f26cc7b85b95eadbdc63e25a6e389}{get\+DT}} () const
+\begin{DoxyCompactList}\small\item\em Return the hw dt used in the last update. \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_ad08e1333e10a1a3e56fec60d8931519d}{get\+TauM}} () const
+\begin{DoxyCompactList}\small\item\em Return the torque applied by the motor (measured by the sensor torque) \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a86d54d2c047d0596f7546a1e22078cab}{get\+TauE}} () const
+\begin{DoxyCompactList}\small\item\em Return the torque applied by the environment (current feedback) \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_aad43dc08e2cc5535d589a8d459372883}{get\+TauS}} () const
+\begin{DoxyCompactList}\small\item\em Return the torque measured by the spring. \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a25e894b072e27defdbe4d8148e264cee}{get\+ThetaM}} () const
+\begin{DoxyCompactList}\small\item\em Return the angle radius measured by the encoder of the motor. \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_ae50c2abc8dc54e811527235916159e6a}{get\+ThetaE}} () const
+\begin{DoxyCompactList}\small\item\em Return the angle radius measured by the encoder of the environment. \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a2cefbb60bdf53e6aa2d7959a3f086d6e}{get\+Output}} () const
+\item 
+void \mbox{\hyperlink{classforecast_1_1_hardware_a9daa21cd673c080765abe32bdd806422}{update}} (float \mbox{\hyperlink{classforecast_1_1_hardware_a3d532a07ef747a565c893e76eccaec6a}{dt}})
+\begin{DoxyCompactList}\small\item\em Update the \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} by reading the value from the physical hw. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classforecast_1_1_hardware_a0c6822127b472b816b19f91e03e82370}{enable\+Control\+Motor}} ()
+\item 
+void \mbox{\hyperlink{classforecast_1_1_hardware_a52512f73eb4c124b587f4db590d54bbd}{enable\+Env\+Motor}} ()
+\item 
+void \mbox{\hyperlink{classforecast_1_1_hardware_afbae233d8cf1e4cf390939f8f322d287}{set\+Control\+Torque}} (float torque)
+\item 
+void \mbox{\hyperlink{classforecast_1_1_hardware_a23fce1ff0b0afefc2c7b32d48015050a}{set\+Env\+Torque}} (float torque)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classforecast_1_1_hardware_a1e9c1820bea2cbe8631ff502eb5a8a5f}{motor\+Encoder\+Init}} ()
+\item 
+bool \mbox{\hyperlink{classforecast_1_1_hardware_afcac66d57795fbbb7059084d5589238e}{env\+Encoder\+Init}} ()
+\begin{DoxyCompactList}\small\item\em $<$ Initialize the motor encoder \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classforecast_1_1_hardware_a0ac35237f3332767c8579feb1a15ee78}{motor\+Control\+Init}} ()
+\begin{DoxyCompactList}\small\item\em $<$ Initialize the environment encoder \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classforecast_1_1_hardware_acb6a62cf40afb5cd44402e19b58e5a1e}{motor\+Environment\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the motor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classforecast_1_1_hardware_a79b6409996cb7e81954e78eb0e763417}{torque\+Sensor\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the motor torque sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Digital\+Encoder\+AB $\ast$ \mbox{\hyperlink{classforecast_1_1_hardware_a1b417020370861d789082ef9a39767ce}{encoder\+\_\+motor}} = nullptr
+\begin{DoxyCompactList}\small\item\em Motor encoder. \end{DoxyCompactList}\item 
+Digital\+Encoder\+AB $\ast$ \mbox{\hyperlink{classforecast_1_1_hardware_aa3626eb38977e5f8caeea54e5ff886b5}{encoder\+\_\+env}} = nullptr
+\begin{DoxyCompactList}\small\item\em Environment encoder. \end{DoxyCompactList}\item 
+Escon\+Motor $\ast$ \mbox{\hyperlink{classforecast_1_1_hardware_a6575f63fe853cf8a444d51d15f206b9b}{control\+\_\+motor}} = nullptr
+\begin{DoxyCompactList}\small\item\em Motor used for the control. \end{DoxyCompactList}\item 
+Escon\+Motor $\ast$ \mbox{\hyperlink{classforecast_1_1_hardware_a02ddc5ec4f4667bd57d97bacc9715dc9}{env\+\_\+motor}} = nullptr
+\begin{DoxyCompactList}\small\item\em Motor used for the env. simulation. \end{DoxyCompactList}\item 
+Analog\+Input $\ast$ \mbox{\hyperlink{classforecast_1_1_hardware_aacd8c5fa6dff5894bcec1a51b7150510}{torque\+\_\+sensor}} = nullptr
+\begin{DoxyCompactList}\small\item\em Motor torque sensor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classforecast_1_1_hardware_a40fc412ff5da97ef7dbdeacb1699317c}{t}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_hardware_a3d532a07ef747a565c893e76eccaec6a}{dt}}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_hardware_ae8b56ba13d2d46ee460d8c5326565ad6}{tau\+\_\+m\+\_\+offset}}
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a73c5959eb41ebee3fc45bac7ce69a535}{tau\+\_\+m}}
+\begin{DoxyCompactList}\small\item\em tau\+\_\+motor \end{DoxyCompactList}\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a6cda6607fdc22daca1f4e4ce97c304d7}{env\+Torque\+Feedback}}
+\begin{DoxyCompactList}\small\item\em tau\+\_\+environment \end{DoxyCompactList}\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a3928dd498ecb049a4bba9114a7128d52}{tau\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em tau\+\_\+spring (or elastic link) \end{DoxyCompactList}\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a94ea6071c0584a38f12d8a2cd856c4d0}{theta\+\_\+m}}
+\begin{DoxyCompactList}\small\item\em motor position \end{DoxyCompactList}\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a2f22abac6c6fae3739f99e49944b9a54}{theta\+\_\+e}}
+\begin{DoxyCompactList}\small\item\em environment position \end{DoxyCompactList}\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_afa6ab7a36316da604e809b0b6841b560}{prev\+\_\+tau\+\_\+m}}
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a4b1665354ba4d437c6a60293af26d579}{prev\+\_\+env\+Torque\+Feedback}}
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_ae92b132c024bfdb21ced78060796eae2}{prev\+\_\+tau\+\_\+s}}
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_ae3100ec5eb52c49c13c488c76fe77929}{prev\+\_\+theta\+\_\+m}}
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_a0f6a8ad84c338d24044c6efd7aebc79f}{prev\+\_\+theta\+\_\+e}}
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_hardware_aa062b3fa1c1c646e0a5c97546098b1bd}{output}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file Hardware.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classforecast_1_1_hardware_a9f8bc21d8c6bb2ce2018a8a3e60a0f57}\label{classforecast_1_1_hardware_a9f8bc21d8c6bb2ce2018a8a3e60a0f57}} 
+\index{forecast::Hardware@{forecast::Hardware}!Hardware@{Hardware}}
+\index{Hardware@{Hardware}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{Hardware()}{Hardware()}}
+{\footnotesize\ttfamily forecast\+::\+Hardware\+::\+Hardware (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classforecast_1_1_hardware_a0c6822127b472b816b19f91e03e82370}\label{classforecast_1_1_hardware_a0c6822127b472b816b19f91e03e82370}} 
+\index{forecast::Hardware@{forecast::Hardware}!enableControlMotor@{enableControlMotor}}
+\index{enableControlMotor@{enableControlMotor}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{enableControlMotor()}{enableControlMotor()}}
+{\footnotesize\ttfamily void forecast\+::\+Hardware\+::enable\+Control\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 95 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a52512f73eb4c124b587f4db590d54bbd}\label{classforecast_1_1_hardware_a52512f73eb4c124b587f4db590d54bbd}} 
+\index{forecast::Hardware@{forecast::Hardware}!enableEnvMotor@{enableEnvMotor}}
+\index{enableEnvMotor@{enableEnvMotor}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{enableEnvMotor()}{enableEnvMotor()}}
+{\footnotesize\ttfamily void forecast\+::\+Hardware\+::enable\+Env\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 97 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_afcac66d57795fbbb7059084d5589238e}\label{classforecast_1_1_hardware_afcac66d57795fbbb7059084d5589238e}} 
+\index{forecast::Hardware@{forecast::Hardware}!envEncoderInit@{envEncoderInit}}
+\index{envEncoderInit@{envEncoderInit}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{envEncoderInit()}{envEncoderInit()}}
+{\footnotesize\ttfamily bool forecast\+::\+Hardware\+::env\+Encoder\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ Initialize the motor encoder 
+
+
+
+Definition at line 52 of file Hardware.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_ade2f26cc7b85b95eadbdc63e25a6e389}\label{classforecast_1_1_hardware_ade2f26cc7b85b95eadbdc63e25a6e389}} 
+\index{forecast::Hardware@{forecast::Hardware}!getDT@{getDT}}
+\index{getDT@{getDT}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{getDT()}{getDT()}}
+{\footnotesize\ttfamily virtual float forecast\+::\+Hardware\+::get\+DT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the hw dt used in the last update. 
+
+\begin{DoxyReturn}{Returns}
+dt 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a2cefbb60bdf53e6aa2d7959a3f086d6e}\label{classforecast_1_1_hardware_a2cefbb60bdf53e6aa2d7959a3f086d6e}} 
+\index{forecast::Hardware@{forecast::Hardware}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}}
+{\footnotesize\ttfamily virtual utility\+::ddvar forecast\+::\+Hardware\+::get\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 81 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_ac6faa49bdbe017fb47d536b7a456cf6a}\label{classforecast_1_1_hardware_ac6faa49bdbe017fb47d536b7a456cf6a}} 
+\index{forecast::Hardware@{forecast::Hardware}!getT@{getT}}
+\index{getT@{getT}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{getT()}{getT()}}
+{\footnotesize\ttfamily virtual float forecast\+::\+Hardware\+::getT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the hw time t of the last update. 
+
+\begin{DoxyReturn}{Returns}
+t 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a86d54d2c047d0596f7546a1e22078cab}\label{classforecast_1_1_hardware_a86d54d2c047d0596f7546a1e22078cab}} 
+\index{forecast::Hardware@{forecast::Hardware}!getTauE@{getTauE}}
+\index{getTauE@{getTauE}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{getTauE()}{getTauE()}}
+{\footnotesize\ttfamily virtual utility\+::ddvar forecast\+::\+Hardware\+::get\+TauE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the torque applied by the environment (current feedback) 
+
+\begin{DoxyReturn}{Returns}
+env\+Torque\+Feedback 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_ad08e1333e10a1a3e56fec60d8931519d}\label{classforecast_1_1_hardware_ad08e1333e10a1a3e56fec60d8931519d}} 
+\index{forecast::Hardware@{forecast::Hardware}!getTauM@{getTauM}}
+\index{getTauM@{getTauM}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{getTauM()}{getTauM()}}
+{\footnotesize\ttfamily virtual utility\+::ddvar forecast\+::\+Hardware\+::get\+TauM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the torque applied by the motor (measured by the sensor torque) 
+
+std\+::make\+\_\+unique$<$control\+::\+Control$>$() \begin{DoxyReturn}{Returns}
+motor\+Torque\+Feedback 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_aad43dc08e2cc5535d589a8d459372883}\label{classforecast_1_1_hardware_aad43dc08e2cc5535d589a8d459372883}} 
+\index{forecast::Hardware@{forecast::Hardware}!getTauS@{getTauS}}
+\index{getTauS@{getTauS}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{getTauS()}{getTauS()}}
+{\footnotesize\ttfamily virtual utility\+::ddvar forecast\+::\+Hardware\+::get\+TauS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the torque measured by the spring. 
+
+\begin{DoxyReturn}{Returns}
+tau\+\_\+s 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_ae50c2abc8dc54e811527235916159e6a}\label{classforecast_1_1_hardware_ae50c2abc8dc54e811527235916159e6a}} 
+\index{forecast::Hardware@{forecast::Hardware}!getThetaE@{getThetaE}}
+\index{getThetaE@{getThetaE}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{getThetaE()}{getThetaE()}}
+{\footnotesize\ttfamily virtual utility\+::ddvar forecast\+::\+Hardware\+::get\+ThetaE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the angle radius measured by the encoder of the environment. 
+
+\begin{DoxyReturn}{Returns}
+theta\+\_\+e 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a25e894b072e27defdbe4d8148e264cee}\label{classforecast_1_1_hardware_a25e894b072e27defdbe4d8148e264cee}} 
+\index{forecast::Hardware@{forecast::Hardware}!getThetaM@{getThetaM}}
+\index{getThetaM@{getThetaM}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{getThetaM()}{getThetaM()}}
+{\footnotesize\ttfamily virtual utility\+::ddvar forecast\+::\+Hardware\+::get\+ThetaM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the angle radius measured by the encoder of the motor. 
+
+\begin{DoxyReturn}{Returns}
+theta\+\_\+m 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_afca0f44f6dc290d340139a42c55c03c6}\label{classforecast_1_1_hardware_afca0f44f6dc290d340139a42c55c03c6}} 
+\index{forecast::Hardware@{forecast::Hardware}!init@{init}}
+\index{init@{init}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceforecast_a487b08052e0d9fbed8405865f52afba8}{forecast\+::\+Status}} forecast\+::\+Hardware\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialization of the \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}}. 
+
+
+
+Definition at line 11 of file Hardware.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a0ac35237f3332767c8579feb1a15ee78}\label{classforecast_1_1_hardware_a0ac35237f3332767c8579feb1a15ee78}} 
+\index{forecast::Hardware@{forecast::Hardware}!motorControlInit@{motorControlInit}}
+\index{motorControlInit@{motorControlInit}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{motorControlInit()}{motorControlInit()}}
+{\footnotesize\ttfamily bool forecast\+::\+Hardware\+::motor\+Control\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$<$ Initialize the environment encoder 
+
+Initialize the motor 
+
+Definition at line 62 of file Hardware.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a1e9c1820bea2cbe8631ff502eb5a8a5f}\label{classforecast_1_1_hardware_a1e9c1820bea2cbe8631ff502eb5a8a5f}} 
+\index{forecast::Hardware@{forecast::Hardware}!motorEncoderInit@{motorEncoderInit}}
+\index{motorEncoderInit@{motorEncoderInit}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{motorEncoderInit()}{motorEncoderInit()}}
+{\footnotesize\ttfamily bool forecast\+::\+Hardware\+::motor\+Encoder\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 41 of file Hardware.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_acb6a62cf40afb5cd44402e19b58e5a1e}\label{classforecast_1_1_hardware_acb6a62cf40afb5cd44402e19b58e5a1e}} 
+\index{forecast::Hardware@{forecast::Hardware}!motorEnvironmentInit@{motorEnvironmentInit}}
+\index{motorEnvironmentInit@{motorEnvironmentInit}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{motorEnvironmentInit()}{motorEnvironmentInit()}}
+{\footnotesize\ttfamily bool forecast\+::\+Hardware\+::motor\+Environment\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialize the motor. 
+
+
+
+Definition at line 75 of file Hardware.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_afbae233d8cf1e4cf390939f8f322d287}\label{classforecast_1_1_hardware_afbae233d8cf1e4cf390939f8f322d287}} 
+\index{forecast::Hardware@{forecast::Hardware}!setControlTorque@{setControlTorque}}
+\index{setControlTorque@{setControlTorque}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{setControlTorque()}{setControlTorque()}}
+{\footnotesize\ttfamily void forecast\+::\+Hardware\+::set\+Control\+Torque (\begin{DoxyParamCaption}\item[{float}]{torque }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 100 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a23fce1ff0b0afefc2c7b32d48015050a}\label{classforecast_1_1_hardware_a23fce1ff0b0afefc2c7b32d48015050a}} 
+\index{forecast::Hardware@{forecast::Hardware}!setEnvTorque@{setEnvTorque}}
+\index{setEnvTorque@{setEnvTorque}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{setEnvTorque()}{setEnvTorque()}}
+{\footnotesize\ttfamily void forecast\+::\+Hardware\+::set\+Env\+Torque (\begin{DoxyParamCaption}\item[{float}]{torque }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 104 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a79b6409996cb7e81954e78eb0e763417}\label{classforecast_1_1_hardware_a79b6409996cb7e81954e78eb0e763417}} 
+\index{forecast::Hardware@{forecast::Hardware}!torqueSensorInit@{torqueSensorInit}}
+\index{torqueSensorInit@{torqueSensorInit}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{torqueSensorInit()}{torqueSensorInit()}}
+{\footnotesize\ttfamily bool forecast\+::\+Hardware\+::torque\+Sensor\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialize the motor torque sensor. 
+
+
+
+Definition at line 88 of file Hardware.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a9daa21cd673c080765abe32bdd806422}\label{classforecast_1_1_hardware_a9daa21cd673c080765abe32bdd806422}} 
+\index{forecast::Hardware@{forecast::Hardware}!update@{update}}
+\index{update@{update}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void forecast\+::\+Hardware\+::update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
+
+
+
+Update the \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} by reading the value from the physical hw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Torque} & that has to be given to the motor for actuating the control Torque that has to be given to the environment for the simulation\\
+\hline
+{\em dt} & is the delta time in seconds to use for the calculations for controls \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file Hardware.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforecast_1_1_hardware_a6575f63fe853cf8a444d51d15f206b9b}\label{classforecast_1_1_hardware_a6575f63fe853cf8a444d51d15f206b9b}} 
+\index{forecast::Hardware@{forecast::Hardware}!control\_motor@{control\_motor}}
+\index{control\_motor@{control\_motor}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{control\_motor}{control\_motor}}
+{\footnotesize\ttfamily Escon\+Motor$\ast$ forecast\+::\+Hardware\+::control\+\_\+motor = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Motor used for the control. 
+
+
+
+Definition at line 120 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a3d532a07ef747a565c893e76eccaec6a}\label{classforecast_1_1_hardware_a3d532a07ef747a565c893e76eccaec6a}} 
+\index{forecast::Hardware@{forecast::Hardware}!dt@{dt}}
+\index{dt@{dt}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily float forecast\+::\+Hardware\+::dt\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 125 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_aa3626eb38977e5f8caeea54e5ff886b5}\label{classforecast_1_1_hardware_aa3626eb38977e5f8caeea54e5ff886b5}} 
+\index{forecast::Hardware@{forecast::Hardware}!encoder\_env@{encoder\_env}}
+\index{encoder\_env@{encoder\_env}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{encoder\_env}{encoder\_env}}
+{\footnotesize\ttfamily Digital\+Encoder\+AB$\ast$ forecast\+::\+Hardware\+::encoder\+\_\+env = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Environment encoder. 
+
+
+
+Definition at line 118 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a1b417020370861d789082ef9a39767ce}\label{classforecast_1_1_hardware_a1b417020370861d789082ef9a39767ce}} 
+\index{forecast::Hardware@{forecast::Hardware}!encoder\_motor@{encoder\_motor}}
+\index{encoder\_motor@{encoder\_motor}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{encoder\_motor}{encoder\_motor}}
+{\footnotesize\ttfamily Digital\+Encoder\+AB$\ast$ forecast\+::\+Hardware\+::encoder\+\_\+motor = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Motor encoder. 
+
+
+
+Definition at line 117 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a02ddc5ec4f4667bd57d97bacc9715dc9}\label{classforecast_1_1_hardware_a02ddc5ec4f4667bd57d97bacc9715dc9}} 
+\index{forecast::Hardware@{forecast::Hardware}!env\_motor@{env\_motor}}
+\index{env\_motor@{env\_motor}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{env\_motor}{env\_motor}}
+{\footnotesize\ttfamily Escon\+Motor$\ast$ forecast\+::\+Hardware\+::env\+\_\+motor = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Motor used for the env. simulation. 
+
+
+
+Definition at line 121 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a6cda6607fdc22daca1f4e4ce97c304d7}\label{classforecast_1_1_hardware_a6cda6607fdc22daca1f4e4ce97c304d7}} 
+\index{forecast::Hardware@{forecast::Hardware}!envTorqueFeedback@{envTorqueFeedback}}
+\index{envTorqueFeedback@{envTorqueFeedback}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{envTorqueFeedback}{envTorqueFeedback}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::env\+Torque\+Feedback\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tau\+\_\+environment 
+
+
+
+Definition at line 130 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_aa062b3fa1c1c646e0a5c97546098b1bd}\label{classforecast_1_1_hardware_aa062b3fa1c1c646e0a5c97546098b1bd}} 
+\index{forecast::Hardware@{forecast::Hardware}!output@{output}}
+\index{output@{output}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::output\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 141 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a4b1665354ba4d437c6a60293af26d579}\label{classforecast_1_1_hardware_a4b1665354ba4d437c6a60293af26d579}} 
+\index{forecast::Hardware@{forecast::Hardware}!prev\_envTorqueFeedback@{prev\_envTorqueFeedback}}
+\index{prev\_envTorqueFeedback@{prev\_envTorqueFeedback}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{prev\_envTorqueFeedback}{prev\_envTorqueFeedback}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::prev\+\_\+env\+Torque\+Feedback\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 136 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_afa6ab7a36316da604e809b0b6841b560}\label{classforecast_1_1_hardware_afa6ab7a36316da604e809b0b6841b560}} 
+\index{forecast::Hardware@{forecast::Hardware}!prev\_tau\_m@{prev\_tau\_m}}
+\index{prev\_tau\_m@{prev\_tau\_m}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{prev\_tau\_m}{prev\_tau\_m}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::prev\+\_\+tau\+\_\+m\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 135 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_ae92b132c024bfdb21ced78060796eae2}\label{classforecast_1_1_hardware_ae92b132c024bfdb21ced78060796eae2}} 
+\index{forecast::Hardware@{forecast::Hardware}!prev\_tau\_s@{prev\_tau\_s}}
+\index{prev\_tau\_s@{prev\_tau\_s}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{prev\_tau\_s}{prev\_tau\_s}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::prev\+\_\+tau\+\_\+s\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 137 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a0f6a8ad84c338d24044c6efd7aebc79f}\label{classforecast_1_1_hardware_a0f6a8ad84c338d24044c6efd7aebc79f}} 
+\index{forecast::Hardware@{forecast::Hardware}!prev\_theta\_e@{prev\_theta\_e}}
+\index{prev\_theta\_e@{prev\_theta\_e}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{prev\_theta\_e}{prev\_theta\_e}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::prev\+\_\+theta\+\_\+e\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 139 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_ae3100ec5eb52c49c13c488c76fe77929}\label{classforecast_1_1_hardware_ae3100ec5eb52c49c13c488c76fe77929}} 
+\index{forecast::Hardware@{forecast::Hardware}!prev\_theta\_m@{prev\_theta\_m}}
+\index{prev\_theta\_m@{prev\_theta\_m}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{prev\_theta\_m}{prev\_theta\_m}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::prev\+\_\+theta\+\_\+m\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 138 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a40fc412ff5da97ef7dbdeacb1699317c}\label{classforecast_1_1_hardware_a40fc412ff5da97ef7dbdeacb1699317c}} 
+\index{forecast::Hardware@{forecast::Hardware}!t@{t}}
+\index{t@{t}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily float forecast\+::\+Hardware\+::t\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 125 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a73c5959eb41ebee3fc45bac7ce69a535}\label{classforecast_1_1_hardware_a73c5959eb41ebee3fc45bac7ce69a535}} 
+\index{forecast::Hardware@{forecast::Hardware}!tau\_m@{tau\_m}}
+\index{tau\_m@{tau\_m}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{tau\_m}{tau\_m}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::tau\+\_\+m\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tau\+\_\+motor 
+
+
+
+Definition at line 129 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_ae8b56ba13d2d46ee460d8c5326565ad6}\label{classforecast_1_1_hardware_ae8b56ba13d2d46ee460d8c5326565ad6}} 
+\index{forecast::Hardware@{forecast::Hardware}!tau\_m\_offset@{tau\_m\_offset}}
+\index{tau\_m\_offset@{tau\_m\_offset}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{tau\_m\_offset}{tau\_m\_offset}}
+{\footnotesize\ttfamily float forecast\+::\+Hardware\+::tau\+\_\+m\+\_\+offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 127 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a3928dd498ecb049a4bba9114a7128d52}\label{classforecast_1_1_hardware_a3928dd498ecb049a4bba9114a7128d52}} 
+\index{forecast::Hardware@{forecast::Hardware}!tau\_s@{tau\_s}}
+\index{tau\_s@{tau\_s}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{tau\_s}{tau\_s}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::tau\+\_\+s\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tau\+\_\+spring (or elastic link) 
+
+
+
+Definition at line 131 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a2f22abac6c6fae3739f99e49944b9a54}\label{classforecast_1_1_hardware_a2f22abac6c6fae3739f99e49944b9a54}} 
+\index{forecast::Hardware@{forecast::Hardware}!theta\_e@{theta\_e}}
+\index{theta\_e@{theta\_e}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{theta\_e}{theta\_e}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::theta\+\_\+e\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+environment position 
+
+
+
+Definition at line 133 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_a94ea6071c0584a38f12d8a2cd856c4d0}\label{classforecast_1_1_hardware_a94ea6071c0584a38f12d8a2cd856c4d0}} 
+\index{forecast::Hardware@{forecast::Hardware}!theta\_m@{theta\_m}}
+\index{theta\_m@{theta\_m}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{theta\_m}{theta\_m}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Hardware\+::theta\+\_\+m\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+motor position 
+
+
+
+Definition at line 132 of file Hardware.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_hardware_aacd8c5fa6dff5894bcec1a51b7150510}\label{classforecast_1_1_hardware_aacd8c5fa6dff5894bcec1a51b7150510}} 
+\index{forecast::Hardware@{forecast::Hardware}!torque\_sensor@{torque\_sensor}}
+\index{torque\_sensor@{torque\_sensor}!forecast::Hardware@{forecast::Hardware}}
+\doxysubsubsection{\texorpdfstring{torque\_sensor}{torque\_sensor}}
+{\footnotesize\ttfamily Analog\+Input$\ast$ forecast\+::\+Hardware\+::torque\+\_\+sensor = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Motor torque sensor. 
+
+
+
+Definition at line 123 of file Hardware.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/forecast/\mbox{\hyperlink{_hardware_8hpp}{Hardware.\+hpp}}\item 
+src/\mbox{\hyperlink{_hardware_8cpp}{Hardware.\+cpp}}\end{DoxyCompactItemize}

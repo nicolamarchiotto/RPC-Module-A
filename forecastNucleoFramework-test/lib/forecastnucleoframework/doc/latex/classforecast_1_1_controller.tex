@@ -1,0 +1,202 @@
+\hypertarget{classforecast_1_1_controller}{}\doxysection{forecast\+::Controller Class Reference}
+\label{classforecast_1_1_controller}\index{forecast::Controller@{forecast::Controller}}
+
+
+{\ttfamily \#include $<$Controller.\+hpp$>$}
+
+Inheritance diagram for forecast\+::Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.081081cm]{classforecast_1_1_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforecast_1_1_controller_a75eb1f136ae48652313a97d32608f54a}{Controller}} (size\+\_\+t \mbox{\hyperlink{classforecast_1_1_controller_a096bd13dfe4e898297487baa86b14a3e}{number\+Of\+Params}}=0)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classforecast_1_1_controller}{Controller}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classforecast_1_1_controller_a134d3e21a7407f459a716c3969e5adec}{$\sim$\+Controller}} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classforecast_1_1_controller_a445798926a36181bd9bc1825ad705b2e}{init}} (const std\+::vector$<$ float $>$ \&params)=0
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classforecast_1_1_controller}{Controller}} initialization. The implementation should take care of setting to true the value of the initialized field of the controller. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classforecast_1_1_controller_aa9a391066225d7300a0ad338e324914a}{get\+Param\+Names}} () const
+\begin{DoxyCompactList}\small\item\em Get the names of the parameter in order. If not implemented it will return a vector of strings\+: \char`\"{}param\+\_\+1\char`\"{}, ..., \char`\"{}param\+\_\+\+N\char`\"{}. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{classforecast_1_1_controller_a1c9b36cffbf8f57a55d3527dcb908117}{get\+Number\+Of\+Params}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of parameters required for the initialization. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classforecast_1_1_controller_a796b223940f8aaf0dae30bdcb38430c6}{is\+Initialized}} () const
+\begin{DoxyCompactList}\small\item\em return if the controller is been initialized \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_controller_ae85c4138f1299cc068d471f65c57b9b0}{process}} (const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$hw, utility\+::ddvar ref)=0
+\begin{DoxyCompactList}\small\item\em Implementation of the control law. The method produces an output given a reference (input). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{classforecast_1_1_controller_a096bd13dfe4e898297487baa86b14a3e}{number\+Of\+Params}}
+\item 
+bool \mbox{\hyperlink{classforecast_1_1_controller_aa5501bd28a7d557b7c12b20222738bfc}{initialized}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 10 of file Controller.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classforecast_1_1_controller_a75eb1f136ae48652313a97d32608f54a}\label{classforecast_1_1_controller_a75eb1f136ae48652313a97d32608f54a}} 
+\index{forecast::Controller@{forecast::Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{number\+Of\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classforecast_1_1_controller}{Controller}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Number} & of parameters required for the initialization \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 5 of file Controller.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_controller_a134d3e21a7407f459a716c3969e5adec}\label{classforecast_1_1_controller_a134d3e21a7407f459a716c3969e5adec}} 
+\index{forecast::Controller@{forecast::Controller}!````~Controller@{$\sim$Controller}}
+\index{````~Controller@{$\sim$Controller}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{$\sim$Controller()}{~Controller()}}
+{\footnotesize\ttfamily virtual forecast\+::\+Controller\+::$\sim$\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classforecast_1_1_controller_a1c9b36cffbf8f57a55d3527dcb908117}\label{classforecast_1_1_controller_a1c9b36cffbf8f57a55d3527dcb908117}} 
+\index{forecast::Controller@{forecast::Controller}!getNumberOfParams@{getNumberOfParams}}
+\index{getNumberOfParams@{getNumberOfParams}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{getNumberOfParams()}{getNumberOfParams()}}
+{\footnotesize\ttfamily size\+\_\+t Controller\+::get\+Number\+Of\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the number of parameters required for the initialization. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file Controller.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_controller_aa9a391066225d7300a0ad338e324914a}\label{classforecast_1_1_controller_aa9a391066225d7300a0ad338e324914a}} 
+\index{forecast::Controller@{forecast::Controller}!getParamNames@{getParamNames}}
+\index{getParamNames@{getParamNames}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{getParamNames()}{getParamNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Controller\+::get\+Param\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the names of the parameter in order. If not implemented it will return a vector of strings\+: \char`\"{}param\+\_\+1\char`\"{}, ..., \char`\"{}param\+\_\+\+N\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a0011442106e51a23003f746e75e6413f}{forecast\+::\+Force\+P\+ID}}, \mbox{\hyperlink{classforecast_1_1_mega_p_d_aeeb240c917b9b059a167ea3c63cbafc6}{forecast\+::\+Mega\+PD}}, \mbox{\hyperlink{classforecast_1_1_impedance_control_ab0144566d59e988ce0dbac49ae728e8e}{forecast\+::\+Impedance\+Control}}, and \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a5ec6ad9d32c84522e9ad806a03dba072}{forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control}}.
+
+
+
+Definition at line 9 of file Controller.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_controller_a445798926a36181bd9bc1825ad705b2e}\label{classforecast_1_1_controller_a445798926a36181bd9bc1825ad705b2e}} 
+\index{forecast::Controller@{forecast::Controller}!init@{init}}
+\index{init@{init}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual bool forecast\+::\+Controller\+::init (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\mbox{\hyperlink{classforecast_1_1_controller}{Controller}} initialization. The implementation should take care of setting to true the value of the initialized field of the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & vector containing the float params. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a7b2ac318699bb3be34f597c7949fde43}{forecast\+::\+Force\+P\+ID}}, \mbox{\hyperlink{classforecast_1_1_mega_p_d_af816f7a15600a12166497ac2d59ee253}{forecast\+::\+Mega\+PD}}, \mbox{\hyperlink{classforecast_1_1_impedance_control_a8dee855308e71d984004fcaaa3b9e8a6}{forecast\+::\+Impedance\+Control}}, and \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a4ca8da6777b01abdc555116e5f9523f9}{forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control}}.
+
+\mbox{\Hypertarget{classforecast_1_1_controller_a796b223940f8aaf0dae30bdcb38430c6}\label{classforecast_1_1_controller_a796b223940f8aaf0dae30bdcb38430c6}} 
+\index{forecast::Controller@{forecast::Controller}!isInitialized@{isInitialized}}
+\index{isInitialized@{isInitialized}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{isInitialized()}{isInitialized()}}
+{\footnotesize\ttfamily bool Controller\+::is\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+return if the controller is been initialized 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Controller.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_controller_ae85c4138f1299cc068d471f65c57b9b0}\label{classforecast_1_1_controller_ae85c4138f1299cc068d471f65c57b9b0}} 
+\index{forecast::Controller@{forecast::Controller}!process@{process}}
+\index{process@{process}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily virtual utility\+::ddvar forecast\+::\+Controller\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$}]{hw,  }\item[{utility\+::ddvar}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementation of the control law. The method produces an output given a reference (input). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Control} & reference \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classforecast_1_1_force_p_i_d_af55eee1041fdb42c0bb31f6b254eac2e}{forecast\+::\+Force\+P\+ID}}, \mbox{\hyperlink{classforecast_1_1_mega_p_d_acb6b3a470fdc4745ad8860d9d9d3284a}{forecast\+::\+Mega\+PD}}, \mbox{\hyperlink{classforecast_1_1_impedance_control_a0b49e63f8019e4ae35d0e7c4a40681e0}{forecast\+::\+Impedance\+Control}}, and \mbox{\hyperlink{classforecast_1_1_integral_sliding_mode_force_control_a730192cb6fde689d94b2b6939b5bc84d}{forecast\+::\+Integral\+Sliding\+Mode\+Force\+Control}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforecast_1_1_controller_aa5501bd28a7d557b7c12b20222738bfc}\label{classforecast_1_1_controller_aa5501bd28a7d557b7c12b20222738bfc}} 
+\index{forecast::Controller@{forecast::Controller}!initialized@{initialized}}
+\index{initialized@{initialized}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily bool forecast\+::\+Controller\+::initialized = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 66 of file Controller.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_controller_a096bd13dfe4e898297487baa86b14a3e}\label{classforecast_1_1_controller_a096bd13dfe4e898297487baa86b14a3e}} 
+\index{forecast::Controller@{forecast::Controller}!numberOfParams@{numberOfParams}}
+\index{numberOfParams@{numberOfParams}!forecast::Controller@{forecast::Controller}}
+\doxysubsubsection{\texorpdfstring{numberOfParams}{numberOfParams}}
+{\footnotesize\ttfamily const size\+\_\+t forecast\+::\+Controller\+::number\+Of\+Params\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 65 of file Controller.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/forecast/\mbox{\hyperlink{_controller_8hpp}{Controller.\+hpp}}\item 
+src/\mbox{\hyperlink{_controller_8cpp}{Controller.\+cpp}}\end{DoxyCompactItemize}

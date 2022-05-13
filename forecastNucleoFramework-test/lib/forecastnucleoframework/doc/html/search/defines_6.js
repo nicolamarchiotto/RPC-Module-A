@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['ticker_5fclock_5ffreq_544',['TICKER_CLOCK_FREQ',['../include_2forecast_2config_2timer_8h.html#a6fb207a5dae2ec86ec2d5923c49d0670',1,'TICKER_CLOCK_FREQ():&#160;timer.h'],['../config__templates_2timer_8h.html#a6fb207a5dae2ec86ec2d5923c49d0670',1,'TICKER_CLOCK_FREQ():&#160;timer.h']]],
+  ['ticker_5fhw_5ftimer_545',['TICKER_HW_TIMER',['../include_2forecast_2config_2timer_8h.html#ae4b166b4ebe052a67eeddfde29a79cca',1,'TICKER_HW_TIMER():&#160;timer.h'],['../config__templates_2timer_8h.html#ae4b166b4ebe052a67eeddfde29a79cca',1,'TICKER_HW_TIMER():&#160;timer.h']]],
+  ['ticker_5fhw_5ftimer_5firqn_546',['TICKER_HW_TIMER_IRQn',['../include_2forecast_2config_2timer_8h.html#acfbfad49b1e0d811f44c8aa5bb9a833c',1,'TICKER_HW_TIMER_IRQn():&#160;timer.h'],['../config__templates_2timer_8h.html#acfbfad49b1e0d811f44c8aa5bb9a833c',1,'TICKER_HW_TIMER_IRQn():&#160;timer.h']]],
+  ['torque_5fsensor_5foffset_547',['TORQUE_SENSOR_OFFSET',['../include_2forecast_2config_2analog__torque__sensor_8h.html#a94705de3d65ebe296c14fbeefac146b5',1,'TORQUE_SENSOR_OFFSET():&#160;analog_torque_sensor.h'],['../config__templates_2analog__torque__sensor_8h.html#a94705de3d65ebe296c14fbeefac146b5',1,'TORQUE_SENSOR_OFFSET():&#160;analog_torque_sensor.h']]],
+  ['torque_5fsensor_5fpin_548',['TORQUE_SENSOR_PIN',['../include_2forecast_2config_2analog__torque__sensor_8h.html#ae66ad1f2dc13aa121147abcb04aafe9c',1,'TORQUE_SENSOR_PIN():&#160;analog_torque_sensor.h'],['../config__templates_2analog__torque__sensor_8h.html#ae66ad1f2dc13aa121147abcb04aafe9c',1,'TORQUE_SENSOR_PIN():&#160;analog_torque_sensor.h']]]
+];

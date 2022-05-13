@@ -1,0 +1,45 @@
+.TH "config_templates/timer.h" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+config_templates/timer.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTICKER_HW_TIMER\fP   $timer[hw_timer]$"
+.br
+.ti -1c
+.RI "#define \fBTICKER_HW_TIMER_IRQn\fP   $timer[hw_timer]$_IRQn"
+.br
+.ti -1c
+.RI "#define \fBTICKER_CLOCK_FREQ\fP   $timer[clock_freq]$"
+.br
+.ti -1c
+.RI "#define \fBENABLE_TICKER\fP   __HAL_RCC_$timer[hw_timer]$_CLK_ENABLE"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ENABLE_TICKER   __HAL_RCC_$timer[hw_timer]$_CLK_ENABLE"
+
+.PP
+Definition at line 8 of file timer\&.h\&.
+.SS "#define TICKER_CLOCK_FREQ   $timer[clock_freq]$"
+
+.PP
+Definition at line 6 of file timer\&.h\&.
+.SS "#define TICKER_HW_TIMER   $timer[hw_timer]$"
+
+.PP
+Definition at line 4 of file timer\&.h\&.
+.SS "#define TICKER_HW_TIMER_IRQn   $timer[hw_timer]$_IRQn"
+
+.PP
+Definition at line 5 of file timer\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

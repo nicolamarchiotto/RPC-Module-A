@@ -1,0 +1,166 @@
+.TH "forecast::MegaPD" 3 "Wed May 6 2020" "Version 0.1.0" "Forecast Nucleo Framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+forecast::MegaPD \- \fBMegaPD\fP control class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MegaPD\&.hpp>\fP
+.PP
+Inherits \fBforecast::Controller\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMegaPD\fP ()"
+.br
+.RI "\fBMegaPD\fP control constructor\&. "
+.ti -1c
+.RI "\fBMegaPD\fP (float \fBkp\fP, float \fBkd\fP, float \fBff\fP)"
+.br
+.RI "Construct a new \fBMegaPD\fP object\&. This constructor initialize, the controller\&. "
+.ti -1c
+.RI "virtual bool \fBinit\fP (const std::vector< float > &params) override"
+.br
+.RI "\fBMegaPD\fP control initialization\&. "
+.ti -1c
+.RI "virtual std::vector< std::string > \fBgetParamNames\fP () const override"
+.br
+.RI "Get Return the names of the parameters\&. "
+.ti -1c
+.RI "virtual utility::ddvar \fBprocess\fP (const \fBHardware\fP *hw, utility::ddvar ref) override"
+.br
+.RI "Implementation of the control law\&. The method produces an output given a reference (input)\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBkp\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBkd\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBff\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBerr\fP = 0\&.0"
+.br
+.ti -1c
+.RI "float \fBderr\fP = 0\&.0"
+.br
+.ti -1c
+.RI "utility::ddvar \fBout\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMegaPD\fP control class\&. 
+.PP
+Definition at line 10 of file MegaPD\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MegaPD::MegaPD ()"
+
+.PP
+\fBMegaPD\fP control constructor\&. 
+.PP
+Definition at line 6 of file MegaPD\&.cpp\&.
+.SS "MegaPD::MegaPD (float kp, float kd, float ff)"
+
+.PP
+Construct a new \fBMegaPD\fP object\&. This constructor initialize, the controller\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkp\fP 
+.br
+\fIkd\fP 
+.br
+\fIff\fP 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file MegaPD\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > MegaPD::getParamNames () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get Return the names of the parameters\&. 
+.PP
+\fBReturns\fP
+.RS 4
+std::vector<std::string> 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBforecast::Controller\fP\&.
+.PP
+Definition at line 46 of file MegaPD\&.cpp\&.
+.SS "bool MegaPD::init (const std::vector< float > & params)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBMegaPD\fP control initialization\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP vector containing the constants kpd, kd, ff in the respected order 
+.RE
+.PP
+
+.PP
+Implements \fBforecast::Controller\fP\&.
+.PP
+Definition at line 23 of file MegaPD\&.cpp\&.
+.SS "utility::ddvar MegaPD::process (const \fBHardware\fP * hw, utility::ddvar ref)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implementation of the control law\&. The method produces an output given a reference (input)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIControl\fP reference 
+.RE
+.PP
+
+.PP
+Implements \fBforecast::Controller\fP\&.
+.PP
+Definition at line 34 of file MegaPD\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float forecast::MegaPD::derr = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file MegaPD\&.hpp\&.
+.SS "float forecast::MegaPD::err = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 49 of file MegaPD\&.hpp\&.
+.SS "float forecast::MegaPD::ff = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 48 of file MegaPD\&.hpp\&.
+.SS "float forecast::MegaPD::kd = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 47 of file MegaPD\&.hpp\&.
+.SS "float forecast::MegaPD::kp = 0\&.0\fC [protected]\fP"
+
+.PP
+Definition at line 46 of file MegaPD\&.hpp\&.
+.SS "utility::ddvar forecast::MegaPD::out\fC [protected]\fP"
+
+.PP
+Definition at line 51 of file MegaPD\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Forecast Nucleo Framework from the source code\&.

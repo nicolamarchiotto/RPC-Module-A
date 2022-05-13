@@ -1,0 +1,260 @@
+\hypertarget{classforecast_1_1_force_p_i_d}{}\doxysection{forecast\+::Force\+P\+ID Class Reference}
+\label{classforecast_1_1_force_p_i_d}\index{forecast::ForcePID@{forecast::ForcePID}}
+
+
+\mbox{\hyperlink{classforecast_1_1_force_p_i_d}{Force\+P\+ID}} control class.  
+
+
+
+
+{\ttfamily \#include $<$Force\+P\+I\+D.\+hpp$>$}
+
+Inheritance diagram for forecast\+::Force\+P\+ID\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classforecast_1_1_force_p_i_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classforecast_1_1_force_p_i_d_a68873611dda487b4849c28c0a6424e9f}{Force\+P\+ID}} ()
+\begin{DoxyCompactList}\small\item\em P\+ID Force control constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classforecast_1_1_force_p_i_d_ab3f76b5a401001729c9f4a447382541a}{Force\+P\+ID}} (float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_afec3bb0f694f7a70e72f852dae69d2b1}{kp}}, float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a69800149309c23341ab1676430bb8726}{ki}}, float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a3aaa2d9f3447730fe986a5253ac9bb2a}{kd}})
+\begin{DoxyCompactList}\small\item\em Construct a new Force P I D object. This constructor initialize, the controller. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a7b2ac318699bb3be34f597c7949fde43}{init}} (const std\+::vector$<$ float $>$ \&params) override
+\begin{DoxyCompactList}\small\item\em P\+ID control initialization. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a0011442106e51a23003f746e75e6413f}{get\+Param\+Names}} () const override
+\begin{DoxyCompactList}\small\item\em Get Return the names of the parameters. \end{DoxyCompactList}\item 
+virtual utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_force_p_i_d_af55eee1041fdb42c0bb31f6b254eac2e}{process}} (const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$hw, utility\+::ddvar ref) override
+\begin{DoxyCompactList}\small\item\em Implementation of the control law. The method produces an output given a reference (input). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_afec3bb0f694f7a70e72f852dae69d2b1}{kp}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a69800149309c23341ab1676430bb8726}{ki}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a3aaa2d9f3447730fe986a5253ac9bb2a}{kd}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a0514ef58d499b49f2041ade026e7e0e1}{err\+Past}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a0c0e1da46fe138e9f183f3400fb12027}{err}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a9bdcec412bbb2adf33e3aa28e266677f}{derr}} = 0.\+0
+\item 
+float \mbox{\hyperlink{classforecast_1_1_force_p_i_d_a354e5697035942101e598a3962bd27a0}{ierr}} = 0.\+0
+\item 
+utility\+::ddvar \mbox{\hyperlink{classforecast_1_1_force_p_i_d_ae9a89e7cbf3c7c46a32acc8dbb5f0c67}{out}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classforecast_1_1_force_p_i_d}{Force\+P\+ID}} control class. 
+
+Definition at line 12 of file Force\+P\+I\+D.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a68873611dda487b4849c28c0a6424e9f}\label{classforecast_1_1_force_p_i_d_a68873611dda487b4849c28c0a6424e9f}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!ForcePID@{ForcePID}}
+\index{ForcePID@{ForcePID}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{ForcePID()}{ForcePID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Force\+P\+I\+D\+::\+Force\+P\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+P\+ID Force control constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to the HW interface \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 5 of file Force\+P\+I\+D.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_ab3f76b5a401001729c9f4a447382541a}\label{classforecast_1_1_force_p_i_d_ab3f76b5a401001729c9f4a447382541a}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!ForcePID@{ForcePID}}
+\index{ForcePID@{ForcePID}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{ForcePID()}{ForcePID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Force\+P\+I\+D\+::\+Force\+P\+ID (\begin{DoxyParamCaption}\item[{float}]{kp,  }\item[{float}]{ki,  }\item[{float}]{kd }\end{DoxyParamCaption})}
+
+
+
+Construct a new Force P I D object. This constructor initialize, the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kp} & \\
+\hline
+{\em ki} & \\
+\hline
+{\em kd} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file Force\+P\+I\+D.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a0011442106e51a23003f746e75e6413f}\label{classforecast_1_1_force_p_i_d_a0011442106e51a23003f746e75e6413f}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!getParamNames@{getParamNames}}
+\index{getParamNames@{getParamNames}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{getParamNames()}{getParamNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Force\+P\+I\+D\+::get\+Param\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get Return the names of the parameters. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classforecast_1_1_controller_aa9a391066225d7300a0ad338e324914a}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 45 of file Force\+P\+I\+D.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a7b2ac318699bb3be34f597c7949fde43}\label{classforecast_1_1_force_p_i_d_a7b2ac318699bb3be34f597c7949fde43}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!init@{init}}
+\index{init@{init}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool Force\+P\+I\+D\+::init (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+P\+ID control initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & vector containing the constants P, I, D with the order respect \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classforecast_1_1_controller_a445798926a36181bd9bc1825ad705b2e}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 22 of file Force\+P\+I\+D.\+cpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_af55eee1041fdb42c0bb31f6b254eac2e}\label{classforecast_1_1_force_p_i_d_af55eee1041fdb42c0bb31f6b254eac2e}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!process@{process}}
+\index{process@{process}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily utility\+::ddvar Force\+P\+I\+D\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classforecast_1_1_hardware}{Hardware}} $\ast$}]{hw,  }\item[{utility\+::ddvar}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of the control law. The method produces an output given a reference (input). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Control} & reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classforecast_1_1_controller_ae85c4138f1299cc068d471f65c57b9b0}{forecast\+::\+Controller}}.
+
+
+
+Definition at line 33 of file Force\+P\+I\+D.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a9bdcec412bbb2adf33e3aa28e266677f}\label{classforecast_1_1_force_p_i_d_a9bdcec412bbb2adf33e3aa28e266677f}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!derr@{derr}}
+\index{derr@{derr}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{derr}{derr}}
+{\footnotesize\ttfamily float forecast\+::\+Force\+P\+I\+D\+::derr = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 57 of file Force\+P\+I\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a0c0e1da46fe138e9f183f3400fb12027}\label{classforecast_1_1_force_p_i_d_a0c0e1da46fe138e9f183f3400fb12027}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!err@{err}}
+\index{err@{err}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily float forecast\+::\+Force\+P\+I\+D\+::err = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 56 of file Force\+P\+I\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a0514ef58d499b49f2041ade026e7e0e1}\label{classforecast_1_1_force_p_i_d_a0514ef58d499b49f2041ade026e7e0e1}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!errPast@{errPast}}
+\index{errPast@{errPast}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{errPast}{errPast}}
+{\footnotesize\ttfamily float forecast\+::\+Force\+P\+I\+D\+::err\+Past = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 54 of file Force\+P\+I\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a354e5697035942101e598a3962bd27a0}\label{classforecast_1_1_force_p_i_d_a354e5697035942101e598a3962bd27a0}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!ierr@{ierr}}
+\index{ierr@{ierr}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{ierr}{ierr}}
+{\footnotesize\ttfamily float forecast\+::\+Force\+P\+I\+D\+::ierr = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 58 of file Force\+P\+I\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a3aaa2d9f3447730fe986a5253ac9bb2a}\label{classforecast_1_1_force_p_i_d_a3aaa2d9f3447730fe986a5253ac9bb2a}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!kd@{kd}}
+\index{kd@{kd}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{kd}{kd}}
+{\footnotesize\ttfamily float forecast\+::\+Force\+P\+I\+D\+::kd = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 52 of file Force\+P\+I\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_a69800149309c23341ab1676430bb8726}\label{classforecast_1_1_force_p_i_d_a69800149309c23341ab1676430bb8726}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!ki@{ki}}
+\index{ki@{ki}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{ki}{ki}}
+{\footnotesize\ttfamily float forecast\+::\+Force\+P\+I\+D\+::ki = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 51 of file Force\+P\+I\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_afec3bb0f694f7a70e72f852dae69d2b1}\label{classforecast_1_1_force_p_i_d_afec3bb0f694f7a70e72f852dae69d2b1}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!kp@{kp}}
+\index{kp@{kp}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{kp}{kp}}
+{\footnotesize\ttfamily float forecast\+::\+Force\+P\+I\+D\+::kp = 0.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 50 of file Force\+P\+I\+D.\+hpp.
+
+\mbox{\Hypertarget{classforecast_1_1_force_p_i_d_ae9a89e7cbf3c7c46a32acc8dbb5f0c67}\label{classforecast_1_1_force_p_i_d_ae9a89e7cbf3c7c46a32acc8dbb5f0c67}} 
+\index{forecast::ForcePID@{forecast::ForcePID}!out@{out}}
+\index{out@{out}!forecast::ForcePID@{forecast::ForcePID}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily utility\+::ddvar forecast\+::\+Force\+P\+I\+D\+::out\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 60 of file Force\+P\+I\+D.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/forecast/controllers/\mbox{\hyperlink{_force_p_i_d_8hpp}{Force\+P\+I\+D.\+hpp}}\item 
+src/controllers/\mbox{\hyperlink{_force_p_i_d_8cpp}{Force\+P\+I\+D.\+cpp}}\end{DoxyCompactItemize}
