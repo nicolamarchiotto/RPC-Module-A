@@ -237,4 +237,5 @@
  lib/forecastnucleoframework/include/debug.hpp \
  src/../include/PosController.hpp \
  src/../include/../lib/forecastnucleoframework/include/forecast/Controller.hpp \
- src/../include/VelController.hpp
+ src/../include/VelController.hpp \
+ src/../include/GravCoulombFrictCompController.hpp

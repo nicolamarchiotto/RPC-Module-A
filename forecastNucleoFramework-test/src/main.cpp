@@ -6,6 +6,7 @@
 #include <debug.hpp>
 #include "../include/PosController.hpp"
 #include "../include/VelController.hpp"
+#include "../include/GravCoulombFrictCompController.hpp"
 
 int main()
 {
@@ -57,7 +58,7 @@ int main()
     // Motor controller, in TODO define robot controller
     // forecast::PosController *ctrl=new forecast::PosController();
 
-    app.setMotor(new forecast::PosController());
+    app.setMotor(new forecast::GravCoulombFrictCompController());
 
     // Handshake with the PC
     app.waitConnection();
