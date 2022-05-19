@@ -7,7 +7,7 @@
 #include "../include/PosController.hpp"
 #include "../include/VelController.hpp"
 #include "../include/GravCoulombFrictCompController.hpp"
-
+#include "../include/DiscretePosController.hpp"
 int main()
 {
 
@@ -20,8 +20,8 @@ int main()
                   { return std::vector<float>{
                         motorRef,
                         hw->getThetaM(),
-                        hw->getDThetaM(),
-                        hw->getDDThetaM(),
+                        // hw->getDThetaM(),
+                        // hw->getDDThetaM(),
                         hw->getTauM(),
                         // hw->getTauS(),
                     }; });
@@ -29,14 +29,14 @@ int main()
     // Hard-coded reference for the motor
     app.setMotorRefGen([](const forecast::RPCHardware *hw)
                        {
-        float A=M_PI/2;
-        float f=0.05;
+        float A=M_PI/4;
+        float f=4;
         
         float ref;
         
         static float t = 0.0;
 
-        // // STEP
+        // STEP
         // if(t >= 1.0f){
         //     ref = 1.0f;
         // }
@@ -58,7 +58,7 @@ int main()
     // Motor controller, in TODO define robot controller
     // forecast::PosController *ctrl=new forecast::PosController();
 
-    app.setMotor(new forecast::GravCoulombFrictCompController());
+    app.setMotor(new forecast::DiscretePosController());
 
     // Handshake with the PC
     app.waitConnection();
