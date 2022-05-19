@@ -9,8 +9,9 @@ lambdas = [];
 sigmas_lambda = [];
 sigmas_exp = [];
 
-filepath = './';
-files = dir([filepath '*.csv']);
+% filepath = './';
+filepath = 'data3/';
+files = dir([filepath 'log*.csv']);
 startTime = 0.5;
 endTime = 120;
 
@@ -55,14 +56,14 @@ for i=1:length(files)
     sigmas_lambda = [sigmas_lambda sigma_lambda];
     
 
-    pause
+    % pause
     clf
     
 end
 
 %%
 
-% [lambdaML var_lambdaML] = MLIdentification(data, 3, 1);
+[lambdaML var_lambdaML] = MLIdentification(data, 3, 1);
 % 
 % lambdaML
 % 
