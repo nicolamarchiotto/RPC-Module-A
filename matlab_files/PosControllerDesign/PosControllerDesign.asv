@@ -44,4 +44,4 @@ sisotool(M)
 
 C=16815*(s+310.9)/(s+6.392*10^-5);
 %% Discretize the Controller
-C_discrete = c2d(C, 1/2000, 'tustin')
+C = c2d(C, 1/50, 'tustin')
