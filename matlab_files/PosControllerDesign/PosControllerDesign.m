@@ -27,8 +27,8 @@ Kt = 0.231;
 Im = 0.000506;
 Fm = 0.001; 
 Kv = Kt;
-Ra = 0.0983;
-La = 0.0001333;
+Ra = 0.844;
+La = 0.00107;
 
 s = tf([1 0],1);
  
@@ -41,7 +41,6 @@ M = fw_path / ( 1 + fw_path*fb_path) * (1/s)
 M = minreal(M); 
 M = zpk(M)
 sisotool(M)
-
-C=16815*(s+310.9)/(s+6.392*10^-5);
 %% Discretize the Controller
+C = (950.66*(s+118.3))/(s+14420);
 C_discrete = c2d(C, 1/2000, 'tustin')
