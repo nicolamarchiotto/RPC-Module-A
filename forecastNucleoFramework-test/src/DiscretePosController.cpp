@@ -23,6 +23,16 @@ bool DiscretePosController::init(const std::vector<float> &params)
 
     out_k = 0.0;
     once = false;
+
+    // double b[2] = {128.45, 128.45 * 11.7};
+    // double a[2] = {1, 6738};
+
+
+    double b[2] = {0, 1};
+    double a[2] = {1, 0};
+
+    analFilter = new utility::AnalogFilter(1, a, b);
+
     return initialized = true;
 }
 
@@ -31,22 +41,24 @@ float DiscretePosController::process(const IHardware *hw,
                                      float dref,
                                      float ddref)
 {
+    // if (once)
+    // {
+    //     out_k = 47.988 * (ref - hw->getThetaM()) - 47.988 * 0.9942 * (ref_k_m_1 - theta_k_m_1) - 0.255 * out_k_m_1;
+    // }
+    // else
+    // {
+    //     once = true;
+    //     out_k = 47.988 * (ref - hw->getThetaM());
+    // }
 
-    if (once)
-    {
-        out_k = 212.5 * (ref - hw->getThetaM()) - 200.3 * (ref_k_m_1 - theta_k_m_1) - 0.5657*out_k_m_1;
-    }
-    else
-    {
-        once = true;
-        out_k = 212.5 * (ref - hw->getThetaM());
-    }
+    // out_k_m_1 = out_k;
+    // theta_k_m_1 = hw->getThetaM();
+    // ref_k_m_1 = ref;
 
-    out_k_m_1 = out_k;
-    theta_k_m_1 = hw->getThetaM();
-    ref_k_m_1 = ref;
-
-    return out_k;
+    // return out_k;
+    double err = ref - hw->getThetaM();
+    float tau = analFilter->process(err, hw->getDT());
+    return tau;
 }
 
 std::vector<std::string> DiscretePosController::getParamNames() const

@@ -2,7 +2,7 @@
 #define DISCRETEPOS_CONTROLLER_H
 
 #include "../lib/forecastnucleoframework/include/forecast/Controller.hpp"
-
+#include "utility/filters/AnalogFilter.hpp"
 namespace forecast
 {
     class DiscretePosController : public Controller
@@ -51,9 +51,9 @@ namespace forecast
         float ref_k_m_1 = 0.0f;
         float theta_k_m_1 = 0.0f;
         float out_k_m_1 = 0.0f;
+        utility::AnalogFilter *analFilter;
+        bool once = false;
 
-        bool once=false;
-        
         float out_k;
     };
 }

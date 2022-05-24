@@ -121,7 +121,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60000",
+                "PLATFORMIO=60001",
                 "STM32L432xx",
                 "DEBUG_BUILD",
                 "ARM_MATH_CM4",

@@ -29,17 +29,17 @@ int main()
     // Hard-coded reference for the motor
     app.setMotorRefGen([](const forecast::RPCHardware *hw)
                        {
-        float A=M_PI/4;
-        float f=4;
+        float A=M_PI/6;
+        float f=5;
         
-        float ref;
+        float ref=0;
         
         static float t = 0.0;
 
         // STEP
-        // if(t >= 1.0f){
-        //     ref = 1.0f;
-        // }
+        if(t >= 1.0f){
+            ref = 1.0f;
+        }
 
         // RAMP
         // static float ramp = 0.0f;
@@ -50,7 +50,7 @@ int main()
         // ref = ramp;
 
         // SIN
-        ref = A*sin(2.0*M_PI*f*t);
+        // ref = A*sin(2.0*M_PI*f*t);
         
         t += hw->getDT();
         return ref; });

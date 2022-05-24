@@ -239,4 +239,7 @@
  src/../include/../lib/forecastnucleoframework/include/forecast/Controller.hpp \
  src/../include/VelController.hpp \
  src/../include/GravCoulombFrictCompController.hpp \
- src/../include/DiscretePosController.hpp
+ src/../include/DiscretePosController.hpp \
+ .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/AnalogFilter.hpp \
+ .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/Filter.hpp \
+ .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/../Bairstow.hpp
