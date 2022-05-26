@@ -22,16 +22,27 @@ bool DiscretePosController::init(const std::vector<float> &params)
     p_ki = params[2]; // position integrative
 
     out_k = 0.0;
+    out_k_m_1 = 0.0f;
+    
     once = false;
+    twice = false;
 
-    // double b[2] = {128.45, 128.45 * 11.7};
-    // double a[2] = {1, 6738};
+    // PD POS
+    //  double b[2] = {28.029, 28.029*11.7};
+    //  double a[2] = {1, 1200};
+    //  analFilter = new utility::AnalogFilter(1, a, b);
+
+    // PID POS
+    double b[3] = {24.64, 253.4, 646.4}; // NUM
+    double a[3] = {1, 800, 0};           // DEN
+
+    analFilter = new utility::AnalogFilter(2, a, b);
 
 
-    double b[2] = {0, 1};
-    double a[2] = {1, 0};
+    double b_z[3] = {20.58, -41.06, 20.48}; // NUM
+    double a_z[3] = {1, -1.667, 0.6667};           // DEN
 
-    analFilter = new utility::AnalogFilter(1, a, b);
+    digitalFilter = new utility::DigitalFilter(2, a_z, b_z);
 
     return initialized = true;
 }
@@ -41,14 +52,16 @@ float DiscretePosController::process(const IHardware *hw,
                                      float dref,
                                      float ddref)
 {
+    // DISCRETE PD POSITION CONTROL
+
     // if (once)
     // {
-    //     out_k = 47.988 * (ref - hw->getThetaM()) - 47.988 * 0.9942 * (ref_k_m_1 - theta_k_m_1) - 0.255 * out_k_m_1;
+    //     out_k = 21.62 * (ref - hw->getThetaM()) - 21.5 * (ref_k_m_1 - theta_k_m_1) + 0.5385 * out_k_m_1;
     // }
     // else
     // {
     //     once = true;
-    //     out_k = 47.988 * (ref - hw->getThetaM());
+    //     out_k = 21.62 * (ref - hw->getThetaM());
     // }
 
     // out_k_m_1 = out_k;
@@ -56,8 +69,41 @@ float DiscretePosController::process(const IHardware *hw,
     // ref_k_m_1 = ref;
 
     // return out_k;
+
+    // DISCRETE PID POSITION CONTROL
+    // if (once)
+    // {
+    //     if (twice)
+    //     {
+    //         out_k = 20.58 * (ref - hw->getThetaM()) - 41.06 * (ref_k_m_1 - theta_k_m_1) + 20.48 * (ref_k_m_2 - theta_k_m_2) + 1.667 * out_k_m_1 - 0.6667 * out_k_m_2;
+    //     }
+    //     else
+    //     {
+    //         twice = true;
+    //         out_k = 20.58 * (ref - hw->getThetaM()) - 41.06 * (ref_k_m_1 - theta_k_m_1) + 1.667 * out_k_m_1;
+    //     }
+    // }
+    // else
+    // {
+    //     once = true;
+    //     out_k = 20.58 * (ref - hw->getThetaM());
+    // }
+
+    // out_k_m_2 = out_k_m_1;
+    // out_k_m_1 = out_k;
+
+    // ref_k_m_2 = ref_k_m_1;
+    // ref_k_m_1 = ref;
+
+    // theta_k_m_2 = theta_k_m_1;
+    // theta_k_m_1 = hw->getThetaM();
+
+    // return out_k;
+
+    // ANALOG FILTER
     double err = ref - hw->getThetaM();
-    float tau = analFilter->process(err, hw->getDT());
+    // float tau = analFilter->process(err, hw->getDT());
+    float tau = digitalFilter->process(err, hw->getDT());
     return tau;
 }
 

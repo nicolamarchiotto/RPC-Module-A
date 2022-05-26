@@ -3,6 +3,8 @@
 
 #include "../lib/forecastnucleoframework/include/forecast/Controller.hpp"
 #include "utility/filters/AnalogFilter.hpp"
+#include "utility/filters/DigitalFilter.hpp"
+
 namespace forecast
 {
     class DiscretePosController : public Controller
@@ -51,10 +53,18 @@ namespace forecast
         float ref_k_m_1 = 0.0f;
         float theta_k_m_1 = 0.0f;
         float out_k_m_1 = 0.0f;
-        utility::AnalogFilter *analFilter;
-        bool once = false;
 
-        float out_k;
+        float ref_k_m_2 = 0.0f;
+        float theta_k_m_2 = 0.0f;
+        float out_k_m_2 = 0.0f;
+
+        utility::AnalogFilter *analFilter;
+        utility::DigitalFilter *digitalFilter;
+        
+        bool once = false;
+        bool twice = false;
+
+        float out_k = 0.0f;
     };
 }
 #endif

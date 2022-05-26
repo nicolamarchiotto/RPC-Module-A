@@ -242,4 +242,5 @@
  src/../include/DiscretePosController.hpp \
  .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/AnalogFilter.hpp \
  .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/Filter.hpp \
- .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/../Bairstow.hpp
+ .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/../Bairstow.hpp \
+ .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/DigitalFilter.hpp
