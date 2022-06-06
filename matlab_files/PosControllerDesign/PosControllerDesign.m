@@ -31,16 +31,39 @@ Ra = 0.844;
 La = 0.00107;
 
 s = tf([1 0],1);
- 
-fw_path = Kt / ((s*La + Ra) * (s*Im + Fm));
-fb_path = Kv;
+
+% fw_path = Kt / ((s*La + Ra) * (s*Im + Fm));
+% fb_path = Kv;
+
+M = 1/((s*Im + Fm)*s) 
 
 %%sys = feedback(fw_path,fb_path) * (1/s);
  
-M = fw_path / ( 1 + fw_path*fb_path) * (1/s)
+% M = fw_path / ( 1 + fw_path*fb_path) * (1/s)
 M = minreal(M); 
 M = zpk(M)
-sisotool(M)
+sisotool(M);
 %% Discretize the Controller
-C = (950.66*(s+118.3))/(s+14420);
-C_discrete = c2d(C, 1/2000, 'tustin')
+% s = tf([1 0],1);
+C = 28.029*(s+11.7)/(s+1200)
+PD = c2d(C, 1/2000, 'tustin')
+%% Discretize PID controller
+s = tf([1 0],1);
+
+PID = (24.638*(s+4.679)*(s+5.607))/(s*(s+800))
+% PID = (3.8973*(s+4.679)*(s+5.691))/(s*(s+200))
+% PID_discrete = c2d(PID, 1/2000, 'tustin')
+PID_discrete = c2d(PID, 1/2000, 'zoh')
+% PID_discrete = c2d(PID, 1/2000, 'foh')
+% PID_discrete = c2d(PID, 1/2000, 'impulse')
+% PID_discrete = c2d(PID, 1/2000, 'matched')
+% PID_discrete = c2d(PID, 1/2000, 'least-squared')
+% PID_discrete = c2d(PID, 1/2000, 'damped')
+%% Discretize PI Controller
+s = tf([1 0],1);
+
+PI = 0.55772*(s+0.03231)/s
+PI_discretize = c2d(PI, 1/2000, 'tustin')
+%% Control and Saturation
+F = PD / (1 + PD*M)
+ 
