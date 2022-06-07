@@ -8,6 +8,18 @@
 #include "../include/VelController.hpp"
 #include "../include/GravCoulombFrictCompController.hpp"
 #include "../include/DiscretePosController.hpp"
+#include "../include/SwipController.hpp"
+
+double b[5] = {28.03, 34020, 460500, 777700, 0};       // NUM
+double a[5] = {1, 2402, 1500000, 69970000, 777700000}; // DEN
+
+float max_current = 4.06;
+float kt = 0.231;
+float u_sat = max_current * kt;
+float scal_factor = 0.5;
+float alpha = 0.1;
+utility::AnalogFilter *analFilter;
+
 int main()
 {
 
@@ -22,24 +34,26 @@ int main()
                         hw->getThetaM(),
                         // hw->getDThetaM(),
                         // hw->getDDThetaM(),
-                        hw->getTauM(),
-                        // hw->getTauS(),
+                        // hw->getTauM(),
+                        // hw->getTauS()
                     }; });
 
     // Hard-coded reference for the motor
     app.setMotorRefGen([](const forecast::RPCHardware *hw)
                        {
-        float A=M_PI/6;
-        float f=5;
+        // float A=1;
+        // float f=5;
         
         float ref=0;
         
         static float t = 0.0;
 
+        analFilter= new utility::AnalogFilter(4, a, b);
+
         // STEP
-        if(t >= 1.0f){
-            ref = 1.0f;
-        }
+        // if(t >= 1.0f){
+        //     ref = 1.0f;
+        // }
 
         // RAMP
         // static float ramp = 0.0f;
@@ -52,13 +66,17 @@ int main()
         // SIN
         // ref = A*sin(2.0*M_PI*f*t);
         
+        float f = alpha * t;
+        // float magnitude = analFilter->getMagnitudeHz(f);
+        float A = u_sat * scal_factor / hw->getMag(f); //magnitude of the reference swip
         t += hw->getDT();
+        ref=A * sin(2.0 * M_PI * f * t); 
         return ref; });
 
     // Motor controller, in TODO define robot controller
     // forecast::PosController *ctrl=new forecast::PosController();
 
-    app.setMotor(new forecast::DiscretePosController());
+    app.setMotor(new forecast::SwipController());
 
     // Handshake with the PC
     app.waitConnection();

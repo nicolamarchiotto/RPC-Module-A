@@ -50,6 +50,8 @@ class RPCHardware : public IHardware {
     // motor to control
     std::unique_ptr<EsconMotor> motor;
 
+    utility::AnalogFilter *analFilter;
+
    private:
     bool motorControlInit();
 
@@ -97,6 +99,8 @@ class RPCHardware : public IHardware {
     virtual inline float getTauS() const override { return tauS; }
     virtual inline float getDTauS() const override { return dtauS; }
     virtual inline float getDDTauS() const override { return ddtauS; }
+
+    float getMag(float f) const;
 };
 
 }  // namespace forecast

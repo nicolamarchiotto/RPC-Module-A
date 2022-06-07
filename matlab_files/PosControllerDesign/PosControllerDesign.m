@@ -41,12 +41,12 @@ M = 1/((s*Im + Fm)*s)
  
 % M = fw_path / ( 1 + fw_path*fb_path) * (1/s)
 M = minreal(M); 
-M = zpk(M)
-sisotool(M);
+% M = zpk(M) to visualuze in form (s+z_1)(s+p_1)
+% sisotool(M);
 %% Discretize the Controller
-% s = tf([1 0],1);
-C = 28.029*(s+11.7)/(s+1200)
-PD = c2d(C, 1/2000, 'tustin')
+s = tf([1 0],1);
+PD = 28.029*(s+11.7)/(s+1200)
+PD_discrete = c2d(PD, 1/2000, 'tustin')
 %% Discretize PID controller
 s = tf([1 0],1);
 
@@ -65,5 +65,6 @@ s = tf([1 0],1);
 PI = 0.55772*(s+0.03231)/s
 PI_discretize = c2d(PI, 1/2000, 'tustin')
 %% Control and Saturation
-F = PD / (1 + PD*M)
+F = PD / (1 + PD*M);
+sisotool(F)
  
