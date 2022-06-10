@@ -21,10 +21,10 @@ RPCHardware::RPCHardware(App &app)
                    TORQUE_SENSOR_BUFFER_SIZE),
       encoder(motorEncoder::CPR, motorEncoder::GEAR_RATIO)
 {
-    // ntd
-    double b[5] = {28.03, 34020, 460500, 777700, 0};       // NUM
-    double a[5] = {1, 2402, 1500000, 69970000, 777700000}; // DEN
-    analFilter = new utility::AnalogFilter(4, a, b);
+    // 
+    // double b[5] = {28.03, 34020, 460500, 777700, 0};       // NUM
+    // double a[5] = {1, 2402, 1500000, 69970000, 777700000}; // DEN
+    // analFilter = new utility::AnalogFilter(4, a, b);
 }
 
 bool RPCHardware::motorControlInit()
@@ -100,8 +100,8 @@ void RPCHardware::update(float dt)
     prev_dtauS = dtauS;
 }
 
-float RPCHardware::getMag(float f) const{
-    return analFilter->getMagnitudeHz(f);
-}
+// float RPCHardware::getMag(float f) const{
+//     return analFilter->getMagnitudeHz(f);
+// }
 
 #endif // TARGET_STM32L4

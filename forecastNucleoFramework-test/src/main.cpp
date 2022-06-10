@@ -9,16 +9,7 @@
 #include "../include/GravCoulombFrictCompController.hpp"
 #include "../include/DiscretePosController.hpp"
 #include "../include/SwipController.hpp"
-
-double b[5] = {28.03, 34020, 460500, 777700, 0};       // NUM
-double a[5] = {1, 2402, 1500000, 69970000, 777700000}; // DEN
-
-float max_current = 4.06;
-float kt = 0.231;
-float u_sat = max_current * kt;
-float scal_factor = 0.5;
-float alpha = 0.1;
-utility::AnalogFilter *analFilter;
+#include <forecast/config/escon_motor.h>
 
 int main()
 {
@@ -26,7 +17,6 @@ int main()
     forecast::RPCApp app;
 
     // oggetto forecast::RPCHardware gestisce l'hardware della board
-
     app.setLogger([](float motorRef, const forecast::RPCHardware *hw,
                      const forecast::Controller *motor)
                   { return std::vector<float>{
@@ -38,45 +28,41 @@ int main()
                         // hw->getTauS()
                     }; });
 
-    // Hard-coded reference for the motor
     app.setMotorRefGen([](const forecast::RPCHardware *hw)
                        {
-        // float A=1;
-        // float f=5;
-        
-        float ref=0;
-        
-        static float t = 0.0;
+    float A = 0.5;
+    float f = 5;
 
-        analFilter= new utility::AnalogFilter(4, a, b);
+    float ref = 0;
 
-        // STEP
-        // if(t >= 1.0f){
-        //     ref = 1.0f;
-        // }
+    static float t = 0.0;
 
-        // RAMP
-        // static float ramp = 0.0f;
-        // ramp += 0.4 * hw->getDT();
-        // if (ramp >= 3.5f) {
-        //     ramp = 3.5f;
-        // }
-        // ref = ramp;
+    // STEP
+    if(t >= 1.0f){
+        ref = 1.0f;
+    }
 
-        // SIN
-        // ref = A*sin(2.0*M_PI*f*t);
-        
-        float f = alpha * t;
-        // float magnitude = analFilter->getMagnitudeHz(f);
-        float A = u_sat * scal_factor / hw->getMag(f); //magnitude of the reference swip
-        t += hw->getDT();
-        ref=A * sin(2.0 * M_PI * f * t); 
-        return ref; });
+    // RAMP
+    // static float ramp = 0.0f;
+    // ramp += 0.4 * hw->getDT();
+    // if (ramp >= 3.5f) {
+    //     ramp = 3.5f;
+    // }
+    // ref = ramp;
+
+    // SIN
+    // ref = A * sin(2.0 * M_PI * f * t);
+    
+    //SWEEP, not tested
+    // ref = A * sin(2.0 * M_PI *t * t);
+   
+    t+=hw->getDT();
+
+    return ref; });
 
     // Motor controller, in TODO define robot controller
-    // forecast::PosController *ctrl=new forecast::PosController();
 
-    app.setMotor(new forecast::SwipController());
+    app.setMotor(new forecast::DiscretePosController());
 
     // Handshake with the PC
     app.waitConnection();

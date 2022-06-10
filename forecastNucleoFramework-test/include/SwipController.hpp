@@ -50,16 +50,7 @@ namespace forecast
         float p_kd = 0.0f;
         float p_ki = 0.0f;
 
-        utility::AnalogFilter *analFilter;
         utility::AnalogFilter *analFilterCtrl;
-        float t = 0.0f;
-        float kt = 0.0f;
-        float max_current = 0.0f;
-        float u_sat = 0.0f;
-        float scal_factor = 0.0;
-        float alpha = 0.0;
-    public:
-        float ref_swip;
     };
 }
 #endif

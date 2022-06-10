@@ -27,29 +27,39 @@ bool DiscretePosController::init(const std::vector<float> &params)
     once = false;
     twice = false;
 
-    // PD POS
-    //  double b[2] = {28.029, 28.029*11.7};
+    //  PD(s)
+    //  double b[2] = {25.641, 25.641*11.7};
     //  double a[2] = {1, 1200};
     //  analFilter = new utility::AnalogFilter(1, a, b);
 
-    // PID POS
-    double b[3] = {24.64, 253.4, 646.4}; // NUM
-    double a[3] = {1, 800, 0};           // DEN
+    //  PD(z)
+    //  double b_z[2] = { 19.78, -19.67};
+    //  double a_z[2] = {1, -0.5385};
+    //  digitalFilter = new utility::DigitalFilter(1, a, b);
 
-    // double b[3] = {3.897, 40.42, 103.8}; // NUM
-    // double a[3] = {1, 200, 0};           // DEN
 
-    analFilter = new utility::AnalogFilter(2, a, b);
 
-    // PD POS
-    // double b_z[3] = {20.58, -41.06, 20.48}; // NUM
-    // double a_z[3] = {1, -1.667, 0.6667};    // DEN
+    //  PID_high_dist(s)
+    //  double b[3] = {5.206, 75.93, 55.09}; // NUM
+    //  double a[3] = {1, 338.3, 0};           // DEN
+    //  analFilter = new utility::AnalogFilter(2, a, b);
 
-    // PID POS
-    double b_z[3] = {3.897, -7.775, 3.878}; // NUM
-    double a_z[3] = {1, -1.905, 0.9048};    // DEN
+    //  PID_high_dist(z)
+    //  double b_z[3] = {4.818, -9.6, 4.783}; // NUM
+    //  double a_z[3] = {1, -1.844, 0.844};    // DEN
+    //  digitalFilter = new utility::DigitalFilter(2, a, b);
 
-    digitalFilter = new utility::DigitalFilter(2, a_z, b_z);
+
+
+    //  PID_low_dist(s)
+     double b[3] = {24.64, 253.4, 646.4}; // NUM
+     double a[3] = {1, 800, 0};           // DEN
+     analFilter = new utility::AnalogFilter(2, a, b);
+
+    //  PID_low_dist(z)
+     double b_z[3] = {20.58, -41.06, 20.48}; // NUM
+     double a_z[3] = {1, -1.667, 0.6667};    // DEN
+     digitalFilter = new utility::DigitalFilter(2, a, b);
 
     return initialized = true;
 }
@@ -59,25 +69,45 @@ float DiscretePosController::process(const IHardware *hw,
                                      float dref,
                                      float ddref)
 {
-    // DISCRETE PD POSITION CONTROL
+    // DISCRETE PD POSITION CONTROL Tustin a 2000 Hz
 
     // if (once)
     // {
-    //     out_k = 21.62 * (ref - hw->getThetaM()) - 21.5 * (ref_k_m_1 - theta_k_m_1) + 0.5385 * out_k_m_1;
+    //     out_k = 19.78 * (ref - hw->getThetaM()) - 19.67 * (ref_k_m_1 - theta_k_m_1) + 0.5385 * out_k_m_1;
     // }
     // else
     // {
     //     once = true;
-    //     out_k = 21.62 * (ref - hw->getThetaM());
+    //     out_k = 19.78 * (ref - hw->getThetaM());
     // }
 
     // out_k_m_1 = out_k;
     // theta_k_m_1 = hw->getThetaM();
     // ref_k_m_1 = ref;
-
     // return out_k;
 
-    // DISCRETE PID POSITION CONTROL Tustin a 2000 Hz
+
+    // DISCRETE PID POSITION CONTROL High Disturbance Tustin a 2000 Hz
+    // if (once)
+    // {
+    //     if (twice)
+    //     {
+    //         out_k = 4.818 * (ref - hw->getThetaM()) - 9.6 * (ref_k_m_1 - theta_k_m_1) + 4.783 * (ref_k_m_2 - theta_k_m_2) + 1.844 * out_k_m_1 - 0.844 * out_k_m_2;
+    //     }
+    //     else
+    //     {
+    //         twice = true;
+    //         out_k = 4.818 * (ref - hw->getThetaM()) - 9.6 * (ref_k_m_1 - theta_k_m_1) + 1.844 * out_k_m_1;
+    //     }
+    // }
+    // else
+    // {
+    //     once = true;
+    //     out_k = 4.818 * (ref - hw->getThetaM());
+    // }
+
+
+    // DISCRETE PID POSITION CONTROL Low Disturbance Tustin a 2000 Hz
     // if (once)
     // {
     //     if (twice)
@@ -96,7 +126,7 @@ float DiscretePosController::process(const IHardware *hw,
     //     out_k = 20.58 * (ref - hw->getThetaM());
     // }
 
-    // DISCRETE PID POSITION CONTROL ZoH a 2000 Hz, non arriva a ref ma costante a regime 0.7 ref
+    // DISCRETE PID POSITION CONTROL Low Disturbance ZoH a 2000 Hz, non arriva a ref ma costante a regime 0.7 ref
     // if (once)
     // {
     //     if (twice)
@@ -115,7 +145,7 @@ float DiscretePosController::process(const IHardware *hw,
     //     out_k = 24.64 * (ref - hw->getThetaM());
     // }
 
-    // DISCRETE PID POSITION CONTROL FoH a 2000 Hz, non arriva a ref ma costante a regime 0.7 ref
+    // DISCRETE PID POSITION CONTROL Low Disturbance FoH a 2000 Hz, non arriva a ref ma costante a regime 0.7 ref
     // if (once)
     // {
     //     if (twice)
@@ -134,7 +164,7 @@ float DiscretePosController::process(const IHardware *hw,
     //     out_k = 20.36 * (ref - hw->getThetaM());
     // }
 
-    // DISCRETE PID POSITION CONTROL Impulse a 2000 Hz, instabile
+    // DISCRETE PID POSITION CONTROL Low Disturbance Impulse a 2000 Hz, instabile
     // if (once)
     // {
     //     if (twice)
@@ -153,26 +183,26 @@ float DiscretePosController::process(const IHardware *hw,
     //     out_k = -9.728 * (ref - hw->getThetaM());
     // }
 
-    // DISCRETE PID POSITION CONTROL matched a 2000 Hz,  non arriva a ref ma costante a regime 0.7 ref
-    if (once)
-    {
-        if (twice)
-        {
-            out_k = 20.36 * (ref - hw->getThetaM()) - 40.61 * (ref_k_m_1 - theta_k_m_1) + 20.25 * (ref_k_m_2 - theta_k_m_2) + 1.67 * out_k_m_1 - 0.6703 * out_k_m_2;
-        }
-        else
-        {
-            twice = true;
-            out_k = 20.36 * (ref - hw->getThetaM()) - 40.61 * (ref_k_m_1 - theta_k_m_1) + 1.67 * out_k_m_1;
-        }
-    }
-    else
-    {
-        once = true;
-        out_k = 20.36 * (ref - hw->getThetaM());
-    }
+    // DISCRETE PID POSITION CONTROL Low Disturbance matched a 2000 Hz,  non arriva a ref ma costante a regime 0.7 ref
+    // if (once)
+    // {
+    //     if (twice)
+    //     {
+    //         out_k = 20.36 * (ref - hw->getThetaM()) - 40.61 * (ref_k_m_1 - theta_k_m_1) + 20.25 * (ref_k_m_2 - theta_k_m_2) + 1.67 * out_k_m_1 - 0.6703 * out_k_m_2;
+    //     }
+    //     else
+    //     {
+    //         twice = true;
+    //         out_k = 20.36 * (ref - hw->getThetaM()) - 40.61 * (ref_k_m_1 - theta_k_m_1) + 1.67 * out_k_m_1;
+    //     }
+    // }
+    // else
+    // {
+    //     once = true;
+    //     out_k = 20.36 * (ref - hw->getThetaM());
+    // }
 
-    // DISCRETE PID POSITION CONTROL Least Squared a 2000 Hz, instabile
+    // DISCRETE PID POSITION CONTROL Low Disturbance Least Squared a 2000 Hz, instabile
     // if (once)
     // {
     //     if (twice)
@@ -191,33 +221,26 @@ float DiscretePosController::process(const IHardware *hw,
     //     out_k = 20.41 * (ref - hw->getThetaM());
     // }
 
+    // out_k_m_2 = out_k_m_1;
+    // out_k_m_1 = out_k;
 
-    // DISCRETE PI Tustin Campionamento a 2000 Hz
-    // if (once)
-    // {
-    //     twice = true;
-    //     out_k = 0.55773 * (ref - hw->getThetaM()) - 0.55773 * (ref_k_m_1 - theta_k_m_1) + out_k_m_1;
-    // }
-    // else
-    // {
-    //     once = true;
-    //     out_k = 0.55773 * (ref - hw->getThetaM());
-    // }
+    // ref_k_m_2 = ref_k_m_1;
+    // ref_k_m_1 = ref;
 
-    out_k_m_2 = out_k_m_1;
-    out_k_m_1 = out_k;
+    // theta_k_m_2 = theta_k_m_1;
+    // theta_k_m_1 = hw->getThetaM();
 
-    ref_k_m_2 = ref_k_m_1;
-    ref_k_m_1 = ref;
+    // return out_k;
 
-    theta_k_m_2 = theta_k_m_1;
-    theta_k_m_1 = hw->getThetaM();
 
-    return out_k;
 
     // ANALOG FILTER
+    double err = ref - hw->getThetaM();
+    float tau = analFilter->process(err, hw->getDT());
+    return tau;
+
+    // DIGITAL FILTER
     // double err = ref - hw->getThetaM();
-    // // float tau = analFilter->process(err, hw->getDT());
     // float tau = digitalFilter->process(err, hw->getDT());
     // return tau;
 }
