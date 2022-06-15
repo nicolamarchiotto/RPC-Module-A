@@ -242,7 +242,6 @@
  src/../include/DiscretePosController.hpp \
  .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/AnalogFilter.hpp \
  .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/Filter.hpp \
- .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/Bairstow.hpp \
  .pio/libdeps/rpc/altair_nucleo_utility_lib/include/utility/filters/DigitalFilter.hpp \
  src/../include/SwipController.hpp \
  lib/forecastnucleoframework/include/forecast/config/escon_motor.h
