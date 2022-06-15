@@ -35,7 +35,7 @@ bool DiscretePosController::init(const std::vector<float> &params)
     //  PD(z)
     //  double b_z[2] = { 19.78, -19.67};
     //  double a_z[2] = {1, -0.5385};
-    //  digitalFilter = new utility::DigitalFilter(1, a, b);
+    //  digitalFilter = new utility::DigitalFilter(2, a_z, b_z);
 
 
 
@@ -47,7 +47,7 @@ bool DiscretePosController::init(const std::vector<float> &params)
     //  PID_high_dist(z)
     //  double b_z[3] = {4.818, -9.6, 4.783}; // NUM
     //  double a_z[3] = {1, -1.844, 0.844};    // DEN
-    //  digitalFilter = new utility::DigitalFilter(2, a, b);
+    //  digitalFilter = new utility::DigitalFilter(2, a_z, b_z);
 
 
 
@@ -59,7 +59,7 @@ bool DiscretePosController::init(const std::vector<float> &params)
     //  PID_low_dist(z)
      double b_z[3] = {20.58, -41.06, 20.48}; // NUM
      double a_z[3] = {1, -1.667, 0.6667};    // DEN
-     digitalFilter = new utility::DigitalFilter(2, a, b);
+     digitalFilter = new utility::DigitalFilter(2, a_z, b_z);
 
     return initialized = true;
 }
